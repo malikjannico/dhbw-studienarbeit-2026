@@ -1,0 +1,225 @@
+\section{Diskussion der Ergebnisse}
+\label{sec:diskussion_der_ergebnisse}
+
+Die systematische Erfassung, methodische Dekonstruktion und typologische Synthese der Fachliteratur zur Auswahl von Commercial-off-the-Shelf (COTS) Software ($N_{\text{studies}} = 39$, $N_{\text{reports}} = 41$) in den vorangegangenen Kapiteln hat ein tiefgreifendes Verständnis für die evolutionäre Entwicklung (FF1) sowie die strukturellen Merkmale und Archetypen (FF2) moderner Entscheidungsinstrumentarien geschaffen. Während Kapitel~\ref{sec:systematische_literaturuebersicht} den aktuellen Status Quo der Forschung deskriptiv und klassifikatorisch aufgeschlüsselt hat, obliegt diesem Kapitel die kritische Reflexion, wissenssoziologische Einordnung und zukunftsorientierte Synthese der Befunde. 
+
+Im Zentrum der nachfolgenden Ausführungen steht die Beantwortung der \textbf{Forschungsfrage 3 (FF3)}, welche nach den unbesetzten Konfigurationsräumen (Forschungslücken) hinsichtlich automatisierter Entscheidungsunterstützung und Kriterienstandardisierung sowie den daraus resultierenden wissenschaftlichen und praktischen Konsequenzen fragt. Die Diskussion gliedert sich hierfür in drei systematische Teilschritte: Zunächst erfolgt in \autoref{subsec:kritische_synthese_forschungsluecken} eine formale Ableitung vier struktureller Forschungslücken auf Basis der Cross-Consistency Assessment (CCA) der General Morphological Analysis (GMA). In \autoref{subsec:implikationen_forschung_praxis} werden darauf aufbauend die wissenschaftlichen Implikationen für die Disziplin der Wirtschaftsinformatik konsolidiert sowie ein praxisorientierter Entscheidungsleitfaden für Enterprise-Architekten formuliert. Das Kapitel schließt in \autoref{subsec:methodische_limitationen} mit einer kritischen Diskussion der methodischen Einschränkungen der vorliegenden Untersuchung.
+
+---
+
+\subsection{Kritische Synthese der Forschungslücken im morphologischen Raum}
+\label{subsec:kritische_synthese_forschungsluecken}
+
+Die in Kapitel~\ref{subsec:cca_ergebnisse} durchgeführte Cross-Consistency Assessment (CCA) hat offengelegt, dass von den $N = 1.296$ theoretisch denkbaren Konfigurationen des morphologischen Feldes nach Abzug der ontologisch inkonsistenten Kombinationen ($X$-Konditionen) genau 184 mathematisch valide Profilkombinationen verbleiben. Allerdings werden lediglich 41 dieser validen Punkte durch die gesichtete Primärliteratur empirisch besetzt. Es existieren somit 143 theoretisch valide, jedoch empirisch unbesetzte Zellen ($T$-Konditionen). Diese systematische Unterrepräsentation bestimmter Parameterkombinationen ist kein zufälliges Artefakt der Literatursuche, sondern legt fundamentale, strukturelle blinde Flecken in der zeitgenössischen Forschung offen \cite{Z6N6V5L9, LPC92LAP}. 
+
+Zur systematischen Beantwortung der \textbf{Forschungsfrage 3 (FF3)} lassen sich diese unbesetzten Konfigurationsräume in vier primäre, theoretisch und praktisch hochrelevante **Forschungslücken (Lücke 1 bis Lücke 4)** verdichten, die im Folgenden detailliert analysiert und mit konkreten zukünftigen Forschungsdesideraten verknüpft werden.
+
+\subsubsection{Lücke 1: Automatisierungs-Lücke in komplexen mathematischen Auswahlmodellen}
+\label{subsubsec:luecke1_automatisierung}
+
+Die erste prägnante Forschungslücke manifestiert sich an der Schnittstelle zwischen der Komplexität der mathematischen Entscheidungsmodelle ($P_1$) und dem werkzeuggestützten Automatisierungsgrad der Entscheidungsunterstützung ($P_5$). Insbesondere betrifft dies das morphologische Spannungsfeld $P_1 \in \{v_{1.2}, v_{1.3}, v_{1.4}\}$ (MCDA, mathematische Optimierung und Hybrid Soft Computing) vs. $P_5 = v_{5.1}$ (manuelle Tabellenkalkulation) beziehungsweise das weitgehende Fehlen benutzerzentrierter, produktionsreifer Decision Support Systeme ($P_5 = v_{5.3}$).
+
+Eine quantitative Detailanalyse des untersuchten Literaturbestands zeigt eine frappierende Diskrepanz: \textbf{85\,\% aller Studien} aus dem Bereich der mathematischen Optimierung ($P_1 = v_{1.3}$) und des Soft Computings ($P_1 = v_{1.4}$) – konkret 17 von 20 untersuchten Publikationen dieser Kategorien – verharren bezüglich ihrer praktischen Anwendbarkeit auf dem Niveau rein manueller Solver-Skripte ($v_{5.2}$ in Entwicklungsumgebungen wie MATLAB, LINGO oder CPLEX) oder präsentieren isolierte mathematische Paper-Formeln ($v_{5.3}$ bzw. $v_{5.1}$), ohne eine benutzbare, grafische DSS-Bedienoberfläche bereitzustellen \cite{VUVLUN85, B7ZTQCZZ, NZJEEPAC}. 
+
+Die wissenschaftliche Literatur konzentriert sich folglich stark auf die theoretische Formulierung immer komplexerer Zielfunktionen (z.\,B. *Fuzzy Chance-Constrained Multiobjective Programming* \cite{6YJHIVHG} oder *Credibility Theory* \cite{JX4RDRDU}), ignoriert jedoch weitgehend die operationalen Schnittstellen zur Entscheidungspraxis in Unternehmen. Lediglich drei isolierte Ausnahmen im Gesamtsammlungsbestand durchbrechen diese Automatisierungsbarriere und stellen explizit prototypische, interagierbare DSS-Softwarewerkzeuge bereit:
+\begin{enumerate}
+    \item Das \textit{Odin}-System von Neubauer \& Stummer \cite{ZQMG69VT}, welches eine interaktive Vektoroptimierung mit visueller Pareto-Front-Exploration verbindet.
+    \item Das \textit{MiHOS-PT}-Tooling von Mohamed \cite{9F79VAAB}, das eine automatisierte Erfassung von Mismatch-Auflösungsregeln unterstützt.
+    \item Das \textit{IDS-Tool} von Sadiq et al. \cite{LNQHES84}, welches auf Dempster-Shafer Evidential Reasoning basiert und eine benutzerfreundliche Schnittstelle zur Unsicherheitsaggregation bietet.
+\end{enumerate}
+
+Diese drastische Automatisierungslücke führt in der Unternehmenspraxis zu einem gravierenden Rezeptions- und Adoptions-Dilemma: Während Praxisentscheider aufgrund von Zeit- und Ressourcenrestriktionen auf einfache, jedoch mathematisch unzulängliche Excel-Scoring-Tabellen ($P_5 = v_{5.1}$) zurückgreifen, verbleiben die hochentwickelten akademischen Optimierungsmodelle in der theoretischen Isolation. 
+
+\paragraph{Zukünftige Forschungsrichtung (Future Direction 1):} Zur Überwindung dieser Automatisierungslücke muss sich die zukünftige Wirtschaftsinformatik-Forschung zwingend von der reinen Erfindung neuer mathematischer Algorithmen hin zur **Entwicklung modularer, quelloffener DSS-Plattformarchitekturen** verlagern. Erforderlich sind serviceorientierte Architekturen (SOA), die komplexe Mixed-Integer Non-Linear Programming (MINLP) Solver und Fuzzy-Inferenz-Engines in kapselbaren Microservices (z.\,B. via REST/gRPC-Schnittstellen) bereitstellen. Ein vielversprechender Ansatz liegt in der Integration von Open-Source DSS-Engines mit modernen Low-Code-Plattformen, um Enterprise-Architekten eine intuitive Interaktion mit Pareto-optimalen Lösungsräumen ohne mathematische Hürden zu ermöglichen.
+
+\subsubsection{Lücke 2: Kriterien-Standardisierungs-Lücke in Optimierungs-Frameworks}
+\label{subsubsec:luecke2_kriterienstandardisierung}
+
+Die zweite strukturelle Forschungslücke zeigt sich in der disjunkten Betrachtung von Kriterienkatalog-Standardisierung ($P_3$) und formal-mathematischen Optimierungsansätzen ($P_1 = v_{1.3}$). Eine präzise Analyse des Parameterpaars $P_1 = v_{1.3}$ vs. $P_3 = v_{3.1}$ offenbart ein dramatisches Bild: \textbf{0 von 11 identifizierten mathematischen Optimierungsstudien} nutzen etablierte internationale Qualitätsnormen wie ISO/IEC 9126 oder deren Nachfolger ISO/IEC 25010 (SQuaRE) \cite{VUVLUN85, MZ8JHDYA, 6YJHIVHG, B7ZTQCZZ, VRTXHQI7, W8P543Y2, JX4RDRDU, P9SATBH5, UFCEV52H}. Stattdessen basieren **100\,\% dieser Optimierungsarbeiten** auf flachen, ad-hoc generierten Variablenlisten ($v_{3.3}$), die meist lediglich drei bis sechs isolierte, willkürlich gewählte Testwerte (typischerweise $Kosten$, $Zuverl\ddot{a}ssigkeit$ und $Lieferzeit$) in ihre Zielfunktionen einsetzen.
+
+Demgegenüber stehen die Arbeiten der klassischen MCDA- und Soft-Computing-Gruppe ($P_1 \in \{v_{1.2}, v_{1.4}\}$), in denen standardisierte Taxonomien ($P_3 = v_{3.1}$) wie ISO/IEC 25010 zwar breite Anwendung finden \cite{M3B2D3GD, U5JPV4SF, DFASRUVC}, dort jedoch meist nur statische, nicht-kombinatorische Hierarchie-Bäume abbilden. 
+
+Dieses Phänomen lässt sich durch eine tiefliegende disziplinäre Entkopplung zwischen der Disziplin des Software Engineering (welche Qualitätsmodelle wie ISO 25010 definiert) und der Disziplin des Operations Research (welche mathematische Optimierungsmodelle entwickelt) erklären:
+\begin{itemize}
+    \item Operations-Research-Forscher vereinfachen den Kriterienkatalog auf wenige mathematisch leicht handhabbare Skalare, um die Lösbarkeit ihrer NP-schweren 0-1 ILP- beziehungsweise MINLP-Modelle nicht zu gefährden.
+    \item Software-Engineers erstellen zwar hochgradig ausdifferenzierte ISO-Qualitätsbäume mit Dutzenden von Unterkriterien (z.\,B. Functional Completeness, Time Behaviour, Resource Utilization, Fault Tolerance), verzichten dabei jedoch auf die mathematische Modellierung kombinatorischer Abhängigkeiten bei Multi-COTS-Systemen.
+\end{itemize}
+
+Das Resultat dieser Entkopplung ist eine unzureichende Validität akademischer Optimierungsmodelle: Eine mathematisch exakte Pareto-Optimierung ist wertlos, wenn die zugrunde liegenden Zielfunktionen wesentliche Qualitäts- und Architekturdimensionen des ISO-Standards (wie z.\,B. Kompatibilität, Übertragbarkeit oder Wartbarkeit) aufgrund vereinfachender Ad-hoc-Annahmen schlicht ausblenden \cite{LPC92LAP}.
+
+\paragraph{Zukünftige Forschungsrichtung (Future Direction 2):} Es besteht dringender Bedarf an der **Entwicklung formaler Übersetzungsschnittstellen und Mapping-Grammatiken**, welche mehrstufige ISO/IEC 25010 Qualitätsbäume automatisiert in mathematische Zielfunktionen und Restriktionsgleichungen transformieren. Forschungsprojekte müssen untersuchen, wie komplex verschachtelte Qualitäts-Taxonomien ohne Informationsverlust und ohne Verletzung der Konvexitätseigenschaften in mathematische Optimierungsprobleme überführt werden können, um normativ fundierte und gleichzeitig mathematisch rigide Auswahlen zu garantieren.
+
+\subsubsection{Lücke 3: Multi-COTS-Kompositions- und Integrations-Lücke}
+\label{subsubsec:luecke3_multicots_komposition}
+
+Die dritte Forschungslücke betrifft den Gegenstandsbereich der Systemarchitektur und Mismatch-Handhabung ($P_2$) bei der zeitgleichen Auswahl mehrerer interagierender COTS-Komponenten (Multi-COTS-Komposition). Während sich frühe Ansätze wie das MiHOS-Framework von Mohamed et al. \cite{MC9UMXZZ, 9F79VAAB} intensiv mit der Identifikation, Taxonomie und monetären Bewertung von Fehlanpassungen (Mismatches) zwischen Softwareanforderungen und Produktfunktionen auseinandersetzten, beschränken sich diese Arbeiten überwiegend auf **Einzelentscheidungen** ($Single\text{-}COTS\text{-}Selection$).
+
+Wird das Auswahlproblem hingegen auf moderne, komponentenbasierte Enterprise-Systeme oder Microservice-Landschaften erweitert, in denen mehrere COTS-Produkte ($C_1, C_2, \dots, C_k$) simultan ausgewählt und miteinander integriert werden müssen ($P_2 = v_{2.3}$ bzw. Multi-Komponenten-Systeme), offenbart die aktuelle Literatur eklatante Defizite:
+\begin{enumerate}
+    \item \textbf{Vernachlässigung von Interaktions- und Kaskadeneffekten:} Mismatches in Komponente $A$ erzwingen häufig Schnittstellen-Adapter (Wrapping, Glue Code), welche ihrerseits die Latenz, Sicherheit oder Systemkompatibilität zu Komponente $B$ negativ beeinflussen. Solche kaskadierenden Mismatch-Interaktionen werden in den bestehenden Evaluierungsmodellen nahezu vollständig ignoriert.
+    \item \textbf{Mangel an empirischer Industrie-Validierung:} Wie Taherdoost \& Mohebi \cite{LPC92LAP} in ihrer kritischen Bestandsaufnahme hervorheben, existieren kaum belastbare empirische Untersuchungen, die die mathematisch berechneten Integrations- und Mismatch-Kosten mit den tatsächlich nach der Systemimplementierung angefallenen Realkosten vergleichen.
+\end{enumerate}
+
+Die bisherigen Multi-Komponenten-Optimierungsmodelle (wie z.\,B. COSE \cite{VUVLUN85} oder Atana \cite{MZ8JHDYA}) modellieren Interkompatibilitäten meist als binäre Matrix ($0$ für inkompatibel, $1$ für kompatibel). Dies stellt eine unzulässige Simplifizierung der IT-Realität dar, da Integrationsschwierigkeiten in der Praxis selten binärer Natur sind, sondern ein kontinuierliches Spektrum technischer und organisatorischer Anpassungsaufwände umfassen.
+
+\paragraph{Zukünftige Forschungsrichtung (Future Direction 3):} Zukünftige Forschungsarbeiten müssen **Integer Linear Programming (ILP) Mismatch-Solver auf dynamische Multi-Komponenten-Architekturnetze** erweitern. Hierbei müssen Graph-basierte Abhängigkeitsmodelle (z.\,B. auf Basis von Attributierten Graph-Grammatiken oder Bayes'schen Netzen) mit Auswahlorchestrierungen gekoppelt werden, um kaskadierende Schnittstellenrisiken, Middleware-Overheads und Mismatch-Propagationen über den gesamten Architekturgraphen hinweg quantitativ zu simulieren und zu optimieren.
+
+\subsubsection{Lücke 4: Hybride Unsicherheits-Lücke (Possibilistik vs. Probabilistik)}
+\label{subsubsec:luecke4_hybride_unsicherheit}
+
+Die vierte identifizierte Forschungslücke betrifft den mathematischen Umgang mit Ungewissheit und Unschärfe ($P_4$). Im morphologischen Feld wird deutlich, dass die Literatur zur Unschärfemodellierung scharf in zwei disjunkte, isolierte mathematische Paradigmen gespalten ist:
+\begin{itemize}
+    \item \textbf{Das possibilistische Paradigma ($P_4 = v_{4.2}$):} Verwendet unscharfe Mengenlehre (Fuzzy Logic, Triangular/Trapezoidal Fuzzy Numbers, Intuitionistic Fuzzy Sets), um epistemische Vageheit, subjektive Ermessensspielräume und unpräzise Expertenurteile (z.\,B. \enquote{hohe Benutzerfreundlichkeit}) zu beschreiben \cite{LYMHTPXS, JT5X3FIG, FVINCQ89}.
+    \item \textbf{Das probabilistische/stochastische Paradigma ($P_4 = v_{4.3}$):} Verwendet Stochastik, Zufallsvariablen, Credibility-Theorie oder Monte-Carlo-Simulationen, um stochastische Risiken, Ausfallraten (MTBF) und historische Datenvarianzen abzubilden \cite{6YJHIVHG, B7ZTQCZZ, VRTXHQI7}.
+\end{itemize}
+
+Die kritische Diskussion dieser Paradigmen zeigt, dass in der realen COTS-Softwareauswahl **beide Formen der Unsicherheit gleichzeitig auftreten**: Ein IT-Entscheider steht vor der Herausforderung, subjektive, vage Expertenbewertungen bezüglich der Software-Ergonomie (epistemische Unsicherheit) mit harten, stochantisch schwankenden Performanz- und Ausfalldaten der Cloud-Infrastruktur (aleatorische Unsicherheit) in einer einzigen Konsistente Entscheidungsrechnung zu aggregieren.
+
+In der aktuellen Primärliteratur existieren jedoch praktisch keine integrierten Ansätze, die possibilistische Fuzzy-Zugehörigkeiten und stochastische Wahrscheinlichkeitsverteilungen mathematisch sauber miteinander verschmelzen. Ansätze wie die *Credibility Theory* \cite{JX4RDRDU} versuchen zwar eine Brücke zu schlagen, setzen jedoch spezifische Plandaten voraus. Das Dempster-Shafer Evidential Reasoning (wie im IDS-Tool \cite{LNQHES84} Ansätze zeigt) wird bisher nur in isolierten Hybridmodellen angewendet, ohne eine allgemeine Kopplung mit Fuzzy-AHP oder PROMETHEE zu vollziehen.
+
+\paragraph{Zukünftige Forschungsrichtung (Future Direction 4):} Ein wesentliches Forschungsdesiderat liegt in der **Konzeption vereinigter Evidenzrahmen auf Basis der Dempster-Shafer-Theorie und der Generalized Information Theory (GIT)**. Zukünftige Modelle müssen in der Lage sein, possibilistische Fuzzy-Zugehörigkeitsfunktionen automatisiert in Glaubensmassen (*Belief Masses*) und Plausibilitätsintervalle (*Plausibility Intervals*) zu überführen. Dadurch kann sowohl subjektive Vageheit als auch objektive stochastische Datenunsicherheit in einem mathematisch einheitlichen Framework ohne Informationsverlust aggregiert werden.
+
+---
+
+\subsubsection{Synthetische Gesamtschau der morphologischen Forschungslücken}
+\label{subsubsec:gesamtschau_forschungsluecken}
+
+Zur übersichtlichen Konsolidierung der Beantwortung von **FF3** fasst \autoref{tab:gesamtschau_forschungsluecken} die vier abgeleiteten Forschungslücken, ihre morphologische Verankerung, die empirischen Evidenzbelege sowie die zugrunde liegenden zukünftigen Forschungsrichtungen prägnant zusammen.
+
+\begin{table}[htbp]
+\centering
+\caption{Synthetische Gesamtschau der identifizierten Forschungslücken im morphologischen Raum (FF3)}
+\label{tab:gesamtschau_forschungsluecken}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{p{3.2cm} p{3.2cm} p{4.5cm} p{4.5cm}}
+\toprule
+\textbf{Forschungslücke} & \textbf{Morphologische Schnittmenge} & \textbf{Empirischer Befund \& Quantifizierung} & \textbf{Zukünftige Forschungsrichtung (Future Direction)} \\
+\midrule
+\textbf{Lücke 1: Automatisierungs-Lücke} & $P_1 \in \{v_{1.2}, v_{1.3}, v_{1.4}\}$ \newline vs. $P_5 = v_{5.1} / v_{5.2}$ & 85\,\% aller Optimierungs- \& Soft-Computing-Studien (17/20) ohne benutzbares DSS-GUI; Verharren auf Solver-Skripten. Nur 3 DSS-Tools (\cite{ZQMG69VT, 9F79VAAB, LNQHES84}). & Entwicklung Open-Source-basierter DSS-Plattformen mit gekapselten MINLP-Solver-Microservices und Low-Code-UI. \\
+\midrule
+\textbf{Lücke 2: Kriterien-Standardisierung} & $P_1 = v_{1.3}$ \newline vs. $P_3 = v_{3.1}$ & 0 von 11 Optimierungsstudien nutzen ISO 9126 / ISO 25010 Normen; 100\,\% basieren auf flachen Ad-hoc-Variablen ($v_{3.3}$) mit 3--6 Werten. & Formale Übersetzungsschnittstellen und Grammatiken zur automatisierten Transformation von ISO 25010 Qualitätsbäumen in ILP-Zielfunktionen. \\
+\midrule
+\textbf{Lücke 3: Multi-COTS-Komposition} & $P_2 = v_{2.3}$ \newline vs. Multi-Komponenten & Mismatch-Resolution (\cite{MC9UMXZZ, 9F79VAAB}) fokussiert Einzelentscheidungen; Kaskadeneffekte \& Mismatch-Propagation in Architekturen unmodelliert. Mangelnde Industrie-Validierung (\cite{LPC92LAP}). & Erweiterung von ILP-Mismatch-Solvern auf dynamische Multi-Komponenten-Architekturnetze unter Nutzung von Graph-Grammatiken. \\
+\midrule
+\textbf{Lücke 4: Hybride Unsicherheit} & $P_4 = v_{4.2}$ \newline vs. $P_4 = v_{4.3}$ & Strikt disjunkte Trennung zwischen possibilistischer Vageheit (Fuzzy) und aleatorischer Stochastik. Keine Kopplung subjektiver \& objektiver Risiken. & Vereinigte Dempster-Shafer Evidenzrahmen zur mathematischen Kopplung possibilistischer Fuzzy-Sets mit stochastischen Glaubensmassen. \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+---
+
+\subsection{Implikationen für Forschung und Praxis}
+\label{subsec:implikationen_forschung_praxis}
+
+Die im Rahmen dieser Arbeit gewonnenen Erkenntnisse besitzen sowohl für die wissenschaftliche Gemeinschaft als auch für die betriebliche Entscheidungspraxis erhebliche Strahlkraft. Im Folgenden werden die Implikationen systematisch aufgefächert.
+
+\subsubsection{Wissenschaftliche Implikationen für die Informationssystemforschung}
+\label{subsubsec:wissenschaftliche_implikationen}
+
+Aus wissenschaftlicher Sicht leistet die vorliegende Arbeit einen substanziellen Beitrag zur **Konsolidierung des fragmentierten COTS-Forschungsfeldes**. Über zwei Jahrzehnte hinweg war die Literatur durch eine Vielzahl isolierter, oft miteinander konkurrierender Einzelmodelle (AHP, ELECTRE, TOPSIS, 0-1 ILP, Fuzzy-AHP, Grey Relational Analysis) geprägt, deren jeweilige Abgrenzung und spezifische Eignung mangels einheitlicher Taxonomie unklar blieb.
+
+Durch die erstmalige Anwendung der General Morphological Analysis (GMA) auf diesen Gegenstandsbereich wird der Problemraum der COTS-Auswahl auf eine **epistemologisch fundierte, orthogonale Strukturbasis** gestellt. Hieraus ergeben sich drei zentrale Implikationen für zukünftige wissenschaftliche Untersuchungen:
+
+\begin{enumerate}
+    \item \textbf{Abkehr von isolierten Ad-hoc-Modellen (\textit{End of Yet-Another-MCDM-Paper}):} Die Ergebnisse verdeutlichen, dass das bloße Ersetzen einer mathematischen Entscheidungstechnik durch eine geringfügig modifizierte Variante (z.\,B. der Wechsel von Fuzzy-AHP zu Intuitionistic Fuzzy-TOPSIS) keinen wesentlichen wissenschaftlichen Erkenntnisfortschritt mehr generiert, solange die strukturellen Lücken im morphologischen Raum (insbesondere Kriterienstandardisierung und DSS-Automatisierung) unberücksichtigt bleiben. Zukünftige Beiträge müssen ihren Mehrwert explizit anhand der morphologischen Parametermatrix nachweisen.
+    
+    \item \textbf{Notwendigkeit interdisziplinärer Forschungssynthesen:} Die Identifikation der Forschungslücken 2 und 3 belegt eindrücklich, dass erfolgreiche COTS-Forschung an den Schnittstellen zwischen **Software Engineering** (Qualitätsmodelle, Mismatch-Taxonomien), **Operations Research** (kombinatorische Optimierung, Unsicherheitstheorie) und der **Wirtschaftsinformatik** (Entscheidungsunterstützungssysteme, IT-Governance) angesiedelt sein muss. Isolierte monodisziplinäre Betrachtungen führen zwangsläufig zu Artefakten, die entweder mathematisch trivial oder praktisch unanwendbar sind.
+    
+    \item \textbf{Etablierung eines standardisierten Benchmarkings:} Um die Performanz, Güte und Robustheit neu entwickelter Auswahlinstrumente objektiv vergleichen zu können, benötigt die Wissenschaftsgemeinschaft einheitliche, öffentlich zugängliche Benchmark-Datensätze (inklusive realer Anforderungskataloge, anonymisierter COTS-Produktdaten und gemessener Mismatch-Aufwände), analog zu etablierten Benchmarks in anderen informatischen Disziplinen.
+\end{enumerate}
+
+\subsubsection{Praktische Implikationen und Entscheidungsleitfaden für die Enterprise-Architektur}
+\label{subsubsec:praktische_implikationen}
+
+Für IT-Entscheider, Enterprise-Architekten und COTS-Auswahlteams in der Praxis bieten die Ergebnisse dieser Arbeit eine wertvolle Orientierungshilfe zur Navigierung im unübersichtlichen Methodendschungel. Das zentrale Ergebnis für die Praxis ist die Erkenntnis, dass **es keine universelle \enquote{Beste Methode} für die COTS-Auswahl gibt** (\textit{No-Free-Lunch-Theorem}). Stattdessen hängt die Wahl des optimalen methodischen Archetyps (Archetypen A bis F, siehe Kapitel~\ref{subsec:typologisierung_archetypen}) entscheidend von den spezifischen organisatorischen und technologischen Kontextfaktoren des jeweiligen Beschaffungsprojekts ab.
+
+Als praktisches Handlungswerkzeug wird in \autoref{tab:entscheidungsbaum_praxis} ein strukturierter **Entscheidungsleitfaden in Form einer Kontext-Archetypen-Zuordnungsmatrix** bereitgestellt. Dieser Leitfaden führt Anwender anhand von vier determinierenden Kontextvariablen gezielt zum am besten geeigneten methodischen Archetyp:
+
+\begin{enumerate}
+    \item \textbf{Projektkomplexität \& Systemumfang:} Handelt es sich um die Auswahl einer einzelnen isolierten COTS-Komponente ($Single\text{-}COTS$) oder um die Orchestrierung eines Multi-Komponenten-Enterprise-Systems ($Multi\text{-}COTS$)?
+    \item \textbf{Unsicherheits- und Vagheitsgrad:} Sind die Evaluierungsdaten weitgehend bekannt und hart messbar ($Deterministisch$) oder stark subjektiv und unvollständig ($Hochgradig\ vage$)?
+    \item \textbf{Verfügbares Evaluierungsbudget \& Zeitressourcen:} Steht ein hohes Spezialisten-Budget zur Verfügung oder muss die Auswahl unter strikten Zeit- und Kostengrenzen erfolgen ($Gering / Mittel / Hoch$)?
+    \item \textbf{IT-Reifegrad \& Mathematische Expertise:} Verfügt die Organisation über internes Operations-Research- und Soft-Computing-Know-how ($Hoch$) oder präferiert sie intuitive, pragmatische Vorgehensweisen ($Standard$)?
+\end{enumerate}
+
+\begin{table}[htbp]
+\centering
+\caption{Praktischer Entscheidungsleitfaden zur Auswahl des optimalen Archetyps nach Kontextfaktoren}
+\label{tab:entscheidungsbaum_praxis}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{p{2.5cm} p{2.5cm} p{2.2cm} p{2.2cm} p{3.2cm} p{4.5cm}}
+\toprule
+\textbf{Projekt-Typus} & \textbf{System-Umfang} & \textbf{Unsicherheit} & \textbf{IT-Reifegrad} & \textbf{Empfohlener Archetyp} & \textbf{Praktische Anwendungsempfehlung \& Tooling} \\
+\midrule
+\textbf{Typ I: Standard-Single-COTS} & Einzel-Komponente & Gering / Deterministisch & Standard (Projektleiter) & \textbf{Archetyp A} \newline (Klassisches MCDA) & Einsatz von AHP / TOPSIS in Excel oder Standard-MCDM-Tools. Fokus auf ISO 25010 Kriterienkataloge (\cite{M3B2D3GD, U5JPV4SF}). \\
+\midrule
+\textbf{Typ II: Multi-COTS Assembly} & Multi-Komponenten (Komposition) & Gering / Kostenfokus & Hoch (Operations Research) & \textbf{Archetyp B} \newline (0-1 ILP Optimierung) & Formulierung als 0-1 ILP Modell. Nutzung kommerzieller Solver (CPLEX/Gurobi) zur Optimierung von Lizenzkosten \& Kompatibilität (\cite{ZQMG69VT, VUVLUN85}). \\
+\midrule
+\textbf{Typ III: Architektur- \& Mismatch-Fokus} & Einzel- oder Multi-System & Mittel / Architektonisch & Mittel bis Hoch (Enterprise Architekt) & \textbf{Archetyp C} \newline (Goal-Driven / MiHOS) & Durchführung von Requirement Negotiations und Mismatch-Analysen nach MiHOS (\cite{9F79VAAB}). Fokus auf Anpassungs- \& Adapterkosten. \\
+\midrule
+\textbf{Typ IV: Risikobehaftete Cloud-Auswahl} & Einzel- oder Multi-System & Hoch (Stochastik \& Datenvarianz) & Sehr Hoch (OR \& Statistik) & \textbf{Archetyp D} \newline (Fuzzy Programming) & Mathematische Modellierung via Credibility-Theorie und Fuzzy Chance Constraints (\cite{B7ZTQCZZ}). Abbildung von Ausfallrisiken. \\
+\midrule
+\textbf{Typ V: Komplexe Multi-Kriterien-Wahl} & Einzel-Komponente (Strategisch) & Hoch (Subjektive Vageheit) & Hoch (MCDM-Spezialist) & \textbf{Archetyp E} \newline (Advanced Soft Computing) & Mehrstufige Kaskaden (Fuzzy-AHP + PROMETHEE / Evidential Reasoning) zur kompensationsfreien Bewertung (\cite{NZJEEPAC, LNQHES84}). \\
+\midrule
+\textbf{Typ VI: Wiederkehrende Enterprise-Wahl} & Portfolio / Strategischer Einkauf & Mittel bis Hoch (Dynamisch) & Sehr Hoch (Wissensmanagement) & \textbf{Archetyp F} \newline (Wissensbasiertes DSS) & Aufbau eines unternehmensweiten Expertensystems / Wissensdatenbank (z.\,B. Plato \cite{8VHUMEKY}). Hohe Wiederverwendbarkeit. \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\paragraph{Konkrete Handlungsempfehlung für Enterprise-Architekten:}
+\begin{itemize}
+    \item Für **Standard-Auswahlentscheidungen** kleinerer bis mittlerer Reichweite (Typ I) sollte strikt auf **Archetyp A** zurückgegriffen werden. Die Verwendung standardisierter ISO-Kriterien verhindert das Vergessen kritischer Nicht-Funktionaler Anforderungen (NFAs), während der verfahrenstechnische Aufwand überschaubar bleibt.
+    \item Bei **hochkomplexen Multi-Komponenten-Architekturen** mit klaren Budget- und Kompatibilitätsgrenzen (Typ II) liefert die kombinatorische Optimierung nach **Archetyp B** messbare Kostenvorteile gegenüber manuellen Verhandlungen.
+    \item Wenn **subjektive Ermessensspielräume und unvollständige Herstellerangaben** das Entscheidungsumfeld dominieren (Typ V), bieten die Evidenzmodelle von **Archetyp E** (insbesondere Dempster-Shafer Evidential Reasoning) die wissenschaftlich belastbarste Grundlage zur Absicherung von Fehlentscheidungen.
+\end{itemize}
+
+---
+
+\subsection{Methodische Limitationen der Arbeit}
+\label{subsec:methodische_limitationen}
+
+Obgleich die vorliegende Studienarbeit unter strikter Einhaltung anerkannter methodischer Standards (Okoli 8-Schritte-Vorgehen \cite{2NHFUF5N}, PRISMA-2020 Berichterstattung \cite{BP42WGEK} sowie GMA nach Ritchey \cite{Z6N6V5L9}) durchgeführt wurde und durch ein technisches vierstufiges Anti-Halluzinations-Protokoll (Kapitel~\ref{subsec:qualitaetssicherung}) abgesichert ist, unterliegt die Synthese unvermeidbaren methodischen Einschränkungen. Diese müssen im Sinne der wissenschaftlichen Redlichkeit explizit reflektiert werden.
+
+\subsubsection{Einschränkungen der Literatursuch- und Auswahlsystematik}
+\label{subsubsec:limitationen_suchsystematik}
+
+Die primären Limitationen der Literatursuche betreffen den Geltungsbereich und die Zugänglichkeit der Datenbasis:
+
+\begin{enumerate}
+    \item \textbf{Sprach- und Zeitraumbeschränkung:} Die Suchmatrix beschränkte sich auf Publikationen in englischer und deutscher Sprache im Publikationszeitraum von 2000 bis 2025. Obwohl Englisch die unangefochtene Leitsprache der Informatik darstellt, können relevante wissenschaftliche Beiträge in anderen Sprachen (z.\,B. Französisch, Spanisch oder Chinesisch) unberücksichtigt geblieben sein. Zudem schließt der Zeithorizont historische Pionierarbeiten der 1990er-Jahre aus, wenngleich diese für moderne, komponentenbasierte Architekturen nur noch bedingt übertragbar sind.
+    
+    \item \textbf{Verfügbarkeitslücke bei Volltexten (\textit{Not-Retrieved-Issue}):} Im Rahmen der PRISMA-Selektionspipeline (Kapitel~\ref{subsec:okoli_umsetzung}) qualifizierten sich 89 Publikationen über das inhaltliche Relevanz-Scoring für die Volltextanalyse. Trotz intensiver Recherche über die Bibliothekslizenzen der DHBW, Fernleihesysteme und direkte Verfasseranfragen konnten **41 Volltexte nicht beschafft werden**. Diese Berichte erschienen überwiegend in älteren, nicht- digitalisierten Tagungsbänden, proprietären Industrietechnologie-Berichten oder länderspezifischen Spezialjournalen. Es kann nicht vollständig ausgeschlossen werden, dass einzelne dieser 41 nicht ausgewerteten Berichte neuartige morphologische Nischen besetzen.
+    
+    \item \textbf{Ausschluss Grauer Literatur:} Um die wissenschaftliche Rigorosität und Qualität der extrahierten Daten zu garantieren, wurden ausschließlich peer-reviewte Zeitschriftenaufsätze, Konferenzbeiträge und wissenschaftliche Buchkapitel inkludiert. Graue Literatur (z.\,B. weiße Papiere von Unternehmensberatungen, Blogbeiträge oder herstellereigene Whitepaper) wurde systematisch exkludiert.
+\end{enumerate}
+
+\subsubsection{Abgrenzung gegenüber kommerziellen Auswahltools und Marktanalysen}
+\label{subsubsec:abgrenzung_markt_beratung}
+
+Eine weitere wesentliche epistemologische Limitation liegt in der bewussten **Abgrenzung der analysierten wissenschaftlichen Methoden gegenüber kommerziellen Auswahlwerkzeugen und Analysten-Frameworks** der IT-Praxis.
+
+In der betrieblichen Realität greifen Großunternehmen bei der Auswahl strategischer Enterprise-Software (z.\,B. ERP-, CRM- oder HCM-Systeme) häufig auf die Evaluierungsprodukte führender Marktanalystenhäuser zurück. Zu nennen sind hierbei insbesondere:
+\begin{itemize}
+    \item Der *Gartner Magic Quadrant* sowie die *Gartner Critical Capabilities* Berichte.
+    \item Die *Forrester Wave* Analysen.
+    \item Spezialisierte kommerzielle Auswahlplattformen (z.\,B. Capterra, G2, SelectHub).
+\end{itemize}
+
+Diese kommerziellen Werkzeuge wurden in die vorliegende wissenschaftliche Analyse nicht einbezogen. Die Gründe hierfür liegen in der grundlegend abweichenden Zielsetzung und Erhebungsmethodik dieser Marktprodukte:
+\begin{enumerate}
+    \item \textbf{Mangelnde mathematische und prozessuale Transparenz:} Kommerzielle Analystenhäuser halten die genaue mathematische Gewichtungslogik, die Berechnungsalgorithmen und die Erhebungsmethoden ihrer Bewertungsmatrix aus Wettbewerbsgründen als Betriebsgeheimnis (*Black-Box-Problematik*). Eine wissenschaftliche Replikation oder kritische Überprüfung im Sinne des Rigor-Prinzips ist dadurch unmöglich.
+    \item \textbf{Kommerzieller Bias und Sponsorings:} Die Positionierung von Anbietern in kommerziellen Quadraten oder Wellen ist nicht frei von kommerziellen Interessen (z.\,B. gebührenpflichtigen Beratungs- und Analysemandaten). Demgegenüber verfolgt die analysierte akademische Primärliteratur das Ziel der objektivierbaren, mathematisch beweisbaren und reproduzierbaren Entscheidungsfindung.
+\end{enumerate}
+
+Dennoch muss konstatiert werden, dass kommerzielle Analysten-Plattformen in der Unternehmenspraxis eine hohe Akzeptanz genießen, da sie den manuellen Aufwand der Datenerhebung durch vorgehaltene Produktdatenbanken drastisch reduzieren. Die Synthese aus der Transparenz akademischer Auswahltaxonomien und der Datenfülle kommerzieller Marktanalysten stellt somit ein hochinteressantes Feld für zukünftige Transferforschungen dar.
+
+---
+
+\subsection{Zusammenfassung des Kapitels}
+\label{subsec:zusammenfassung_diskussion}
+
+Das vorliegende Kapitel hat die Ergebnisse der systematischen Literaturanalyse kritisch reflektiert und synthetisiert. Durch die Beantwortung von **FF3** wurden vier zentrale Forschungslücken im morphologischen Raum offengelegt: Die Automatisierungs-Lücke bei mathematischen Modellen (Lücke 1), die Kriterien-Standardisierungs-Lücke in Optimierungs-Frameworks (Lücke 2), die Multi-COTS-Kompositions-Lücke (Lücke 3) sowie die hybride Unsicherheits-Lücke zwischen Possibilistik und Probabilistik (Lücke 4). 
+
+Für die Forschung leitet sich hieraus die Notwendigkeit ab, von isolierten Ad-hoc-Modellen abzurücken und interdisziplinäre, quelloffene DSS-Plattformen zu entwickeln. Für die Praxis wurde ein strukturierter Entscheidungsleitfaden aufgestellt, der Enterprise-Architekten anhand von Kontextfaktoren zur Wahl des optimalen Archetyps führt. Das Kapitel schloss mit einer transparenten Reflexion der methodischen Limitationen der Arbeit.
