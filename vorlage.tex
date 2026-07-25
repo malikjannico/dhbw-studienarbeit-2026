@@ -41,9 +41,10 @@
 \usepackage[intoc]{nomencl} 
 \makenomenclature
 
-% Zitate und Literaturverzeichnis mit biblatex (APA 7th / Harvard gemäß DHBW CAS)
-\usepackage[backend=biber, style=apa, citestyle=apa]{biblatex}
+% Zitate und Literaturverzeichnis mit biblatex (Autor-Jahr gemäß DHBW CAS)
+\usepackage[backend=bibtex, style=authoryear, citestyle=authoryear]{biblatex}
 \addbibresource{pages/literatur/literatur.bib}
+\let\cite\parencite
 
 % Mathematische Formeln und Tabellen
 \usepackage{amsmath, amssymb} 

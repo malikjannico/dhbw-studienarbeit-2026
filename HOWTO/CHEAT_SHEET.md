@@ -184,12 +184,3 @@ Die Berechnung der Gesamtnutzwerts erfolgt über $NWA = \sum_{i=1}^{n} g_i \cdot
 ```
 
 ---
-
-## 12. Git Befehle (Terminal)
-
-```bash
-git status                                  # Status der Änderungen prüfen
-git add .                                   # Alle Änderungen stagen
-git commit -m "Neues Kapitel hinzugefügt"   # Commit erstellen
-git push origin main                        # Zu GitHub pushen
-```
