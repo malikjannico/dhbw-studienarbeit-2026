@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.bcf
+*.bbl
+*.blg
+*-blx.bib
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+!styles/*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.nlo
+*.nls
+*.out
+*.pdf
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb

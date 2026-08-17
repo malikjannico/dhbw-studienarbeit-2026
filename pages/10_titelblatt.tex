@@ -1,0 +1,50 @@
+\setlength{\headheight}{15pt}
+\begin{titlepage}
+	\begin{center}
+		\vspace*{0.5cm}
+		\begin{figure}[htp]
+			\centering
+			\includegraphics[width=0.65\textwidth]{pages/dhbwcas.jpg}
+		\end{figure}
+		\vspace*{0.5cm}
+		
+		{\LARGE \bf \myTopic \par}
+		\ifx\mySubTopic\empty\else
+			\vspace*{0.3cm}
+			{\Large \rm \mySubTopic \par}
+		\fi
+		
+		\vspace*{1.2cm}
+		{\Large \bf Studienarbeit \par}
+		\vspace*{0.3cm}
+		{\normalsize \rm (Modul W3M20033) \par}
+		
+		\vspace*{0.8cm}
+		{\normalsize \rm \singlespacing
+			für die Prüfung zum\\
+			\textbf{Master of Science (M.Sc.)}\\[0.4cm]
+			an der Fakultät für Wirtschaft\\
+			im Studiengang Wirtschaftsinformatik\\[0.4cm]
+			an der\\
+			\textbf{Duale Hochschule Baden-Württemberg}\\
+			Center for Advanced Studies (DHBW CAS)\par
+		}
+		
+		\vfill
+	\end{center}
+	
+	\singlespacing
+	\normalsize
+	\begin{tabular}{ll}
+		\textbf{Verfasser:} & \myAutor \\
+		\textbf{Matrikelnummer:} & \myMatrikelnummer \\
+		\textbf{Kurs:} & \myKurs \\
+		\ifx\myCompany\empty\else
+			\textbf{Dualer Partner:} & \myCompany \\
+			\textbf{Anschrift:} & \myCompanyAddressStreet, \myCompanyAddressCity \\
+		\fi
+		\textbf{Wiss. Betreuer:} & \myProf \\
+		\textbf{Abgabedatum:} & \myEndDate \\
+	\end{tabular}
+\end{titlepage}
+\newpage

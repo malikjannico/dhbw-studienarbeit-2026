@@ -1,0 +1,169 @@
+% Optionen für das xcolor-Paket vor dem Laden festlegen
+\PassOptionsToPackage{table}{xcolor}
+
+% Dokumentenklasse und grundlegende Einstellungen (Gemäß DHBW CAS: 11pt, A4)
+\documentclass[a4paper, 11pt]{article} 
+
+% Seitenränder gemäß DHBW CAS Handreichung: Oben/Unten 2,5cm, Links 4,0cm, Rechts 3,0cm
+\usepackage[left=4cm, right=3cm, top=2.5cm, bottom=2.5cm, includehead]{geometry} 
+
+% Sprachunterstützung und Zeichenkodierung
+\usepackage[ngerman]{babel} 
+\usepackage[utf8]{inputenc} 
+\usepackage[autostyle=true, german=quotes]{csquotes}
+
+% Schriftart Arial (gemäß DHBW CAS Pflicht) mit Fallback für pdflatex/xelatex/lualatex
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{fontspec}
+  \setmainfont{Arial}
+\else\ifLuaTeX
+  \usepackage{fontspec}
+  \setmainfont{Arial}
+\else
+  \usepackage[scaled]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi\fi
+
+% Hyperlinks und Inhaltsverzeichnis
+\usepackage[hyphens]{url} 
+\usepackage[hyperfootnotes=false]{hyperref} 
+\hypersetup{
+  colorlinks=false,
+  hidelinks,
+  bookmarksnumbered=true,
+  pdfstartview=Fit,
+  pdfpagelayout=SinglePage
+}
+
+% Abkürzungsverzeichnis und Glossar
+\usepackage{makeidx} 
+\usepackage[intoc]{nomencl} 
+\makenomenclature
+
+% Zitate und Literaturverzeichnis mit biblatex (Autor-Jahr gemäß DHBW CAS)
+\usepackage[backend=bibtex, style=authoryear, citestyle=authoryear]{biblatex}
+\addbibresource{pages/literatur/literatur.bib}
+\let\cite\parencite
+
+% Mathematische Formeln und Tabellen
+\usepackage{amsmath, amssymb, mathtools} 
+\usepackage{array, booktabs} 
+\usepackage{longtable} 
+\usepackage{multirow}
+\usepackage{tabularx} 
+
+% Abbildungen und Beschriftungen
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage[labelfont=bf, aboveskip=1mm]{caption} 
+
+% Sonstige Pakete
+\usepackage{color, xcolor} 
+\usepackage{enumitem} 
+\usepackage{setspace} 
+\usepackage{pdfpages} 
+\usepackage{pdflscape}
+\usepackage{fancyhdr}
+\usepackage[bottom, hang]{footmisc}
+
+% Einstellungen für Zeilenabstand und Absätze gemäß DHBW CAS
+% (1,5-zeilig im Text, 6pt Absatzabstand nach, kein Einzug)
+\onehalfspacing
+\setlength{\parskip}{6pt} 
+\setlength{\parindent}{0pt} 
+
+% Einstellungen für Schusterjungen und Hurenkinder
+\widowpenalty=10000
+\clubpenalty=10000
+
+% -------------------------------------------------------
+% Konfiguration der Studienarbeit (DHBW CAS)
+% -------------------------------------------------------
+
+\def\myTopic{Systematische Literaturübersicht und vergleichende Analyse von Methoden zur Evaluierung und Auswahl von COTS-Software}
+\def\mySubTopic{}
+\def\myAutor{Malik Jannico Press}
+\def\myMatrikelnummer{1781283}
+\def\myKurs{WMWI22}
+\def\myProf{Prof. Dr. Frank Koslowski}
+\def\myEndDate{30. November 2026}
+
+% Optionale Angaben zum Dualen Partner
+\def\myCompany{Vetter Pharma-Fertigung GmbH \& Co. KG}
+\def\myCompanyAddressStreet{Schützenstraße 87}
+\def\myCompanyAddressCity{88212 Ravensburg}
+
+% PDF-Metadaten
+\hypersetup{
+  pdftitle={\myTopic}, 
+  pdfsubject={Studienarbeit (Modul W3M20033)}, 
+  pdfauthor={\myAutor}
+}
+
+% -------------------------------------------------------
+% Kopf- und Fußzeilen (Gemäß DHBW CAS: Nur Seitenzahl oben zentriert)
+% -------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\thepage} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% -------------------------------------------------------
+% Layout und Beschriftungen 
+% -------------------------------------------------------
+
+\setlist{noitemsep} 
+
+\addto\captionsngerman{ 
+  \renewcommand{\figurename}{Abb.}
+  \renewcommand{\tablename}{Tab.}
+}
+
+\numberwithin{table}{section} 
+\numberwithin{figure}{section} 
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}} 
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}} 
+\renewcommand{\thefootnote}{\arabic{footnote}} 
+
+% -------------------------------------------------------
+% Dokumenteninhalt
+% -------------------------------------------------------
+
+\begin{document}
+  \pagenumbering{Roman}
+
+  % 1. Titelblatt
+  \include{pages/10_titelblatt}
+
+  % 2. Ehrenwörtliche Erklärung (nach Deckblatt gemäß DHBW CAS)
+  \include{pages/11_erklaerung}
+
+  % 3. Optionale Seiten (bei Bedarf einkommentieren)
+  %\include{pages/11_sperrvermerk} 
+
+  \pagestyle{fancy}
+
+  % 4. Inhaltsverzeichnis
+  \include{pages/12_inhaltsverzeichnis}
+
+  % 5. Optionale Verzeichnisse (bei Bedarf einkommentieren)
+  %\include{pages/13_abkuerzungsverzeichnis}
+  %\include{pages/15_abbildungsverzeichnis}
+  %\include{pages/16_tabellenverzeichnis}
+
+  % 6. Hauptteil (arabische Nummerierung ab Seite 1)
+  \pagenumbering{arabic}
+  \include{chapter/10_AllChapter}
+
+  % 7. Anhang
+  \begin{appendix}
+    \include{appendix/index}
+  \end{appendix}
+
+  % 8. Literaturverzeichnis
+  \include{pages/18_literaturverzeichnis}
+
+\end{document}
