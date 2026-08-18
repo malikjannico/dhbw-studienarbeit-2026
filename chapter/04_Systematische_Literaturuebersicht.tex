@@ -1,0 +1,371 @@
+% ==============================================================================
+% Kapitel 4: Systematische Literaturübersicht
+% ==============================================================================
+
+\section{Systematische Literaturübersicht}
+\label{sec:systematische_literaturuebersicht}
+
+Aufbauend auf dem in Kapitel~\ref{sec:forschungsdesign} hergeleiteten methodischen Design präsentiert das vorliegende Kapitel die empirischen und methodischen Befunde der systematischen Literaturübersicht zur Evaluierung und Auswahl von COTS-Software (\textit{Commercial Off-The-Shelf}). Die Beschaffung und Integration kommerzieller Standardsoftwarekomponenten und -pakete stellt eine der weitreichendsten strategischen und architektonischen Weichenstellungen in modernen IT- und Unternehmenslandschaften dar. Eine fehlerhafte oder unzureichend methodisch fundierte Auswahlentscheidung induziert gravierende Folgerisiken: Unvorhergesehene Schnittstellen- und Architekturdiskrepanzen (\textit{Mismatches}), prohibitive Aufwände für nachträgliche Anpassungsprogrammierungen (\textit{Glue-Code}), Performanz- und Sicherheitsengpässe sowie fatale langfristige Herstellerabhängigkeiten (\textit{Vendor Lock-in}) bedrohen den Erfolg von Softwareprojekten in erheblichem Maße.
+
+Über den 26-jährigen Untersuchungszeitraum von 2000 bis 2026 hat die internationale Forschungsgemeinschaft im Software Engineering und der Wirtschaftsinformatik ein heterogenes Spektrum an methodischen Ansätzen zur Entscheidungsunterstützung hervorgebracht. Diese reichen von frühen qualitativen Bewertungsheuristiken und hierarchischen Paarvergleichsverfahren über nicht-lineare mathematische Portfolio-Optimierungsmodelle und Fuzzy-Entscheidungssysteme bis hin zu modernen kompositionellen, evidenzbasierten und architekturzentrierten Decision Support Systems (DSS).
+
+Ziel dieses Kapitels ist es, diesen dispers verteilten Forschungsstand systematisch aufzubereiten, theoriegeleitet zu strukturieren und in seiner vollen wissenschaftlichen Tiefe zu analysieren. Der Aufbau des Kapitels gliedert sich in drei Hauptabschnitte:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Abschnitt~\ref{subsec:suchergebnisse_demografie} (Suchergebnisse und Demografie der Literatur):} Dokumentiert den quantitativen Selektionsprozess nach PRISMA 2020, diskutiert das zugehörige Flussdiagramm, analysiert die bibliometrische und institutionelle Demografie des Literaturkorpus und legt die Ergebnisse des vierdimensionalen Quality Appraisals offen.
+  \item \textbf{Abschnitt~\ref{subsec:evolutionaere_abbildung} (Evolutionäre Abbildung der COTS-Auswahlmethoden):} Beantwortet die erste Forschungsfrage (RQ1) durch eine detaillierte historische Rekonstruktion über vier evolutionäre Epochen und würdigt ausnahmslos alle 39 Primärstudien in ihren mathematischen, prozeduralen und architektonischen Facetten.
+  \item \textbf{Abschnitt~\ref{subsec:morphologische_analyse_ergebnisse} (Morphologische Analyse der COTS-Auswahlmethoden):} Beantwortet die zweite Forschungsfrage (RQ2) anhand der General Morphological Analysis (GMA), analysiert die sechs Parameter des morphologischen Feldes ($N = 2.592$ Konfigurationen), leitet vier methodische Lösungsarchetypen her und analysiert die inhärenten methodischen Trade-offs und praktischen Anwendungsbarrieren.
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+% 4.1 Suchergebnisse und Demografie der Literatur
+% ------------------------------------------------------------------------------
+\subsection{Suchergebnisse und Demografie der Literatur}
+\label{subsec:suchergebnisse_demografie}
+
+\subsubsection{Quantitativer PRISMA-2020-Selektionsverlauf}
+\label{subsubsec:prisma_verlauf}
+
+Die Identifikation und Selektion des Primärliteraturkorpus erfolgte unter strikter Einhaltung der PRISMA-2020-Berichtsstandards \parencite{BP42WGEK} sowie des Leitfadenmodells nach \textcite{2NHFUF5N}. Die systematische Suche in den vier wissenschaftlichen Fachdatenbanken erbrachte eine initiale Treffermenge von 761 Datensätzen:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{IEEE Xplore (IEEE/IET Electronic Library):} 27 Datensätze,
+  \item \textbf{ACM Digital Library Premium:} 15 Datensätze,
+  \item \textbf{Business Source Premier (EBSCOhost):} 145 Datensätze,
+  \item \textbf{Springer Nature eBooks (inkl. Reference-API):} 574 Datensätze.
+\end{itemize}
+
+Vor Beginn der inhaltlichen Begutachtung wurden die Metadaten in Zotero zusammengeführt. Ein automatisierter und manuell nachgeprüfter Dublettenabgleich identifizierte 16 redundante Einträge, die eliminiert wurden. Der verbleibende Bereinigungsbestand von 745 Datensätzen wurde dem dreistufigen Screening-Prozess unterzogen.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.82\textwidth]{appendix/prisma_flowchart.png}
+  \caption{PRISMA-2020-Flussdiagramm des Such- und Selektionsprozesses \parencite[adaptiert nach][]{BP42WGEK, MQ9M8Q7L}}
+  \label{fig:prisma_flowchart}
+\end{figure}
+
+Wie in Abbildung~\ref{fig:prisma_flowchart} visualisiert, gliederte sich der Selektionsprozess in drei aufeinander aufbauende Stufen:
+\begin{enumerate}[label=\textbf{Stufe \arabic*:}, leftmargin=*]
+  \item \textbf{Practical Screen 1 (Metadaten-Screening):} Alle 745 Datensätze wurden gegen formale Kriterien geprüft. Ausgeschlossen wurden 597 Publikationen, deren Erscheinungsjahr vor 2000 lag, die nicht in englischer oder deutscher Sprache verfasst waren, reine Vorworte, Konferenz-Inhaltsverzeichnisse oder Editorials darstellten oder keinen fachlichen Bezug zu kommerzieller Standardsoftware aufwiesen. Nach diesem formalen Filter verblieben 148 Publikationen.
+  \item \textbf{Practical Screen 2 (Thematisches Relevanz-Screening):} Die 148 Publikationen wurden auf Basis von Titel, Abstract und Schlagwörtern einer Relevanzbewertung auf einer Skala von 1 bis 10 unterzogen. Als Einschlusskriterium galt ein Schwellenwert von $\text{Score} > 7$. Insgesamt wurden 61 Arbeiten exkludiert, die sich primär mit allgemeinen Software-Entwicklungsmetriken im Component-Based Software Engineering (CBSE) ohne Beschaffungs- oder Auswahlsituation befassten, reine Hardware- oder Telekommunikationsinfrastrukturen betrafen oder rein deskriptive Anforderungslisten ohne Entscheidungsmodell diskutierten. 87 Publikationen qualifizierten sich als hochrelevant; unter Berücksichtigung zweier methodischer Grenzfälle wurden 89 Volltexte zur Beschaffung angefordert.
+  \item \textbf{Practical Screen 3 (Volltextbeschaffung und Eligibility-Screening):} Von den 89 angeforderten Volltexten konnten über die institutionellen Lizenzen der DHBW CAS sowie Open-Access-Repositorien 46 Volltexte erfolgreich abgerufen werden. 43 Volltexte waren aufgrund geschlossener Verlagskonsortien oder fehlender Campuslizenzen nicht zugänglich (\textit{not retrieved}). Die 46 beschafften Volltexte wurden einer vollständigen inhaltlichen Prüfung gegen die materiellen Einschlusskriterien unterzogen. Acht Volltexte wurden unter Angabe hierarchischer Ausschlussgründe exkludiert:
+  \begin{itemize}[leftmargin=*]
+    \item \textit{Ausschlussgrund 1.1 (Non-COTS Domain, $N = 1$):} Der Fokus lag ausschließlich auf der physischen Hardware- und Netzwerkauswahl.
+    \item \textit{Ausschlussgrund 1.2 (Non-Selection Focus, $N = 3$):} Die Arbeiten behandelten reine Softwaremetriken oder Entwicklungsansätze ohne Auswahlsituation.
+    \item \textit{Ausschlussgrund 2.1 (No Specific Method/Model/Framework, $N = 3$):} Reine konzeptionelle Diskussionen oder abstrakte Management-Empfehlungen ohne operationalisiertes mathematisches oder prozedurales Bewertungsmodell.
+    \item \textit{Ausschlussgrund 2.2 (Pure Literature Survey / Overview, $N = 1$):} Sekundäre Übersichtsarbeit ohne eigenständigen methodischen Beitrag.
+  \end{itemize}
+\end{enumerate}
+
+Zur Schließung einer methodischen Lücke wurde eine zentrale Vorarbeit aus der Proposal-Recherche re-integriert, bei der es sich um die empirische Fallstudie zum Atana-Entscheidungsunterstützungssystem von \textcite{MZ8JHDYA} handelt. Das finale Korpus umfasst somit exakt $N = 39$ Publikationen (\textit{Reports}), welche $N = 38$ unabhängige Primärstudien (\textit{Studies}) repräsentieren, da die Publikationen von \textcite{ZQMG69VT} und \textcite{MZ8JHDYA} als zusammengehöriges Forschungscluster (STUDY-02) bewertet werden.
+
+\subsubsection{Demografische und bibliometrische Korpusstruktur}
+\label{subsubsec:demografie_korpus}
+
+Die bibliometrische Analyse des Primärkorpus über den Zeitraum 2000 bis 2026 zeigt eine kontinuierliche wissenschaftliche Befassung mit der COTS-Auswahlproblematik. Tabelle~\ref{tab:demografie_qa_uebersicht} fasst die demografischen Kennzahlen, Publikationskanäle und Quality-Appraisal-Ergebnisse zusammen.
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Demografische Struktur, Publikationsorgane und Quality-Appraisal-Verteilung ($N = 39$)}
+  \label{tab:demografie_qa_uebersicht}
+  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{4.2cm}cc>{\raggedright\arraybackslash}X}
+    \toprule
+    \textbf{Kategorie} & \textbf{Ausprägung / Dimension} & \textbf{Anzahl ($N$)} & \textbf{Anteil (\%)} & \textbf{Charakteristische Primärstudien (Auswahl)} \\
+    \midrule
+    \multirow{3}{*}{\textbf{Zeitraum}} 
+      & 2000--2009 (Dekade 1) & 16 & 41,0\,\% & Paschetta (2000), Morris (2001), Colombo (2004), Chung (2006), Mohamed (2007) \\
+      & 2010--2019 (Dekade 2) & 13 & 33,3\,\% & Becker (2010), Gupta (2012), Al-Tarawneh (2014), Mehlawat (2015a), Hanine (2017) \\
+      & 2020--2026 (Dekade 3) & 10 & 25,6\,\% & Chatzipetrou (2020), Lempert (2021), Garg (2022), Nabot (2025), Taherdoost (2025) \\
+    \addlinespace[2pt]
+    \multirow{4}{*}{\textbf{Publikationsorgan}} 
+      & Internationale Fachzeitschriften & 21 & 53,8\,\% & \textit{IEEE TEM}, \textit{Appl. Intell.}, \textit{JSS}, \textit{IST}, \textit{SQJ}, \textit{AnOR}, \textit{Complex Intell. Syst.} \\
+      & Konferenzbände (Peer-Reviewed) & 14 & 35,9\,\% & \textit{HICSS}, \textit{ICCBSS}, \textit{CCECE}, \textit{APSCC}, \textit{ICRITO}, \textit{INDIACom} \\
+      & Dissertationen / Monographien & 3 & 7,7\,\% & Mohamed (2007), Al-Tarawneh (2014), Lempert (2021) \\
+      & Springer-Buchkapitel & 1 & 2,6\,\% & Skroch (2010) \\
+    \addlinespace[2pt]
+    \multirow{3}{*}{\textbf{Quality Appraisal}} 
+      & High Rigor \& Relevance (6--8 Pkt.) & 36 & 92,3\,\% & 36 Studien (Mittelwert: 7,03 / 8,00 Punkte) \\
+      & Medium Rigor (3--5 Pkt.) & 2 & 5,1\,\% & Taherdoost \& Mohebi (2025) [4], Khatri et al. (2016) [5] \\
+      & Low Rigor / Conceptual (0--2 Pkt.) & 1 & 2,6\,\% & Wanyama \& Far (2005) [2] \\
+    \midrule
+    \multicolumn{5}{p{\dimexpr\textwidth-2\tabcolsep\relax}}{\textbf{Mittelwerte der Qualitätsdimensionen (Skala 0,00 bis 2,00; Gesamtmittelwert: 6,87 / 8,00):} \newline
+    QA1 (Formalisierung): \textbf{1,87} \quad QA2 (Kriterienkatalog): \textbf{1,87} \quad QA3 (Empirische Validierung): \textbf{1,56} \quad QA4 (Grenzen/Reflexion): \textbf{1,56}} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+In der Dekade 2000--2009 erschienen 16 Publikationen (41,0\,\%). Diese Pionierphase war geprägt von der Etablierung erster Outranking- und AHP-Modelle sowie dem Entwurf dedizierter Software-Werkzeuge. In der zweiten Dekade (2010--2019) wurden 13 Arbeiten (33,3\,\%) publiziert, in denen die mathematische Optimierung, nicht-lineare Programmierung und Fuzzy-MCDA-Verfahren dominierten. Die jüngste Phase (2020--2026) steuert 10 Arbeiten (25,6\,\%) bei, die sich auf kompositionelle Datenanalysen, Evidential Reasoning und großangelegte Meta-Synthesen konzentrieren.
+
+Hinsichtlich der Publikationsorgane stellen begutachtete internationale Fachzeitschriften mit 53,8\,\% ($N = 21$) den Hauptanteil dar. Darunter befinden sich renommierte Journals wie \textit{IEEE Transactions on Engineering Management} \parencite{FCYW9EWJ}, \textit{Journal of Systems and Software} \parencite{8VHUMEKY}, \textit{Information and Software Technology} \parencite{UK2X9C4W}, \textit{Applied Intelligence} \parencite{6YJHIVHG, B7ZTQCZZ, JX4RDRDU}, \textit{Software Quality Journal} \parencite{DAU8NSK8, M3B2D3GD}, \textit{Annals of Operations Research} \parencite{YVWGHAWQ} und \textit{Complex \& Intelligent Systems} \parencite{UFCEV52H}. Peer-reviewte Konferenzbeiträge umfassen 35,9\,\% ($N = 14$), unter anderem von der \textit{Hawaii International Conference on System Sciences (HICSS)} \parencite{MZ8JHDYA, JT5X3FIG} und der \textit{International Conference on COTS-Based Software Systems (ICCBSS)} \parencite{TLB687YL, 8XNYS4M9}. Hinzu kommen drei wegweisende Dissertationen \parencite{9F79VAAB, WZM7DUBY, RRU375GB} sowie ein wissenschaftliches Buchkapitel \parencite{WBGP3ETU}.
+
+Geografisch und institutionell lassen sich vier globale Forschungsschwerpunkte identifizieren:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Nordamerika:} Die University of Calgary (Kanada) formierte mit den Arbeiten von Far, Wanyama und Mohamed \parencite{CZZ6XQZJ, 9F79VAAB} eine führende Gruppe für Multi-Stakeholder-Verhandlungen und architekturzentriertes Mismatch-Handling. In den USA erforschten das NASA Langley Research Center und die University of Virginia probabilistische Bayes-Netze für sicherheitskritische Raumfahrtsysteme \parencite{QDUNCXFC}, während an der University of Texas at Dallas modellgetriebene Anforderungs- und Fuzzy-Auswahlverfahren entwickelt wurden \parencite{CI86GRRG, 6RNULWVY}.
+  \item \textbf{Mitteleuropa:} In Österreich etablierten Secure Business Austria und die Universität Wien (Neubauer, Stummer, Pichler) interaktive Mehrzieloptimierungs- und Pareto-DSS-Engines \parencite{ZQMG69VT, MZ8JHDYA}. An der TU Wien konzipierten Becker und Rauber das Plato-System zur automatisierten Benchmark-Evaluation \parencite{8VHUMEKY}. In Deutschland legten Skroch \parencite{WBGP3ETU} an der TU Dresden und Lempert \parencite{RRU375GB} an der Universität Stuttgart umfassende Arbeiten zu Make-or-Buy-Strategien und IoT-Plattformen vor.
+  \item \textbf{Südeuropa und Skandinavien:} An der Universitat Politècnica de Catalunya prägte Franch zielorientierte Anforderungsmodelle \parencite{TLB687YL}. An der Universität Paris-Dauphine (LAMSADE) und bei Telecom Italia entwickelten Tsoukiàs, Paschetta und Blin frühe Outranking-Verfahren auf Basis der ISO 9126 \parencite{LZQJ6M4X, M3B2D3GD}. Am Politecnico di Milano untersuchten Colombo und Francalanci empirische AHP-Modelle \parencite{DAU8NSK8}. In Schweden trieben das Blekinge Institute of Technology und die Universität Lund (Wohlin, Wnuk, Chatzipetrou) strategische Sourcing-Taxonomien und kompositionelle Datenanalysen voran \parencite{JT5X3FIG, UK2X9C4W}.
+  \item \textbf{Asien (insbesondere Indien):} Eine außergewöhnlich dichte Serie mathematischer Optimierungs- und Fuzzy-MCDA-Arbeiten entstand an der University of Delhi und der Netaji Subhas University of Technology (Jha, Gupta, Mehlawat, Arora, Verma, Mahajan) \parencite{VUVLUN85, 6YJHIVHG, P9SATBH5, B7ZTQCZZ, JX4RDRDU, YVWGHAWQ, 8KF4HAZS}, ergänzt durch Arbeiten der Amity University \parencite{DFASRUVC}, des NITIE Mumbai \parencite{U4E7VXQU} und der PDEU Gujarat \parencite{5BBYQCJB}.
+\end{itemize}
+
+\subsubsection{Ergebnisse des Quality Appraisals}
+\label{subsubsec:qa_ergebnisse}
+
+Das vierdimensionale Quality Appraisal (QA1 bis QA4) bescheinigt dem Primärliteraturkorpus eine exzellente wissenschaftliche Belastbarkeit. Mit einem Gesamtmittelwert von \textbf{6,87 von 8,00 Punkten} erreichen 36 der 39 Publikationen (92,3\,\%) die höchste Evidenzklasse \textit{High Rigor \& Relevance} (6 bis 8 Punkte). Zwei Publikationen (5,1\,\%) fallen in die Kategorie \textit{Medium Rigor} (3 bis 5 Punkte), während lediglich ein früher konzeptioneller Entwurf (2,6\,\%) der Klasse \textit{Low Rigor} zugeordnet wurde.
+
+Die Detailanalyse der Einzeldimensionen (jeweils normiert auf 0 bis 2 Punkte) zeigt folgende Ausprägungen:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{QA1 (Methodische Transparenz und Formalisierung -- Mittelwert: 1,87):} 34 Studien erzielten die Maximalpunktzahl von 2 Punkten. Die mathematischen und algorithmischen Modelle -- von AHP-Supermatrizen über nicht-lineare ganzzahlige Optimierungsgleichungen bis hin zu Dempster-Shafer-Evidenzregeln -- sind formelhaft lückenlos und reproduzierbar spezifiziert.
+  \item \textbf{QA2 (Transparenz des Kriterienkatalogs -- Mittelwert: 1,87):} Ebenfalls 34 Arbeiten legen vollständig strukturierte, hierarchisch gegliederte Kriterienkataloge offen. Lediglich fünf Arbeiten beschränken sich auf unvollständige Beispiellisten.
+  \item \textbf{QA3 (Empirische Validierung und Evidenzniveau -- Mittelwert: 1,56):} 22 Studien (56,4\,\%) weisen eine reale empirische Validierung anhand von Industrie-Fallstudien, Praktiker-Surveys oder kontrollierten Experimenten auf. 14 Studien demonstrieren ihre Algorithmen an synthetischen numerischen Benchmarks, während drei Arbeiten rein theoretisch verbleiben.
+  \item \textbf{QA4 (Kritische Reflexion von Grenzen und Kontextfaktoren -- Mittelwert: 1,56):} 22 Studien diskutieren Limitationen, kognitiven Aufwand, Rechenkomplexität und Validitätsrisiken tiefgründig. 17 Arbeiten begnügen sich mit kurzen methodischen Anmerkungen.
+\end{itemize}
+
+% ------------------------------------------------------------------------------
+% 4.2 Evolutionäre Abbildung der COTS-Auswahlmethoden
+% ------------------------------------------------------------------------------
+\subsection{Evolutionäre Abbildung der COTS-Auswahlmethoden}
+\label{subsec:evolutionaere_abbildung}
+
+Zur Beantwortung von Forschungsfrage 1 (\textit{Wie haben sich Methoden zur Evaluierung und Auswahl von COTS-Software über die letzten zwei Jahrzehnte von frühen Heuristiken zu modernen mathematischen und hybriden Verfahren entwickelt?}) rekonstruiert dieser Abschnitt die historische Entwicklungslinie anhand von vier chronologischen Epochen. Alle 39 Primärstudien werden nachfolgend in ihren mathematischen, architektonischen und prozeduralen Beiträgen detailliert analysiert und gewürdigt. Tabelle~\ref{tab:evolutionaere_epochen} bietet eine systematische Übersicht über die Epochen, Leitprofile und Übergangstreiber.
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Chronologische evolutionäre Epochen der COTS-Softwareauswahl (2000--2026)}
+  \label{tab:evolutionaere_epochen}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.8cm}}
+    \toprule
+    \textbf{Epoche \& Zeitraum} & \textbf{Leitthema \& Fokus} & \textbf{Dominantes Profil} & \textbf{Zentraler methodischer Übergangstreiber} & \textbf{Exemplarische Studien \& QA-Score} \\
+    \midrule
+    \textbf{Epoche 1} \newline (2000--2005) 
+      & \textbf{Grundlegende Outranking- \& MCDA-Modelle} 
+      & $P_1 \in \{v_{1.1}, v_{1.2}\}$ \newline $P_2 \in \{v_{2.1}, v_{2.2}\}$ \newline $P_4 = v_{4.1}, P_5 = v_{5.3}$
+      & Übergang von Ad-hoc-Entscheidungen zu formaler MCDA (ELECTRE, ANP, AHP), ISO 9126-Normenbezug und Zielmodellen ($i^*$).
+      & Paschetta (2000) [8] \newline Blin (2001) [8] \newline Morris (2001) [8] \newline Sarkis (2003) [8] \newline Colombo (2004) [8] \newline Franch (2005) [8] \\
+    \addlinespace[2pt]
+    \textbf{Epoche 2} \newline (2006--2011) 
+      & \textbf{Architektur, Mismatch-Handling \& DSS} 
+      & $P_1 \in \{v_{1.3}, v_{1.5}\}$ \newline $P_2 = v_{2.3}, P_3 = v_{3.4}$ \newline $P_6 = v_{6.3}$
+      & Mismatch-Taxonomien, Glue-Code-Planung und interaktive Pareto-DSS (Atana, Plato, MiHOS, HKBS) zur Überwindung isolierter Blackbox-Auswahl.
+      & Chung (2006) [8] \newline Mohamed (2007) [8] \newline Neubauer (2008) [8] \newline Becker (2010) [8] \newline Jadhav (2011) [8] \\
+    \addlinespace[2pt]
+    \textbf{Epoche 3} \newline (2012--2019) 
+      & \textbf{Mathematische Optimierung \& Fuzzy-MCDA} 
+      & $P_1 = v_{1.4}, P_2 = v_{2.2}$ \newline $P_3 = v_{3.3}, P_4 = v_{4.2}$ \newline $P_5 = v_{5.2}$
+      & Modellierung linguistischer Unschärfe und multi-modularer Systeme via Fuzzy-TOPSIS, 0-1-Ganzzahlmodelle und Credibility Theory.
+      & Gupta (2012) [6] \newline Roshanaei (2013) [7] \newline Al-Tarawneh (2014) [8] \newline Mehlawat (2015a) [6] \newline Hanine (2017) [8] \\
+    \addlinespace[2pt]
+    \textbf{Epoche 4} \newline (2020--2026) 
+      & \textbf{CoDa, Evidential Reasoning \& Synthesen} 
+      & $P_1 \in \{v_{1.4}, v_{1.5}\}$ \newline $P_4 \in \{v_{4.3}, v_{4.4}\}$ \newline $P_6 \in \{v_{6.2}, v_{6.3}\}$
+      & Behebung von Simplex-Verzerrungen (\$100-Test) via CoDa, Modellierung von Nichtwissen via Dempster-Shafer und Meta-Synthesen.
+      & Chatzipetrou (2020) [8] \newline Bhatt (2021) [8] \newline Lempert (2021) [8] \newline Gupta (2022) [6] \newline Nabot (2025) [6] \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsubsection{Epoche 1 (2000--2005): Grundlegende Outranking- und frühe Mehrkriterien-Frameworks}
+\label{subsubsec:epoche1}
+
+Die erste Epoche (2000--2005) markiert den Übergang von rein informellen, intuitiven Beschaffungsentscheidungen zu formalisierten mathematischen und prozeduralen Bewertungsverfahren. Angesichts explodierender Fehlerraten bei der Einführung unternehmensweiter Softwaresysteme bestand das primäre Ziel darin, die Auswahlentscheidung transparent, objektiv und kriteriengeleitet zu gestalten.
+
+Den Beginn markieren Arbeiten aus dem Bereich der europäischen Outranking-Schule. \textcite{LZQJ6M4X} demonstrierten anhand eines realen Beschaffungsprojekts bei Telecom Italia den Einsatz von ELECTRE-TRI zur Vorfilterung und Klassifikation kommerzieller Angebote im Rahmen öffentlicher Ausschreibungen (\textit{Calls for Tenders}). Ihr Ansatz nutzte Konkordanz- und Diskordanzschwellen, um unzureichende Softwarekandidaten über Veto-Regeln auszusortieren. Der fundamentale Vorteil dieses Outranking-Ansatzes lag in seiner Nicht-Kompensatorik: Gravierende Schwächen in funktionalen Kernanforderungen durften nicht durch hervorragende Werte in Nebenkriterien kompensiert werden. Aufbauend auf dieser Arbeit stellten \textcite{M3B2D3GD} die erste formale Verbindung zwischen Outranking-Relationen und dem internationalen Qualitätsstandard ISO/IEC 9126 her. Sie wiesen mathematisch nach, dass naive additive Aggregationen (wie das klassische gewichtete Punktwertmodell WSM) auf ordinalen Qualitätsmetriken unzulässig sind und führten Präferenz- sowie Indifferenzschwellen zur Vermeidung von Fehlinterpretationen ein.
+
+Parallel dazu etablierten sich hierarchische und netzwerkartige Verfahren. \textcite{DAU8NSK8} operacionalisierten den Analytic Hierarchy Process (AHP) auf Basis der ISO 9126 und validierten das Modell empirisch an einer Stichprobe von 42 kommerziellen CRM-Paketen. Sie zeigten, dass AHP Entscheidungsträgern erlaubt, funktionale Eignung, technische Qualität und Kostenstrukturen strukturiert gegeneinander abzuwägen. Da hierarchische Bäume jedoch Wechselwirkungen zwischen Kriterien vernachlässigen, führten \textcite{FCYW9EWJ} den Analytic Network Process (ANP) in die COTS-Evaluation ein. Mittels Supermatrizen bildeten sie wechselseitige Abhängigkeiten zwischen betriebswirtschaftlichen Kernprozessen, bestehender Legacy-Infrastruktur und Softwareattributen formelhaft ab.
+
+Für hochgradig sicherheitskritische Anwendungsdomänen reichten deterministische Bewertungsbäume nicht aus. \textcite{QDUNCXFC} entwickelten für das \textit{Cockpit Avionics Upgrade} (CAU) des NASA Space Shuttles ein probabilistisches Entscheidungsmodell auf Basis von Bayesian Belief Networks (BBN). Durch die Hinterlegung bedingter Wahrscheinlichkeitstabellen (\textit{Conditional Probability Tables}, CPTs) gelang es, extreme Unsicherheiten hinsichtlich Echtzeitfähigkeit, Speicherzuverlässigkeit und Flugzertifizierung kommerzieller Echtzeitbetriebssysteme (RTOS) mathematisch präzise zu modellieren.
+
+Gleichzeitig entstanden erste hybride und anforderungszentrierte Ansätze. \textcite{CI86GRRG} integrierten Fuzzy-Regelsysteme und Adaptive Neuro-Fuzzy Inference Systems (ANFIS), um Unschärfen in Dienstgütemetriken (QoS) von COTS-Komponenten auszugleichen. \textcite{TLB687YL} konzipierte einen leichtgewichtigen zielorientierten Modellierungsansatz auf Basis des $i^*$-Frameworks, der relationale Abhängigkeiten zwischen Organisationszielen (\textit{Strategic Dependency}) und Softwarefähigkeiten (\textit{Strategic Rationale}) analysierte. \textcite{CZZ6XQZJ} legten mit NeMo-CoSe ein Verhandlungsmodell vor, das spieltheoretische Win-Win-Konditionen zwischen heterogenen Stakeholder-Gruppen bei der Komponentenauswahl formalisierte.
+
+\subsubsection{Epoche 2 (2006--2011): Architekturintegration, Mismatch-Behandlung und dedizierte DSS-Engines}
+\label{subsubsec:epoche2}
+
+Die zweite Epoche (2006--2011) brachte eine entscheidende architektonische Wende hervor. Die wissenschaftliche Gemeinschaft erkannte, dass Standardsoftwarekomponenten isoliert selten perfekt in bestehende Systemlandschaften passen. Der Forschungsschwerpunkt verlagerte sich daher von der reinen Blackbox-Bewertung hin zur aktiven Mismatch-Erkennung, architektonischen Verträglichkeitsprüfung und der Entwicklung eigenständiger Decision Support Systems (DSS).
+
+\textcite{8XNYS4M9} operationalisierten funktionale Diskrepanzen, indem sie auf Basis von ISO/IEC 9126-2 eine formale Metrik-Suite für funktionale Eignung entwickelten. Diese differenzierte zwischen funktionaler Vollständigkeit (\textit{Completeness}), Adäquatheit (\textit{Adequacy}) und funktionalem Überhang (\textit{Excess}) und balancierte diese Metriken über AHP-Stakeholdergewichte im E-Payment-Kontext. \textcite{6RNULWVY} automatisierten den Anforderungsabgleich im CARE-Framework (\textit{Component-Aware Requirements Engineering}), indem sie syntaktische Baum-Editierdistanzen mit semantischen WordNet-Ontologien kombinierten, um funktionale \enquote{Near-Miss}-Kandidaten über Softgoal Interdependency Graphs (SIG) algorithmisch zu identifizieren. \textcite{U5JPV4SF} präsentierte eine Hybridisierung, die ANP zur Modellierung von Kriterieninterdependenzen mit einem modifizierten TOPSIS-Algorithmus vereinte, um Workflow-Management-Systeme anhand euklidischer Distanzen zu idealen Referenzpunkten zu bewerten.
+
+Einen Meilenstein setzte die Dissertation von \textcite{9F79VAAB}, der das MiHOS-Framework (\textit{Mismatch Handling aware COTS Selection}) schuf. Mohamed systematisierte funktionale, architektonische und nicht-funktionale Inkompatibilitäten in einer fundierten Taxonomie und integrierte die mathematische Planung von Anpassungsmaßnahmen (z.\,B. Glue-Code, Wrapper-Synthese) direkt in das Auswahl-DSS, flankiert durch die neuartige Sensitivitätsanalyse IDS-SA.
+
+Parallel dazu revolutionierten \textcite{ZQMG69VT} und \textcite{MZ8JHDYA} (STUDY-02) die multikriterielle Entscheidungsfindung: Anstatt Entscheidungsträger zu zwingen, Kriteriengewichte \textit{a priori} festzulegen -- was bei unvollständiger Marktkenntnis regelmäßig zu Fehlentscheidungen führt -- formulierten sie das Auswahlproblem als multikriterielle 0-1-Ganzzahlprogrammierung. In ihrem interaktiven DSS-Werkzeug Atana/Odin erkunden Entscheidungsträger interaktiv die Pareto-optimale Lösungsfront. Dadurch wird kognitive Überlastung vermieden und Portfolio-Kombinationen werden ohne a-priori-Gewichtsverzerrungen identifiziert, wie die Validierung im österreichischen Sozialversicherungssektor (MediCorp-Fallstudie) belegte.
+
+Weitere spezialisierte DSS-Artefakte entstanden in dieser Phase: \textcite{8VHUMEKY} entwickelten das Plato-DSS für digitale Langzeitarchivierung, das subjektive Experteneinschätzungen durch vollautomatisierte empirische Benchmark-Messreihen und objektive Nutzenbäume ersetzte. \textcite{VUVLUN85} formulierten ein nicht-lineares 0-1-Optimierungsmodell zur Komponentenauswahl unter fehlertoleranten \textit{Recovery Block} (RB) Architekturen, das Zuverlässigkeit, Kosten und Ausführungszeit simultan optimierte. \textcite{WBGP3ETU} strukturierte die strategische Make-or-Buy-Entscheidung architektonisch, während \textcite{U4E7VXQU} mit HKBS ein wissensbasiertes System schufen, das regelbasierte Vorabfilterung, fallbasiertes Schließen (\textit{CBRank}) und AHP vereinte.
+
+\subsubsection{Epoche 3 (2012--2019): Mathematische Optimierung und Proliferation von Fuzzy-MCDA}
+\label{subsubsec:epoche3}
+
+Die dritte Epoche (2012--2019) war durch eine massive Mathematisierung und die Proliferation der Fuzzy-Set-Theorie gekennzeichnet. Die Forschergemeinschaft reagierte damit auf die Erkenntnis, dass Expertenurteile bei komplexen Softwarebeschaffungen naturgemäß vage, linguistisch geprägt und mit epistemischer Unsicherheit behaftet sind.
+
+\textcite{6YJHIVHG} formulierten ein interaktives Fuzzy-Mathematisches Programmierungsmodell (FMP), das ISO-9126-Qualitätsmetriken in eine simultane Optimierung von Kosten, Zuverlässigkeit, Lieferzeit und Ausführungszeit modularer Systeme einbettete. \textcite{W8P543Y2} erweiterten MCDM-Systeme für Cloud-basierte SaaS-ERP-Systeme um dynamische QoS-Messungen und Social-Network-Reputationsbewertungen. \textcite{VRTXHQI7} entwickelten ein hybrides Fuzzy-MCDA-Modell für CAD/CAM-Software, das die relative Nähe zur idealen Lösung via Fuzzy-TOPSIS mit den nicht-kompensatorischen Veto-Schwellen von Fuzzy-ELECTRE kombinierte.
+
+\textcite{WZM7DUBY} entwickelte in seiner Dissertation das COTS-ESF-Framework, das AHP-Gewichtungen mathematisch mit quantitativer Gap-Analyse verknüpfte, um Anpassungsaufwände und Schnittstellenrisiken vor der Kaufentscheidung formelhaft zu quantifizieren. \textcite{LYMHTPXS} operationalisierten die neu verabschiedete Qualitätsnorm ISO/IEC 25010 für ein gewichtetes Attribut-Scoring proprietärer und quelloffener BPMS-Werkzeuge.
+
+Eine Serie mathematisch hochgradig anspruchsvoller Arbeiten stammte von der Forschergruppe um Gupta, Mehlawat, Jha und Verma: \textcite{P9SATBH5} modellierten die Komponentenauswahl unter einem fehlertoleranten \textit{Consensus Recovery Block} (CRB) Schema mittels Fuzzy-Nichtlinearer Optimierung in LINGO. \textcite{B7ZTQCZZ} kombinierten Fuzzy-TOPSIS mit kompensatorischen Credibility-Chance-Constrained-Modellen, während \textcite{JX4RDRDU} ein multikriterielles kredibilistisches 0-1-Programmierungsmodell vorlegten, das Erwartungswert- und Zufallsparameter unter Fuzzy-Glaubwürdigkeitsmaßen simultan steuerte.
+
+Ergänzt wurde diese Phase durch hierarchische Wiederverwendungsmodelle von \textcite{DFASRUVC}, das strategische GRADE-Sourcing-Framework von \textcite{JT5X3FIG}, die methodische Triangulation aus Delphi-Filterung, Fuzzy-AHP und PROMETHEE-II-Outranking-Flüssen von \textcite{NZJEEPAC} sowie die Usability-fokussierte AHP-VIKOR-Kompromissrangbildung von \textcite{QNWK8SAP}.
+
+\subsubsection{Epoche 4 (2020--2026): Kompositionelle Daten, Evidential Reasoning und Meta-Synthesen}
+\label{subsubsec:epoche4}
+
+Die jüngste Epoche (2020--2026) zeichnet sich durch methodische Reifung, die Beseitigung struktureller mathematischer Verzerrungen klassischer Verfahren sowie breit angelegte empirische und methodische Meta-Synthesen aus.
+
+Einen herausragenden methodenkritischen Beitrag leisteten \textcite{UK2X9C4W}: Sie wiesen mathematisch nach, dass traditionelle Punkteverteilungsverfahren wie das Cumulative Voting (\$100-Test) aufgrund der konstanten Summenrestriktion im Simplex-Raum massiven statistischen Scheinkorrelationen unterliegen. Durch die Einführung der \textit{Compositional Data Analysis} (CoDa) mit isometrischen Log-Ratio-Transformationen (ilr) etablierten sie ein verzerrungsfreies statistisches Fundament zur Priorisierung von ISO/IEC-25010-Qualitätsattributen, validiert an 157 Software-Praktikern.
+
+\textcite{5BBYQCJB} validierten empirisch ein Fuzzy-AHP-Modell mit Dreiecks-Fuzzy-Zahlen zur ERP-Auswahl in Industrieunternehmen. \textcite{UFCEV52H} führten das Konzept der \textit{Fuzzy Intra-Coupling Density} (Fuzzy-ICD) in ein nicht-lineares 0-1-Ganzzahlmodell ein, um modulare Kopplungen und Kohäsionen in Build-or-Buy-Architekturen simultan mit Kosten und Zuverlässigkeit zu optimieren.
+
+Einen Höhepunkt der Evidenzkonsolidierung bildet die 588-seitige DSR-Monographie von \textcite{RRU375GB}, die in einer Meta-Synthese von 139 COTS-Publikationen den State-of-the-Art systematisierte und einen ganzheitlichen Kriterienkatalog sowie eine Referenzarchitektur für IoT-Softwareplattformen entwickelte. \textcite{FVINCQ89} präsentierte den FMDBA-Ansatz (\textit{Fuzzy Modified Distance-Based Approach}), der subjektive Expertengewichte mit objektiver Fuzzy-Entropie fusionierte. \textcite{YVWGHAWQ} verknüpften die Effizienzgrenzen der Data Envelopment Analysis (DEA) mit evolutionären NSGA-II-Algorithmen zur Komponentenauswahl unter optimaler Redundanz. \textcite{8KF4HAZS} etablierten ein Zwei-Phasen-Framework aus Fuzzy-TOPSIS und interaktiver Optimierung für Multi-Applikations-Suiten.
+
+Einen wegweisenden Schritt zur Behandlung epistemischer Unvollständigkeit vollzog \textcite{LNQHES84} durch den Einsatz des Evidential Reasoning (ER) auf Basis der Dempster-Shafer-Theorie. Dieses Modell erlaubt es, unvollständige Anbieterauskünfte und konfligierende Gutachterbewertungen über Glaubensverteilungen (\textit{Belief Distributions}) und Nichtwissensgrade mathematisch exakt abzubilden. Schließlich lieferten \textcite{LPC92LAP} eine kritische Meta-Analyse über 41 Arbeiten zum Einsatz von MCDM im Software Engineering, in der sie Phänomene der Rangumkehr (\textit{Rank Reversal}) und kognitive Überlastungen beleuchteten.
+
+% ------------------------------------------------------------------------------
+% 4.3 Morphologische Analyse der COTS-Auswahlmethoden
+% ------------------------------------------------------------------------------
+\subsection{Morphologische Analyse der COTS-Auswahlmethoden}
+\label{subsec:morphologische_analyse_ergebnisse}
+
+Zur Beantwortung von Forschungsfrage 2 (\textit{Welche methodischen Merkmale, Stärken und praktischen Grenzen kennzeichnen aktuelle Auswahlmethoden, und welche übergeordneten Lösungsarchetypen lassen sich identifizieren?}) wird die General Morphological Analysis (GMA) nach Zwicky und Ritchey \parencite{Z6N6V5L9} herangezogen. Das resultierende sechsdimensionale morphologische Feld formalisiert den Lösungsraum aller 39 Primärstudien über $N = 2.592$ theoretische Konfigurationen.
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Morphologisches Feld der COTS-Softwareauswahl ($N = 2.592$ Konfigurationen)}
+  \label{tab:morphologisches_feld}
+  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{2.6cm}lXcc}
+    \toprule
+    \textbf{ID} & \textbf{Parametername} & \textbf{Wert} & \textbf{Diskrete Ausprägung \& Definition} & \textbf{Häuf.} & \textbf{\%} \\
+    \midrule
+    \multirow{6}{*}{\textbf{P1}} 
+      & \multirow{6}{=}{Mathematisches Entscheidungs- \& Gewichtungsmodell}
+      & $v_{1.1}$ & \textbf{Klassische MCDA (AHP / ANP / WSM / Distance)} & 9 & 23,1\,\% \\
+      & & $v_{1.2}$ & \textbf{Outranking-Relationen (ELECTRE / PROMETHEE)} & 2 & 5,1\,\% \\
+      & & $v_{1.3}$ & \textbf{Mathematische Optimierung / OR (0-1 IP / DEA)} & 4 & 10,3\,\% \\
+      & & $v_{1.4}$ & \textbf{Fuzzy-MCDA \& Fuzzy-OR (FAHP / F-TOPSIS / Credibility)} & 11 & 28,2\,\% \\
+      & & $v_{1.5}$ & \textbf{Probabilistisch, Evidential \& KI (BBN / ER / CBR / Matching)} & 6 & 15,4\,\% \\
+      & & $v_{1.6}$ & \textbf{Qualitative, zielorientierte Frameworks (Goals / Voting / SLR)} & 7 & 17,9\,\% \\
+    \addlinespace[2pt]
+    \multirow{3}{*}{\textbf{P2}} 
+      & \multirow{3}{=}{Entscheidungsunter\-stützungs-Automatisierung}
+      & $v_{2.1}$ & \textbf{Manuelle Prozesse \& Prozedurale Leitfäden} & 7 & 17,9\,\% \\
+      & & $v_{2.2}$ & \textbf{Skripte, Matrix-Kalkulatoren \& Solver (LINGO / MATLAB)} & 21 & 53,8\,\% \\
+      & & $v_{2.3}$ & \textbf{Dedizierte interaktive Decision Support Systems (DSS)} & 11 & 28,2\,\% \\
+    \addlinespace[2pt]
+    \multirow{4}{*}{\textbf{P3}} 
+      & \multirow{4}{=}{Mismatch- \& Inkompatibilitäts\-behandlung}
+      & $v_{3.1}$ & \textbf{Keine explizite Behandlung (Implizite Bewertung)} & 5 & 12,8\,\% \\
+      & & $v_{3.2}$ & \textbf{Vorabauswahl-Filterung (Threshold Gates / Screening)} & 15 & 38,5\,\% \\
+      & & $v_{3.3}$ & \textbf{Mathematische Nebenbedingungen / Straffunktionen} & 15 & 38,5\,\% \\
+      & & $v_{3.4}$ & \textbf{Post-Selektions-Adaptationsplanung (Gap Analysis / Glue-Code)} & 4 & 10,3\,\% \\
+    \addlinespace[2pt]
+    \multirow{4}{*}{\textbf{P4}} 
+      & \multirow{4}{=}{Unsicherheits- \& Unschärfemodellierung}
+      & $v_{4.1}$ & \textbf{Deterministisch / Keine (Crisp Single-Point Values)} & 16 & 41,0\,\% \\
+      & & $v_{4.2}$ & \textbf{Fuzzy-Set-Theorie \& Linguistische Variablen} & 13 & 33,3\,\% \\
+      & & $v_{4.3}$ & \textbf{Sensitivitätsanalyse, Intervalle \& Log-Ratios (CoDa)} & 7 & 17,9\,\% \\
+      & & $v_{4.4}$ & \textbf{Probabilistisch, Bayes \& Evidential Reasoning (Dempster-Shafer)} & 3 & 7,7\,\% \\
+    \addlinespace[2pt]
+    \multirow{3}{*}{\textbf{P5}} 
+      & \multirow{3}{=}{Umfang des Kriterienkatalogs}
+      & $v_{5.1}$ & \textbf{Rein funktional \& architektonische Fähigkeiten} & 4 & 10,3\,\% \\
+      & & $v_{5.2}$ & \textbf{Softwarequalität \& technische Performance (NFR)} & 13 & 33,3\,\% \\
+      & & $v_{5.3}$ & \textbf{Ganzheitlich mehrdimensional (Funktional, Qualität, TCO, Vendor)} & 22 & 56,4\,\% \\
+    \addlinespace[2pt]
+    \multirow{3}{*}{\textbf{P6}} 
+      & \multirow{3}{=}{Kriterien-Standardisierung \& Wiederverwendung}
+      & $v_{6.1}$ & \textbf{Ad-hoc / Projektspezifisch generiert} & 19 & 48,7\,\% \\
+      & & $v_{6.2}$ & \textbf{Standardbasiertes Qualitätsmodell (ISO 9126 / ISO 25010)} & 9 & 23,1\,\% \\
+      & & $v_{6.3}$ & \textbf{Wiederverwendbare Wissensbasis (Ontologie / Taxonomie / CBR)} & 11 & 28,2\,\% \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsubsection{Parameteranalyse des morphologischen Feldes}
+\label{subsubsec:parameteranalyse}
+
+Tabelle~\ref{tab:morphologisches_feld} schlüsselt die relative Häufigkeitsverteilung über alle sechs Parameter auf:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{$P_1$ (Mathematisches Entscheidungs- und Gewichtungsmodell):} Das Feld wird von Fuzzy-MCDA- und Fuzzy-OR-Modellen dominiert ($v_{1.4}$: 28,2\,\%, $N = 11$), gefolgt von klassischen deterministischen MCDA-Ansätzen ($v_{1.1}$: 23,1\,\%, $N = 9$). Qualitative und prozessorientierte Modelle umfassen 17,9\,\% ($v_{1.6}$, $N = 7$), während probabilistische, evidenzbasierte und wissensbasierte Systeme 15,4\,\% stellen ($v_{1.5}$, $N = 6$). Mathematische Optimierungsmodelle ($v_{1.3}$: 10,3\,\%, $N = 4$) und reine Outranking-Verfahren ($v_{1.2}$: 5,1\,\%, $N = 2$) bilden spezialisierte Nischen.
+  \item \textbf{$P_2$ (Automatisierungsgrad der Entscheidungsunterstützung):} Mehr als die Hälfte aller Arbeiten ($v_{2.2}$: 53,8\,\%, $N = 21$) stützt sich auf mathematische Skripte, Tabellenkalkulationen oder kommerzielle OR-Solver (z.\,B. LINGO, MATLAB). 28,2\,\% ($v_{2.3}$, $N = 11$) implementieren vollwertige interaktive Decision Support Systems mit eigener GUI. 17,9\,\% ($v_{2.1}$, $N = 7$) verbleiben auf Ebene manueller prozeduraler Richtlinien.
+  \item \textbf{$P_3$ (Mismatch- und Inkompatibilitätsbehandlung):} Jeweils 38,5\,\% ($N = 15$) nutzen Vorabfilterung ($v_{3.2}$) oder mathematische Nebenbedingungen ($v_{3.3}$). Dagegen adressieren lediglich 10,3\,\% ($v_{3.4}$, $N = 4$) die fundamentale post-selektive Adaptationsplanung (Glue-Code, Gap Analysis). 12,8\,\% ($v_{3.1}$, $N = 5$) ignorieren Mismatches vollständig.
+  \item \textbf{$P_4$ (Unsicherheits- und Unschärfemodellierung):} 41,0\,\% ($v_{4.1}$, $N = 16$) arbeiten rein deterministisch mit Einzelwerten. 33,3\,\% ($v_{4.2}$, $N = 13$) modellieren Unschärfe über Fuzzy-Zahlen. Sensitivitätsanalysen und CoDa-Log-Ratios stellen 17,9\,\% ($v_{4.3}$, $N = 7$), während probabilistische Bayes-Netze und Dempster-Shafer-Evidenzmodelle 7,7\,\% umfassen ($v_{4.4}$, $N = 3$).
+  \item \textbf{$P_5$ (Umfang des Kriterienkatalogs):} Die Mehrheit ($v_{5.3}$: 56,4\,\%, $N = 22$) verfolgt ganzheitliche Kriterienkataloge (Funktionalität, NFRs, Kosten, Anbieterlebensfähigkeit). 33,3\,\% ($v_{5.2}$, $N = 13$) fokussieren primär Softwarequalität und technische Performanz, während 10,3\,\% ($v_{5.1}$, $N = 4$) rein funktionale Schnittstellen prüfen.
+  \item \textbf{$P_6$ (Kriterien-Standardisierung und Wiederverwendbarkeit):} Fast die Hälfte aller Studien ($v_{6.1}$: 48,7\,\%, $N = 19$) definiert Kriterien ad-hoc für spezifische Fallbeispiele. 28,2\,\% ($v_{6.3}$, $N = 11$) nutzen wiederverwendbare Taxonomien oder Ontologien, während 23,1\,\% ($v_{6.2}$, $N = 9$) explizit auf ISO/IEC 9126 oder ISO/IEC 25010 referenzieren.
+\end{itemize}
+
+\subsubsection{Vergleichende Analyse der vier methodischen Archetypen}
+\label{subsubsec:archetypen_analyse}
+
+Durch Clusterung der diskreten 6-Tupel-Profile lassen sich alle 39 Studien vier distinkten **Methodischen Archetypen** zuordnen, deren Eigenschaften und QA-Stützung in Tabelle~\ref{tab:archetypen_matrix} detailliert gegenübergestellt sind.
+
+\begin{table}[htbp]
+  \centering
+  \footnotesize
+  \caption{Vergleichende Bewertungsmatrix der vier methodischen Lösungsarchetypen}
+  \label{tab:archetypen_matrix}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.7cm}}
+    \toprule
+    \textbf{Archetyp} & \textbf{Kernprofil} & \textbf{Zentrale methodische Stärken} & \textbf{Praktische \& mathematische Grenzen} & \textbf{Evidenz \& QA-Score} \\
+    \midrule
+    \textbf{Archetyp 1} \newline \textbf{Classic \& Outranking Decision Engineering} 
+      & $P_1 \in \{v_{1.1}, v_{1.2}, v_{1.6}\}$ \newline $P_2 \in \{v_{2.1}, v_{2.2}\}$ \newline $P_3 \in \{v_{3.1}, v_{3.2}\}$ \newline $P_4 \in \{v_{4.1}, v_{4.3}\}$ \newline $P_5 = v_{5.3}$ \newline $P_6 \in \{v_{6.1}, v_{6.2}\}$
+      & Hohe Transparenz und Nachvollziehbarkeit; starke Verankerung in ISO-Normen; Veto-Schwellen verhindern Kompensation gravierender Mängel.
+      & Kognitive Überlastung durch $O(n^2)$ Paarvergleiche; Anfälligkeit für Rangumkehr (\textit{Rank Reversal}); Mismatch-Behandlung nur als Vorabfilter.
+      & \textbf{14 Studien (11 High QA):} \newline Paschetta (2000), Blin (2001), Sarkis (2003), Colombo (2004), Franch (2005), Shyur (2006), Delgado (2015), Wohlin (2016), Lempert (2021) \\
+    \addlinespace[3pt]
+    \textbf{Archetyp 2} \newline \textbf{Multi-Objective Programming \& Optimization} 
+      & $P_1 = v_{1.3}$ \newline $P_2 \in \{v_{2.2}, v_{2.3}\}$ \newline $P_3 = v_{3.3}$ \newline $P_4 \in \{v_{4.1}, v_{4.2}\}$ \newline $P_5 \in \{v_{5.2}, v_{5.3}\}$ \newline $P_6 = v_{6.1}$
+      & Globale portfolio-weite Systemoptimierung; gleichzeitige Modellierung von Budget, Lieferzeit, Zuverlässigkeit und Redundanz; simultane Verträglichkeitsrestriktionen.
+      & Hohe Sensitivität gegenüber Zielfunktionsgewichten; erfordert teure OR-Solver; Kriterien fast ausschließlich ad-hoc ohne ISO-Standardbezug.
+      & \textbf{4 Studien (4 High QA):} \newline Neubauer \& Stummer (2007), Neubauer et al. (2008), Jha et al. (2010), Gupta et al. (2022) \\
+    \addlinespace[3pt]
+    \textbf{Archetyp 3} \newline \textbf{Fuzzy \& Credibilistic Decision Systems} 
+      & $P_1 = v_{1.4}$ \newline $P_2 = v_{2.2}$ \newline $P_3 \in \{v_{3.2}, v_{3.3}\}$ \newline $P_4 = v_{4.2}$ \newline $P_5 \in \{v_{5.2}, v_{5.3}\}$ \newline $P_6 \in \{v_{6.1}, v_{6.2}, v_{6.3}\}$
+      & Mathematisch exakte Modellierung linguistischer Unschärfe und vager Expertenurteile; Vermeidung künstlicher Trennschärfen; robuste Kredibilitätsmaße.
+      & Hohe Rechenkomplexität bei Defuzzifizierung; \enquote{Black-Box}-Charakter für Praktiker; kaum integrierte GUIs (fast nur Solver-Skripte).
+      & \textbf{14 Studien (12 High QA):} \newline Cooper (2005), Gupta (2012), Roshanaei (2013), Kaur (2015), Mehlawat (2015a,b), Hanine (2017), Bhatt (2021), Garg (2022) \\
+    \addlinespace[3pt]
+    \textbf{Archetyp 4} \newline \textbf{Interactive \& Architecture-Aware DSS} 
+      & $P_1 \in \{v_{1.1}, v_{1.3}, v_{1.5}\}$ \newline $P_2 = v_{2.3}$ \newline $P_3 \in \{v_{3.2}, v_{3.4}\}$ \newline $P_4 \in \{v_{4.1}, v_{4.3}, v_{4.4}\}$ \newline $P_5 = v_{5.3}$ \newline $P_6 \in \{v_{6.2}, v_{6.3}\}$
+      & Durchgängige interaktive Software-Toolunterstützung ($v_{2.3}$); explizite post-selektive Adaptationsplanung (Glue-Code, Wrapper); Wissenswiederverwendung via CBR/Ontologien.
+      & Hoher initialer Erstellungs- und Pflegeaufwand für Fallbasen; akademische Prototypen selten als Open-Source oder Industrieprodukt gepflegt (\enquote{Prototypen-Friedhof}).
+      & \textbf{7 Studien (7 High QA):} \newline Morris (2001), Chung (2006), Mohamed (2007), Becker (2010), Jadhav (2011), Park (2013), Nabot (2025) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+  \item \textbf{Archetyp 1: Classic \& Outranking Decision Engineering ($N = 14$ Studien):}  
+  Dieser Archetyp repräsentiert traditionelle multikriterielle Analysemethoden wie AHP, ANP, WSM, ELECTRE und zielorientierte Graphen \parencite{LZQJ6M4X, M3B2D3GD, FCYW9EWJ, DAU8NSK8, TLB687YL, CZZ6XQZJ, 8XNYS4M9, U5JPV4SF, WBGP3ETU, WZM7DUBY, LYMHTPXS, DFASRUVC, JT5X3FIG, QNWK8SAP, UK2X9C4W, RRU375GB, LPC92LAP}.  
+  \textit{Stärken:} Höchste methodische Transparenz, direkte Abbildbarkeit auf Standard-Qualitätsmodelle (ISO/IEC 9126 und 25010) sowie effektive Veto-Mechanismen gegen K.-o.-Kriterien.  
+  \textit{Grenzen:} Extreme kognitive Belastung bei Paarvergleichen ($n(n-1)/2$), Anfälligkeit für das Phänomen der Rangumkehr (\textit{Rank Reversal}) bei nachträglichem Hinzufügen oder Entfernen von Alternativen sowie eine rein statische Vorabfilterung von Mismatches.
+  
+  \item \textbf{Archetyp 2: Multi-Objective Mathematical Programming \& Optimization ($N = 4$ Studien):}  
+  Hierunter fallen ganzzahlige und nicht-lineare mathematische Optimierungsmodelle des Operations Research \parencite{ZQMG69VT, MZ8JHDYA, VUVLUN85, YVWGHAWQ}.  
+  \textit{Stärken:} Ganzheitliche globale Systemoptimierung modularer Architekturen; simultane Einhaltung von Budget-, Lieferzeit- und Zuverlässigkeitsgrenzen; formale Modellierung von Redundanzallokationen (z.\,B. Recovery Blocks) und architektonischen Verträglichkeitsmatrizen.  
+  \textit{Grenzen:} Hohe Sensitivität gegenüber der Formulierung von Zielfunktionen; Abhängigkeit von teuren kommerziellen Solvern; primäre Verwendung ad-hoc generierter Kriterien ohne Anbindung an internationale Software-Qualitätsnormen.
+  
+  \item \textbf{Archetyp 3: Fuzzy \& Credibilistic Decision Systems ($N = 14$ Studien):}  
+  Dieser Archetyp umfasst Modelle, die Unschärfe und vage Expertenpräferenzen über Dreiecks- oder Trapezzahlen, linguistische Skalen oder kredibilistische Zufallsrestriktionen steuern \parencite{CI86GRRG, 6YJHIVHG, VRTXHQI7, P9SATBH5, B7ZTQCZZ, JX4RDRDU, NZJEEPAC, 5BBYQCJB, UFCEV52H, FVINCQ89, 8KF4HAZS}.  
+  \textit{Stärken:} Exzellente Abbildung epistemischer Vagheit; Vermeidung künstlicher Schwellenwert-Sprünge an Eignungsgrenzen; robuste Kompromissbildung.  
+  \textit{Grenzen:} Hoher mathematischer Defuzzifizierungsaufwand; \enquote{Black-Box}-Wirkung auf betriebliche Entscheidungsträger; praktische Umsetzung fast ausschließlich in akademischen Skripten ohne benutzerfreundliche Oberflächen.
+  
+  \item \textbf{Archetyp 4: Interactive, Intelligent \& Architecture-Aware Decision Support ($N = 7$ Studien):}  
+  Die methodische Speerspitze bilden integrierte, intelligente DSS-Umgebungen \parencite{QDUNCXFC, 6RNULWVY, 9F79VAAB, 8VHUMEKY, U4E7VXQU, W8P543Y2, LNQHES84}.  
+  \textit{Stärken:} Vollständig integrierte Software-Werkzeuge ($v_{2.3}$); explizite Modellierung post-selektiver Integrationsmaßnahmen (Glue-Code, Adapter, Wrapper-Synthese); maschinelle Wissenswiederverwendung über Fallbasen (CBR), Dempster-Shafer-Evidenzfusion und automatisierte Messreihen.  
+  \textit{Grenzen:} Sehr hoher initialer Aufwand zur Wissensakquisition und Ontologieerstellung; Gefahr des \enquote{Prototypen-Friedhofs}, da akademische DSS-Werkzeuge nach Projektende selten zu wartbaren Industrie- oder Open-Source-Tools weiterentwickelt werden.
+\end{enumerate}
+
+\subsubsection{Vertiefte methodische Trade-offs und praktische Anwendungsbarrieren}
+\label{subsubsec:tradeoffs_barrieren}
+
+Die vergleichende Synthese über alle Archetypen hinweg offenbart drei fundamentale methodische Zielkonflikte, die den praktischen Einsatz von COTS-Auswahlmethoden in der Unternehmenspraxis maßgeblich determinieren:
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+  \item \textbf{Kognitive Last versus mathematische Expressivität:}  
+  Klassische hierarchische Verfahren (insbesondere AHP in Archetyp 1) leiden unter einem kombinatorischen Skalierungsproblem. Bei einem Kriterienbaum mit 20 Subkriterien und 5 Alternativen erfordert der vollständige Paarvergleich $20 \times \frac{5 \times 4}{2} + \frac{20 \times 19}{2} = 200 + 190 = 390$ Einzelbewertungen. In der Praxis führt dies zu rascher kognitiver Ermüdung der Gutachter und gravierenden Inkonsistenzen (Konsistenzverhältnis $\text{CR} > 0,10$). Zwar mindern Fuzzy-Verfahren (Archetyp 3) linguistische Härten, erhöhen jedoch die algorithmische Intransparenz derart, dass Entscheidungsträger die Resultate aufgrund des Black-Box-Charakters ablehnen. Neuere statistische Ansätze wie die kompositionelle Datenanalyse (CoDa nach \textcite{UK2X9C4W}) und distanzbasierte Entropieverfahren (\textcite{FVINCQ89}) bieten hier vielversprechende Auswege zur Reduktion von Verzerrungen ohne kognitive Überlastung.
+  
+  \item \textbf{A-priori-Gewichtung versus interaktive Pareto-Exploration:}  
+  Ein fundamentaler Schwachpunkt klassischer MCDA-Verfahren besteht im Zwang zur \textit{a-priori}-Festlegung von Kriteriengewichten, bevor die tatsächlich am Markt verfügbaren Softwareeigenschaften im Detail bekannt sind. Wie \textcite{MZ8JHDYA} im MediCorp-Projekt empirisch nachwiesen, führt das unreflektierte Festhalten an starren a-priori-Gewichten regelmäßig dazu, dass hochattraktive Softwarepakete verworfen werden, nur weil sie ein einzelnes, theoretisch hoch gewichtetes Kriterium knapp verfehlen. Die interaktive Mehrzieloptimierung (Archetyp 2 und 4) bricht dieses Paradigma auf: Durch die algorithmische Generierung Pareto-optimaler Lösungsfronten können Entscheidungsträger Kompromisse zwischen Budget, Funktionsabdeckung und Lieferzeit dynamisch visualisieren und explorieren.
+  
+  \item \textbf{Isolierte Produktauswahl versus architektonische Systemintegration:}  
+  Die gravierendste praktische Barriere im gesamten Korpus ist das \enquote{Integrationsrisiko}. Fast 90\,\% aller untersuchten Methoden (Archetypen 1 bis 3) behandeln die COTS-Auswahl als isolierten Einkaufsakt ($v_{3.1}$ bis $v_{3.3}$), bei dem Mismatches lediglich zum Ausschluss führen. In der industriellen Realität ist jedoch kein COTS-Paket vollkommen mismatch-frei. Ansätze, die den Lebenszyklus nach der Auswahl ignorieren, verursachen exorbitante Folgekosten bei der Implementierung. Nur hochentwickelte architekturzentrierte Frameworks wie MiHOS \parencite{9F79VAAB}, COTS-ESF \parencite{WZM7DUBY} und Plato \parencite{8VHUMEKY} (Archetyp 4) quantifizieren den Aufwand für Glue-Code, Adapter-Entwicklung und architektonische Refaktorisierungen im Vorfeld und binden diese mathematisch in die Gesamtentscheidung ein.
+\end{enumerate}
+
+Die hier identifizierten Archetypen, Parameterverteilungen und Trade-offs bilden das methodische Fundament für die in Kapitel~5 folgende komparative Diskussion sowie die Ableitung einer zukunftsorientierten Forschungsagenda zur Schließung morphologischer Innovationslücken.

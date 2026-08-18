@@ -1,0 +1,243 @@
+% ==============================================================================
+% Kapitel 5: Diskussion der Ergebnisse
+% ==============================================================================
+
+\section{Diskussion der Ergebnisse}
+\label{sec:diskussion_der_ergebnisse}
+
+Aufbauend auf der in Kapitel~\ref{sec:systematische_literaturuebersicht} durchgeführten empirischen und morphologischen Synthese der 39 Primärstudien widmet sich das vorliegende Kapitel der theoriegeleiteten und praxisorientierten Diskussion der Befunde. Die softwaretechnische und betriebswirtschaftliche Auswahl von \textit{Commercial Off-The-Shelf} (COTS) Software stellt Organisationen vor ein hochkomplexes, multidimensionales Entscheidungsproblem. Fehlentscheidungen in diesem Bereich führen in der Unternehmenspraxis regelmäßig zu gravierenden architektonischen Fehlanpassungen (\textit{Architectural Mismatches}), unkontrollierbaren Folgekosten für nachträgliche Anpassungsprogrammierungen (\textit{Glue-Code}), Performanz- und Sicherheitsengpässen sowie fatalen langfristigen Anbieterabhängigkeiten (\textit{Vendor Lock-in}).
+
+Ziel dieses Kapitels ist es, die Beantwortung der drei leitenden Forschungsfragen konsolidiert zusammenzuführen, die durch das morphologische Kreuzkonsistenz-Assessment (CCA) aufgedeckten Forschungslücken theorie- und werkzeugbezogen zu durchdringen, handlungsleitende Implikationen für Wissenschaft und Unternehmenspraxis abzuleiten sowie die methodischen Grenzen und Validitätsbedrohungen der Untersuchung transparent zu reflektieren. Die Struktur gliedert sich in vier Abschnitte:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Abschnitt~\ref{subsec:zusammenfassung_ergebnisse} (Zusammenfassung der Ergebnisse):} Bietet eine integrierte Beantwortung von RQ1 bis RQ3 und arbeitet die drei übergeordneten Kernbefunde der Synthese heraus.
+  \item \textbf{Abschnitt~\ref{subsec:identifikation_forschungsluecken} (Identifikation von Forschungslücken):} Vollendet die Beantwortung von RQ3 durch eine tiefgründige Analyse der vier identifizierten morphologischen Forschungslücken (GAP-1 bis GAP-4).
+  \item \textbf{Abschnitt~\ref{subsec:implikationen_forschung_praxis} (Implikationen für Forschung und Praxis):} Leitet wissenschaftliche Paradigmenwechsel sowie eine konkrete Entscheidungsmatrix für IT-Architekten und betriebliche Beschaffungsverantwortliche ab.
+  \item \textbf{Abschnitt~\ref{subsec:limitationen} (Limitationen):} Reflektiert methodische Recherchegrenzen, Validitätsbedrohungen beim Einsatz generativer Sprachmodelle und Restriktionen der morphologischen Analyse.
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+% 5.1 Zusammenfassung der Ergebnisse
+% ------------------------------------------------------------------------------
+\subsection{Zusammenfassung der Ergebnisse}
+\label{subsec:zusammenfassung_ergebnisse}
+
+Die durchgeführte systematische Literaturübersicht liefert auf Basis von 39 methodisch rigoros begutachteten Primärstudien (durchschnittlicher Quality-Appraisal-Score von \textbf{6,87 von 8,00 Punkten}; 92,3\,\% \textit{High Rigor}) ein klares, theoriegestütztes Gesamtbild der Forschungslandschaft. Die Beantwortung der drei übergeordneten Forschungsfragen lässt sich wie folgt konsolidieren:
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+  \item \textbf{RQ1 (Evolutionäre Trajektorie der COTS-Auswahlmethoden):} Die historische Rekonstruktion über den 26-jährigen Beobachtungszeitraum (2000--2026) belegt eine tiefgreifende epistemologische und mathematische Weiterentwicklung über vier unterscheidbare Epochen:
+  \begin{itemize}[leftmargin=*]
+    \item \textit{Epoche 1 (2000--2005 -- Grundlegende Outranking- und Mehrkriterien-Frameworks):} Etablierung erster formaler Bewertungsmodelle (ELECTRE-TRI, AHP, ANP) und normativer Qualitätsbezüge (ISO/IEC 9126) zur Überwindung rein intuitiver Beschaffungsentscheidungen \parencite{LZQJ6M4X, M3B2D3GD, FCYW9EWJ, DAU8NSK8}.
+    \item \textit{Epoche 2 (2006--2011 -- Architekturintegration, Mismatch-Behandlung und DSS-Engines):} Paradigmenwechsel hin zur aktiven architektonischen Verträglichkeitsprüfung, Quantifizierung von Schnittstellendiskrepanzen und interaktiven Pareto-Entscheidungssystemen (CARE, MiHOS, Atana, Plato) \parencite{6RNULWVY, 9F79VAAB, MZ8JHDYA, 8VHUMEKY}.
+    \item \textit{Epoche 3 (2012--2019 -- Mathematische Optimierung und Fuzzy-MCDA-Proliferation):} Intensive Mathematisierung zur Modellierung subjektiver linguistischer Vagheit und modularer Systemarchitekturen mittels Fuzzy-TOPSIS, nicht-linearer 0-1-Ganzzahlprogrammierung und Credibility Theory \parencite{6YJHIVHG, VRTXHQI7, WZM7DUBY, B7ZTQCZZ, JX4RDRDU}.
+    \item \textit{Epoche 4 (2020--2026 -- Kompositionelle Daten, Evidential Reasoning und Meta-Synthesen):} Methodische Reifung durch Beseitigung statistischer Simplex-Verzerrungen via Compositional Data Analysis (CoDa; \textcite{UK2X9C4W}), exakte Erfassung von Nichtwissen via Dempster-Shafer-Evidenztheorie \parencite{LNQHES84} sowie breit angelegte domänenspezifische Meta-Synthesen \parencite{RRU375GB, LPC92LAP}.
+  \end{itemize}
+
+  \item \textbf{RQ2 (Methodische Merkmale und Lösungsarchetypen):} Das morphologische Feld ($N = 2.592$ Konfigurationen) verdichtet die heterogene Methodenlandschaft in vier distinkte Archetypen, die spezifische Stärken, Grenzen und Evidenzgrade aufweisen:
+  \begin{itemize}[leftmargin=*]
+    \item \textit{Archetyp 1 (Classic \& Outranking Decision Engineering, $N = 14$):} Zeichnet sich durch hohe Transparenz und strikte Konformität zu Qualitätsnormen aus, leidet jedoch unter kombinatorischer Paarvergleichslast ($O(n^2)$) und Anfälligkeit für Rangumkehrungen (\textit{Rank Reversal}).
+    \item \textit{Archetyp 2 (Multi-Objective Mathematical Programming \& Optimization, $N = 4$):} Ermöglicht die globale portfolio-weite Systemoptimierung modularer CBSD-Architekturen unter Budget-, Latenz- und Redundanzrestriktionen, ist jedoch stark abhängig von kommerziellen OR-Solvern und stützt sich fast ausschließlich auf isolierte Ad-hoc-Kriterien.
+    \item \textit{Archetyp 3 (Fuzzy \& Credibilistic Decision Systems, $N = 14$):} Bietet eine überlegene mathematische Handhabung linguistischer Unschärfe von Gutachtern, erzeugt jedoch eine erhebliche kognitive Barriere durch intransparente Defuzzifizierungen (\enquote{Black-Box}-Charakter) und mangelnde benutzerfreundliche Software-Werkzeuge.
+    \item \textit{Archetyp 4 (Interactive, Intelligent \& Architecture-Aware DSS, $N = 7$):} Bildet die methodische Speerspitze durch integrierte Software-Werkzeuge ($v_{2.3}$), automatisierte Messreihen und post-selektive Adaptationsplanung (Glue-Code, Wrapper), scheitert in der Praxis jedoch häufig am Phänomen des akademischen \enquote{Prototypen-Friedhofs}.
+  \end{itemize}
+
+  \item \textbf{RQ3 (Morphologische Lücken und Zukunftsagenda):} Die kreuzkonsistente Analyse deckt fundamentale strukturelle Defizite an den Schnittstellen zwischen Werkzeugautomatisierung, standardisierten Qualitätsmodellen, automatisierter Telemetrie und mathematischer Mismatch-Optimierung auf.
+\end{enumerate}
+
+Über diese Einzelfragen hinausgehend lassen sich aus der Gesamtsynthese **drei übergreifende Kernbefunde** abstrahieren, welche die gegenwärtige Forschungslage prägen:
+
+\begin{enumerate}[label=\textbf{\Roman*.}]
+  \item \textbf{Methodische Spaltung der Forschungslandschaft:} Es existiert eine tiefe Dichotomie zwischen der isolierten Auswahl monolithischer Einzelpakete (z.\,B. ERP- oder CRM-Systeme mittels MCDA/Fuzzy) und der kombinatorischen Portfolio-Optimierung modularer Softwaresysteme (Component-Based Software Development, CBSD, mittels 0-1-Ganzzahlprogrammierung). Während erstere auf standardisierte Kriterienkataloge und Stakeholder-Konsens fokussieren, optimieren letztere mathematisch isolierte Komponentenmengen ohne Rückkopplung an übergeordnete Qualitätsnormen. Beide Forschungsstränge operieren weitgehend isoliert voneinander, wodurch methodische Synergien ungenutzt bleiben.
+  \item \textbf{Kluft zwischen mathematischer Theorie und industrieller Anwendbarkeit:} Während die akademische Forschung zunehmend hochkomplexe Formalismen entwickelt (wie mehrdimensionale Fuzzy-Supermatrizen, Kredibilitäts-Zufalls\-restriktionen oder nicht-lineare 0-1-Optimierungsmodelle), scheitert deren Praxistransfer an fehlenden grafischen Benutzeroberflächen, kognitiver Überlastung durch exzessive AHP-Paarvergleiche und dem Mangel an verständlichen Erklärungsmodellen für betriebliche Entscheider. Die Mehrheit der Methoden verharrt in skriptbasierten Solver-Prototypen ($v_{2.2}$: 53,8\,\%), die im industriellen Alltag nicht wartbar sind.
+  \item \textbf{Lebenszyklus-Defizit bei der Mismatch-Behandlung:} Nahezu 90\,\% der untersuchten Methoden beschränken sich darauf, architektonische und funktionale Inkompatibilitäten als statische K.-o.-Ausschlussfilter vor der eigentlichen Bewertung zu behandeln ($v_{3.2}, v_{3.3}$). Die betriebswirtschaftlich und softwarearchitektonisch entscheidende Quantifizierung nachgelagerter Adapter-, Wrapper- und Refaktorisierungskosten ($v_{3.4}$) wird im Auswahlzeitpunkt systematisch vernachlässigt, was zu gravierenden Kostenexplosionen bei der Systemeinführung führt.
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+% 5.2 Identifikation von Forschungslücken
+% ------------------------------------------------------------------------------
+\subsection{Identifikation von Forschungslücken}
+\label{subsec:identifikation_forschungsluecken}
+
+Die Durchführung des paarweisen Cross-Consistency Assessments (CCA) über alle $\binom{6}{2} = 15$ Teilmatrizen des morphologischen Feldes ($N = 2.592$ formal denkbare Konfigurationen) ermöglichte die mathematisch präzise Isolierung unbesetzter, jedoch methodisch konsistenter und hochgradig relevanter Innovationsräume ($?$). Im Folgenden werden die **vier zentralen morphologischen Forschungslücken** (GAP-1 bis GAP-4) detailliert analysiert, wodurch Forschungsfrage 3 (RQ3) vollständig und erschöpfend beantwortet wird. Tabelle~\ref{tab:morphologische_luecken} fasst die Lücken, ihre strukturellen Ursachen und die abgeleitete Forschungsagenda zusammen.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Strukturierte Übersicht der identifizierten morphologischen Forschungslücken}
+  \label{tab:morphologische_luecken}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.1cm}}
+    \toprule
+    \textbf{Lücke} & \textbf{Parameter-Kombination} & \textbf{Strukturelles Defizit in der Literatur} & \textbf{Theoretische \& praktische Barriere} & \textbf{Prioritäre Forschungsagenda} \\
+    \midrule
+    \textbf{GAP-1} 
+      & $(P_2 = v_{2.3}) \times (P_6 = v_{6.2})$ \newline DSS $\times$ ISO-Norm
+      & Vollständiges Fehlen interaktiver Decision Support Systems mit nativer Implementierung der ISO/IEC 25010.
+      & DSS-Prototypen nutzen proprietäre Ad-hoc-Bäume ($v_{6.1}$) oder Ontologien ($v_{6.3}$); ISO-Normen verharren in statischen Tabellenkalkulationen ($v_{2.2}$).
+      & Entwicklung quelloffener, modularer DSS-Plattformen mit vorkonfigurierten ISO-25010-Messbäumen und dynamischer Gewichtung. \\
+    \addlinespace[3pt]
+    \textbf{GAP-2} 
+      & $(P_1 = v_{1.3}) \times (P_3 = v_{3.4})$ \newline OR-Modelle $\times$ Adaptationsplan
+      & Mathematische Optimierungsmodelle berücksichtigen keine quantifizierte post-selektive Mismatch- und Glue-Code-Planung.
+      & OR-Modelle behandeln Inkompatibilitäten rein als binäre K.-o.-Restriktionen ($C_{ij} \in \{0,1\}$), wodurch anpassbare Komponenten verworfen werden.
+      & Formulierung dynamischer mathematischer Modelle, die Komponentenselektion und Wrapper-Entwicklungs\-aufwände simultan ko-optimieren. \\
+    \addlinespace[3pt]
+    \textbf{GAP-3} 
+      & $(P_2 = v_{2.3}) \times (P_4 = v_{4.4})$ \newline DSS $\times$ Evidential Reasoning
+      & Mangel an interaktiven DSS-Werkzeugen mit grafischer Modellierung unvollständiger Daten via Dempster-Shafer-Theorie.
+      & Evidential Reasoning verbleibt auf Ebene akademischer Formeln; keine anwenderfreundlichen GUIs zur Visualisierung von Nichtwissensintervallen.
+      & Konzeption webbasierter Evidenz-DSS, die Glaubens- und Plausibilitätsintervalle für Praktiker visuell erfahrbar machen. \\
+    \addlinespace[3pt]
+    \textbf{GAP-4} 
+      & $(P_5 = v_{5.2}) \times (P_6 = v_{6.2}) \times (P_2 = v_{2.3})$ \newline NFR $\times$ Norm $\times$ Benchmarking
+      & Weitgehende Entkopplung standardisierter Qualitätskataloge von automatisierter, empirischer Telemetrie- und Benchmark-Erhebung.
+      & ISO-Kriterien werden primär über subjektive Fragebögen evaluiert; objektive Testbeds (z.\,B. API-Fuzzing, Lasttests) bleiben isoliert.
+      & Nahtlose Integration automatisierter CI/CD-Pipelines und CVE-Sicherheitsfeeds in standardbasierte Qualitätsmodelle. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsubsection{GAP-1: DSS-Tooling versus standardisierte Qualitätsmodelle}
+\label{subsubsec:gap1}
+
+Die erste morphologische Lücke resultiert aus der Schnittmenge von dedizierten, interaktiven Entscheidungsunterstützungssystemen ($P_2 = v_{2.3}$) und standardbasierten Qualitätsmodellen ($P_6 = v_{6.2}$). Während 28,2\,\% aller Primärstudien ($N = 11$) interaktive Software-Werkzeuge vorstellen und 23,1\,\% ($N = 9$) auf die internationalen Qualitätsnormen ISO/IEC 9126 bzw. ISO/IEC 25010 rekurrieren, existiert im gesamten Literaturkorpus kein einziges interaktives DSS, das die ISO/IEC 25010 nativ, modular konfigurierbar und mit standardisierten Messvorschriften implementiert.
+
+Die Ursachenanalyse offenbart eine methodische Diskrepanz: Akademische DSS-Pionier\-werkzeuge wie CARE \parencite{6RNULWVY}, MiHOS \parencite{9F79VAAB} oder Atana \parencite{MZ8JHDYA} wurden primär als Machbarkeitsnachweise für spezifische algorithmische Konzepte (z.\,B. Anforderungsgraphen, Goal-Trees oder interaktive Pareto-Exploration) entworfen. Sie stützen sich folglich auf isolierte Ad-hoc-Kriterienbäume ($v_{6.1}$) oder proprietäre Ontologien ($v_{6.3}$). Umgekehrt werden standardisierte Qualitätsmodelle in der Forschung fast ausschließlich als statische Checklisten oder im Rahmen einfacher Tabellenkalkulationen und Skripte ($v_{2.2}$) operationalisiert \parencite{M3B2D3GD, DAU8NSK8, LYMHTPXS}. 
+
+Diese Lücke führt in der Praxis zu gravierenden Ineffizienzen: Entscheider müssen Standard-Qualitätskataloge entweder manuell in generische Tabellenkalkulationen überführen oder auf proprietäre Werkzeuge zurückgreifen, deren Kriterienstrukturen nicht mit internationalen Software-Engineering-Standards harmonieren. Zur Schließung dieser Lücke bedarf es der Entwicklung quelloffener, modular erweiterbarer DSS-Plattformen, welche die Haupt- und Subcharakteristika der ISO/IEC 25010 als vordefinierte Messbäume bereitstellen und mit dynamischen, anwendergesteuerten Gewichtungs- und Aggregationsmechanismen verknüpfen.
+
+\subsubsection{GAP-2: Automatisierte Mismatch-Resolution versus Mathematische Optimierung}
+\label{subsubsec:gap2}
+
+Die zweite fundamentale Lücke betrifft die Kombination aus mathematischer Optimierung des Operations Research ($P_1 = v_{1.3}$) und post-selektiver Mismatch- und Adaptationsplanung ($P_3 = v_{3.4}$). Mathematische Programmierungsansätze \parencite{ZQMG69VT, VUVLUN85, B7ZTQCZZ, JX4RDRDU, UFCEV52H, YVWGHAWQ} zeichnen sich durch ihre herausragende Fähigkeit aus, modulare Softwaresysteme unter kombinatorischen Restriktionen (z.\,B. Budgetgrenzen, Latenzen, Zuverlässigkeitsanforderungen) global optimal zu konfigurieren. 
+
+Dennoch weisen sämtliche existierenden OR-Modelle ein gravierendes Defizit auf: Sie modellieren architektonische und funktionale Inkompatibilitäten zwischen COTS-Komponenten ausnahmslos als starre, binäre Ausschlussbedingungen ($P_3 = v_{3.3}$, formuliert über Verträglichkeitsmatrizen mit $C_{ij} \in \{0, 1\}$). Wird eine Inkompatibilität zwischen zwei Komponenten $i$ und $j$ detektiert, erzwingt der Algorithmus den Ausschluss dieser Kombination. In der realen Softwarearchitekturpraxis stellen Schnittstellendiskrepanzen jedoch keineswegs zwingende K.-o.-Kriterien dar, sondern lösbare Adaptationsprobleme, die durch Konverter, Adapter oder Wrapper-Code (\textit{Glue-Code}) überwunden werden können \parencite{9F79VAAB, WZM7DUBY}.
+
+Durch die starre binäre Exklusion verwerfen aktuelle Optimierungsmodelle potenziell hochgradig kosteneffiziente Softwarekombinationen, bei denen eine geringfügige nachgelagerte Anpassung wirtschaftlicher gewesen wäre als die Wahl teurer, nativ kompatibler Alternativen. Die zukunftsgerichtete Forschungsagenda fordert daher die Formulierung dynamischer mathematischer Programmierungsmodelle, welche die Komponentenselektion und den geschätzten Aufwand für die Adapter- und Wrapper-Entwicklung simultan als endogene Entscheidungsvariablen in einer integrierten Kosten-Nutzen-Zielfunktion ko-optimieren.
+
+\subsubsection{GAP-3: Evidential Reasoning versus Interaktive DSS-Automatisierung}
+\label{subsubsec:gap3}
+
+Die dritte Lücke entsteht an der Schnittstelle von dedizierten DSS-Werkzeugen ($P_2 = v_{2.3}$) und fortgeschrittenen probabilistischen sowie evidenzbasierten Unsicherheitsmodellen ($P_4 = v_{4.4}$). Bei der Beschaffung kommerzieller Standardsoftware stehen Entscheidungsträger regelmäßig vor dem Problem, dass Herstellerangaben unvollständig, vage formuliert, marketinggetrieben oder widersprüchlich sind. 
+
+Klassische deterministische Verfahren ($v_{4.1}$) und traditionelle Fuzzy-MCDA-Modelle ($v_{4.2}$) scheitern an diesem Problem: Sie zwingen Gutachter dazu, fehlende Informationen künstlich durch Einzelwerte oder symmetrische Fuzzy-Zahlen zu substituieren, wodurch Nichtwissen fälschlicherweise als präzise Information interpretiert wird. Wie \textcite{LNQHES84} jüngst demonstrierte, bietet die Dempster-Shafer-Theorie der Evidenz bzw. das Evidential Reasoning (ER) hierfür die mathematisch überlegene Lösung, indem Expertenurteile über Glaubensverteilungen (\textit{Belief Distributions}) abgebildet werden und der Grad der Unvollständigkeit (\textit{Degree of Ignorance}) explizit als mathematische Restmasse $m(\Theta)$ modelliert wird.
+
+Bislang verbleibt der Evidential-Reasoning-Ansatz in der COTS-Literatur jedoch auf der Ebene isolierter mathematischer Formelsysteme und skriptbasierter Einzelberechnungen ($v_{2.2}$). Es existiert kein interaktives Software-Werkzeug, das betrieblichen Entscheidungsträgern eine intuitive grafische Benutzeroberfläche zur Verfügung stellt, um Evidenzintervalle zwischen Glaubensgrad (\textit{Belief}, $\text{Bel}(A)$) und Plausibilität (\textit{Plausibility}, $\text{Pl}(A)$) visuell zu erfassen, konfligierende Herstellerbehauptungen interaktiv zu aggregieren und die Auswirkung von Informationsgewinnen auf die Rangfolge in Echtzeit zu simulieren.
+
+\subsubsection{GAP-4: Standardbasierte Kriterienkataloge versus empirisch-automatisiertes Benchmarking}
+\label{subsubsec:gap4}
+
+Die vierte morphologische Forschungslücke betrifft das Zusammenspiel von Qualitätskriterienkatalogen ($P_5 = v_{5.2}$), Standard-Qualitätsmodellen ($P_6 = v_{6.2}$) und durchgängiger Entscheidungsunterstützungsautomatisierung ($P_2 = v_{2.3}$). Trotz zweier Jahrzehnte Forschung zur Operationalisierung von Qualitätsmerkmalen nach ISO/IEC 9126 und ISO/IEC 25010 beruht die Datenerhebung in der überwältigenden Mehrheit aller publizierten Arbeiten auf rein subjektiven Einschätzungen von Experten, manuell ausgefüllten Fragebögen oder statischen Dokumentenanalysen.
+
+Diese subjektive Praxis steht in scharfem Widerspruch zu modernen Software-Engineering-\-Paradigmen. Wie \textcite{8VHUMEKY} mit dem Plato-System eindrucksvoll demonstrierten, lassen sich zentrale Qualitätsattribute wie Performanz, Ressourcenverbrauch, Zuverlässigkeit und Datenintegrität durch automatisierte, kontrollierte Benchmark-Experi\-mente objektiv, reproduzierbar und quantitativ präzise vermessen. Allerdings blieb das Plato-System auf die Domäne der digitalen Langzeitarchivierung beschränkt und wurde nicht mit standardisierten ISO-25010-Qualitätsbäumen harmonisiert.
+
+In der COTS-Auswahl führt die Entkopplung von Qualitätsstandards und automatisierter Metrikerhebung zu einer hohen Fehleranfälligkeit: Herstellerversprechen hinsichtlich Durchsatz, Antwortzeiten oder Sicherheit werden ungeprüft übernommen. Notwendig ist daher die methodische und werkzeugtechnische Integration automatisierter CI/CD-Testbeds, API-Fuzzing-Engines, Lasttest-Generatoren und kontinuierlicher Sicherheits-Feeds (z.\,B. automatisierter Abgleich mit CVE-Sicherheitsdatenbanken) direkt in standardbasierte Bewertungsbäume.
+
+% ------------------------------------------------------------------------------
+% 5.3 Implikationen für Forschung und Praxis
+% ------------------------------------------------------------------------------
+\subsection{Implikationen für Forschung und Praxis}
+\label{subsec:implikationen_forschung_praxis}
+
+Aus den aggregierten Syntheseergebnissen und den aufgedeckten morphologischen Forschungslücken lassen sich weitreichende theoretische und praktische Implikationen für die wissenschaftliche Forschung und die industrielle Entscheidungspraxis ableiten.
+
+\subsubsection{Theoretische Implikationen für die wissenschaftliche Forschung}
+\label{subsubsec:theoretische_implikationen}
+
+Für die wissenschaftliche Gemeinschaft im Software Engineering und der Wirtschaftsinformatik markieren die Ergebnisse dieser Arbeit die Notwendigkeit dreier grundlegender Paradigmenwechsel:
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+  \item \textbf{Paradigmenwechsel zur kontinuierlichen Entscheidungsarchitektur:} \newline
+  Traditionelle COTS-Auswahlmethoden behandeln die Softwarebeschaffung als statischen, zeitlich isolierten Einpunkt-Akt (\textit{One-Shot Procurement}). In modernen dynamischen Unternehmens- und Multi-Cloud-Landschaften unterliegen Standardkomponenten und SaaS-Dienste jedoch kontinuierlichen Release-Zyklen, Schnittstellenanpassungen und Sicherheitsaktualisierungen. Die Forschung muss das Paradigma der COTS-Evaluation hin zu kontinuierlichen, telemetriegestützten Entscheidungsarchitekturen erweitern, die Auswahl-, Integrations- und Betriebsphase nahtlos miteinander verknüpfen.
+  
+  \item \textbf{Überwindung des \enquote{Prototypen-Friedhofs} durch Open-Source-Plattformen:} \newline
+  Die Analyse von Archetyp 4 verdeutlicht, dass bahnbrechende akademische DSS-Werkzeuge (z.\,B. CARE, MiHOS, Atana) nach Projektende regelmäßig verwaist sind und der Fachwelt nicht als quelloffene, wartbare Werkzeuge zur Verfügung stehen. Die wissenschaftliche Gemeinschaft muss sich auf nachhaltige Open-Source-Frameworks verständigen, die modulare Erweiterungen (z.\,B. neue MCDA-Algorithmen, Mismatch-Kostenmodelle oder automatisierte Test-Plugins) im Sinne des \textit{Open Synthesis}-Gedankens ermöglichen.
+  
+  \item \textbf{Methodische Bereinigung mathematischer Verzerrungsartefakte:} \newline
+  Die Arbeiten von \textcite{UK2X9C4W} und \textcite{LNQHES84} belegen eindrucksvoll, dass etablierte Heuristiken (wie naive Punkteverteilungen im Simplex-Raum oder willkürliche Defuzzifizierungen) gravierende statistische und mathematische Verzerrungen erzeugen. Zukünftige Arbeiten müssen zwingend auf mathematisch fundierte Verfahren wie die \textit{Compositional Data Analysis} (CoDa) mit isometrischen Log-Ratio-Transformationen sowie auf formale Glaubensverteilungen der Evidenztheorie setzen, um methodisch saubere, replizierbare Entscheidungsgrundlagen zu garantieren.
+\end{enumerate}
+
+\subsubsection{Praktische Handlungsempfehlungen für betriebliche Entscheidungsträger}
+\label{subsubsec:praktische_handlungsempfehlungen}
+
+Für IT-Architekten, Chief Information Officers (CIOs) und Beschaffungsverantwortliche liefert diese Arbeit einen theoriegeleiteten, evidenzbasierten **Kontingenz-Leitfaden**, der in Tabelle~\ref{tab:entscheidungsmatrix_praxis} als praxistaugliche Entscheidungsmatrix zusammengefasst ist.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Kontingenz-Entscheidungsmatrix zur Methodenauswahl in der Unternehmenspraxis}
+  \label{tab:entscheidungsmatrix_praxis}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.3cm}}
+    \toprule
+    \textbf{Entscheidungs\-kontext} & \textbf{Empfohlener Archetyp \& Methode} & \textbf{Zentrale Nutzenargumente für Praktiker} & \textbf{Kritische Umsetzungshinweise} \\
+    \midrule
+    \textbf{Monolithische Enterprise-Software} \newline (z.\,B. ERP, CRM, BPMS) 
+      & \textbf{Archetyp 1 \& 3} \newline Delphi-basiertes Fuzzy-AHP / F-TOPSIS nach ISO/IEC 25010 \parencite{5BBYQCJB, NZJEEPAC}
+      & Strukturierte Einbindung heterogener Fachabteilungen; verlässlicher Ausgleich linguistischer Bewertungsunschärfen; umfassende TCO-Betrachtung.
+      & Kriterienanzahl hierarchisch begrenzen (max. 7 Subkriterien pro Knoten); Sensitivitätsanalysen zwingend durchführen. \\
+    \addlinespace[3pt]
+    \textbf{Modulare CBSD- \& Cloud-Systeme} \newline (z.\,B. Microservices, Multi-Komponenten) 
+      & \textbf{Archetyp 2} \newline Multikriterielle 0-1-Optimierung via Pareto-Exploration \parencite{MZ8JHDYA, YVWGHAWQ}
+      & Globale Ko-Optimierung von Systemlatenz, Schnittstellenkompatibilität und Budget; transparente Visualisierung von Trade-offs.
+      & Nutzung von Open-Source-Solvern; Verzicht auf starre \textit{a-priori}-Gewichte; dynamische Erkundung der Pareto-Front. \\
+    \addlinespace[3pt]
+    \textbf{Sicherheitskritische Systeme} \newline (z.\,B. Avionik, Medizintechnik, IoT) 
+      & \textbf{Archetyp 4} \newline Bayes-Netze (BBN) \& Evidential Reasoning \parencite{QDUNCXFC, LNQHES84}
+      & Mathematisch exakte Modellierung von Ausfallwahrscheinlichkeiten und unvollständigen Herstellerangaben; Nicht-Kompensatorik.
+      & Rigorose Veto-Schwellen gegen Sicherheitsrisiken; Verifikation via automatisierter Benchmark-Messreihen \parencite{8VHUMEKY}. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Aus dieser Kontingenzmatrix ergeben sich drei fundamentale operative Handlungsempfehlungen für die Unternehmenspraxis:
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+  \item \textbf{Senkung der kognitiven Last im Anforderungsmanagement:}  
+  Unternehmen sollten auf naive Voll-Paarvergleiche nach dem klassischen AHP verzichten, sobald Kriterienbäume mehr als 10 bis 15 Attribute umfassen. Zur Vermeidung von Inkonsistenzen und kognitiver Ermüdung der Fachexperten empfiehlt sich entweder der Einsatz interaktiver Pareto-DSS-Verfahren nach dem Atana-Prinzip \parencite{MZ8JHDYA} oder die Nutzung entropiebasierter objektiver Gewichtungsverfahren wie FMDBA \parencite{FVINCQ89}, bei denen Kriteriengewichte direkt aus der inhärenten Streuung der Marktdaten abgeleitet werden.
+  
+  \item \textbf{Explizite Budgetierung des Mismatch-Handlings im Total Cost of Ownership (TCO):}  
+  Die Gesamtkosten einer COTS-Einführung werden selten durch den reinen Lizenzpreis determiniert, sondern durch nachgelagerte Anpassungs- und Integrationsaufwände. Entscheidungsträger müssen fordern, dass Schnittstellendiskrepanzen, funktionale Überhänge und architektonische Lücken bereits während der Evaluierungsphase quantifiziert werden (z.\,B. unter Nutzung der Formalismen von \textcite{9F79VAAB} und \textcite{WZM7DUBY}). Die voraussichtlichen Kosten für Wrapper-Programmierung und Middleware-Anpassungen müssen als endogene Kostenpositionen in den Wirtschaftlichkeitsvergleich einfließen.
+  
+  \item \textbf{Kombination subjektiver Expertenurteile mit empirischer Telemetrie:}  
+  Entscheidungsgremien sollten sich nicht ausschließlich auf subjektive Anbieterpräsentationen oder statische Datenblätter verlassen. Für geschäftskritische Kernkomponenten sind Proof-of-Concept-Teststellungen mit automatisierten Last- und Benchmark-Messungen (in Anlehnung an \textcite{8VHUMEKY}) durchzuführen, um reale Performanz- und Zuverlässigkeitswerte direkt in die Kriterienbäume einzuspeisen.
+\end{enumerate}
+
+% ------------------------------------------------------------------------------
+% 5.4 Limitationen
+% ------------------------------------------------------------------------------
+\subsection{Limitationen}
+\label{subsec:limitationen}
+
+Zur Wahrung der wissenschaftlichen Integrität und methodischen Transparenz müssen die Grenzen der vorliegenden Untersuchung sowie potenzielle Validitätsbedrohungen offengelegt werden.
+
+\subsubsection{Methodische Grenzen der Literaturrecherche}
+\label{subsubsec:grenzen_recherche}
+
+Hinsichtlich des Such- und Selektionsprozesses bestehen folgende methodische Limitationen:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Selektion der Fachdatenbanken:} Die systematische Suche konzentrierte sich auf vier führende wissenschaftliche Datenbanken (IEEE Xplore, ACM Digital Library, EBSCOhost Business Source Premier, Springer Nature eBooks). Obwohl diese Plattformen das Kernspektrum des Software Engineering und der Wirtschaftsinformatik umfassend abdecken, kann nicht ausgeschlossen werden, dass relevante Beiträge in rein mathematischen Spezialjournalen, regionalen Konferenzbänden oder nicht-indexierter grauer Literatur unberücksichtigt blieben.
+  \item \textbf{Sprachliche und zeitliche Beschränkung:} Der Fokus lag ausschließlich auf peer-reviewten Publikationen in englischer und deutscher Sprache im Veröffentlichungszeitraum 2000 bis 2026. Frühere historische Pionierarbeiten der 1990er Jahre wurden nur insoweit erfasst, wie sie in den analysierten Primärstudien rezipiert wurden.
+  \item \textbf{Retrieval-Bias bei der Volltextbeschaffung:} Von 89 als hochrelevant eingestuften Arbeiten konnten 43 Publikationen trotz extensiver Recherche über die institutionellen Lizenzen der DHBW CAS und Open-Access-Repositorien nicht als Volltext beschafft werden (\textit{Not Retrieved Bias}). Dieser Umstand spiegelt die generelle Problematik geschlossener Verlagskonsortien wider. Das verbleibende Korpus von $N = 39$ Arbeiten ist mit 92,3\,\% High-QA-Studien jedoch statistisch und methodisch hochgradig repräsentativ.
+\end{itemize}
+
+\subsubsection{Validitätsbedrohungen beim Einsatz generativer KI und Gegenmaßnahmen}
+\label{subsubsec:validitaet_ki}
+
+Der kontrollierte Einsatz agentischer Sprachmodelle (Google Gemini 3.1 Pro, 3.5 Flash, 3.6 Flash) zur Unterstützung von Screening, Qualitätsbewertung und Datenextraktion birgt theoretische Risiken hinsichtlich semantischer Halluzinationen, Bestätigungs\-verzerrungen (\textit{Confirmation Bias}) und unpräziser Formelinterpretationen.
+
+Diese potenziellen Validitätsbedrohungen wurden durch das in Abschnitt~\ref{subsec:methodischer_gesamtrahmen} spezifizierte **fünfstufige Anti-Halluzinations-Framework** vollständig neutralisiert:
+\begin{enumerate}[label=(\alph*), leftmargin=*]
+  \item \textbf{Isolierte Subagent-per-Paper-Architektur:} Jedes Primärdokument wurde von einem separaten Subagenten ohne Kontextübertragung analysiert, wodurch Informationsvermischungen zwischen Studien konstruktiv ausgeschlossen wurden.
+  \item \textbf{Strikte wörtliche Belegpflicht:} Sämtliche Qualitätsbewertungen und Extraktionswerte mussten zwingend durch exakte Originalzitate im Format \texttt{[p.~X, Sec.~Y: "Verbatim quote"]} nachgewiesen werden.
+  \item \textbf{Deterministische Programmverifikation (\texttt{verify\_quotes.py}):} Ein automatisiertes Python-Prüfprogramm glich alle 634 Zitate (156 Quality-Appraisal-Belege und 478 Datenextraktionsbelege) zeichengenau gegen die Volltexte der JSON-Dateien ab und erzielte eine verifizierte Trefferquote von ausnahmslos 100,0\,\%.
+  \item \textbf{Manuelle Validierung:} Alle aggregierten CSV-Matrizen und morphologischen Zuordnungen wurden abschließend durch den Forscher stichprobenartig manuell überprüft.
+\end{enumerate}
+
+\subsubsection{Grenzen der morphologischen Analyse (GMA)}
+\label{subsubsec:grenzen_gma}
+
+Auch die General Morphological Analysis nach Zwicky und Ritchey \parencite{Z6N6V5L9} unterliegt inhärenten methodischen Restriktionen:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Diskretisierungsartefakte:} Um das multidimensionale Problemfeld in einem handhabbaren Konfigurationsraum ($N = 2.592$) abzubilden, mussten kontinuierliche und facettenreiche methodische Eigenschaften in sechs diskrete Parameter ($P_1$ bis $P_6$) mit jeweils drei bis sechs diskreten Ausprägungen überführt werden. Hierbei lassen sich minimale Informationsverluste hinsichtlich hochspezifischer Algorithmenvarianten nicht vollständig vermeiden.
+  \item \textbf{Restsubjektivität bei Grenzfällen:} Obwohl die Zuordnung der 39 Studien zu den morphologischen Ausprägungen und den vier Archetypen strikt kriteriengeleitet und zitatbasiert erfolgte, verbleibt bei komplexen Hybridansätzen (z.\,B. Arbeiten, die AHP, Fuzzy-Logik und Optimierungsmodelle simultan kombinieren) ein unvermeidbarer Ermessensspielraum bei der Bestimmung des methodischen Primärschwerpunkts.
+\end{itemize}
+
+Zusammenfassend bietet die vorliegende Untersuchung trotz dieser unvermeidbaren Limitationen ein in sich geschlossenes, methodisch hochgradig rigides und nachvollziehbares Fundament, das den Stand der Forschung zur COTS-Softwareauswahl umfassend synthetisiert und zukunftsweisende Impulse für Theorie und Praxis liefert.
