@@ -57,7 +57,7 @@ Wie in Abbildung~\ref{fig:prisma_flowchart} visualisiert, gliederte sich der Sel
 
 Eine zentrale Publikation wurde aus der Proposal-Recherche integriert, bei der es sich um das COTS-ESF Framework von \textcite{WZM7DUBY} handelt. Die finale Literatursammlung umfasst somit exakt 39 Publikationen (\textit{Reports}), welche 38 unabhängige Primärstudien (\textit{Studies}) repräsentieren, da die Publikationen von \textcite{ZQMG69VT} und \textcite{MZ8JHDYA} als zusammengehöriges Forschungscluster bewertet werden.
 
-\subsubsection{Demografische und bibliometrische Struktur der Litaratursammlung}
+\subsubsection{Demografische und bibliometrische Struktur der Literatursammlung}
 \label{subsubsec:demografie_korpus}
 
 Die bibliometrische Analyse der Literatursammlung über den Zeitraum 2000 bis 2026 zeigt eine kontinuierliche wissenschaftliche Befassung mit der COTS-Auswahlproblematik. Tabelle~\ref{tab:demografie_qa_uebersicht} fasst die demografischen Kennzahlen, Publikationskanäle und Quality-Appraisal-Ergebnisse zusammen.
@@ -226,7 +226,28 @@ Einen wegweisenden Schritt zur Behandlung erkenntnistheoretischer Unvollständig
 \subsection{Morphologische Analyse der COTS-Auswahlmethoden}
 \label{subsec:morphologische_analyse_ergebnisse}
 
-Zur Beantwortung von Forschungsfrage 2 wird die General Morphological Analysis (GMA) nach Zwicky und Ritchey \parencite{Z6N6V5L9} herangezogen. Das resultierende sechsdimensionale morphologische Feld formalisiert den Lösungsraum aller 39 Primärstudien über $N = 2.592$ theoretische Konfigurationen.
+Zur Beantwortung von Forschungsfrage 2 (\textit{Welche methodischen Merkmale, Stärken und praktischen Grenzen kennzeichnen aktuelle Auswahlmethoden, und welche übergeordneten Lösungsarchetypen lassen sich identifizieren?}) wird die in Abschnitt~\ref{subsec:morphologische_analyse_methodik} hergeleitete General Morphological Analysis (GMA) nach Zwicky und Ritchey \parencite[S.~81--91]{Z6N6V5L9} empirisch auf das Primärliteraturkorpus angewendet.
+
+\subsubsection{Induktive Konstruktion des morphologischen Feldes}
+\label{subsubsec:feldkonstruktion}
+
+Die sechs Schlüsselparameter ($P_1 \dots P_6$) und ihre diskreten Ausprägungen wurden induktiv und theoriegeleitet aus den Merkmalsclustern der 18-spaltigen Datenextraktionsmatrix (Abschnitt~\ref{subsec:qualitaetsbewertung_datenextraktion}) abgeleitet. Sie erfüllen die formalen Bedingungen der Parameter-Orthogonalität (wechselseitiger Ausschluss) und kollektiven Erschöpfung \parencite[S.~82--83]{Z6N6V5L9}:
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
+  \item \textbf{$P_1$ (Mathematisches Entscheidungs- und Gewichtungsmodell):} Operationalisiert das fundamentale mathematische Paradigma aus den Extraktionsfeldern \texttt{Mathematical\_Decision\_Model} und \texttt{Primary\_Methodological\_Approach}. Es umfasst $|P_1| = 6$ disjunkte Ausprägungen: klassische MCDA ($v_{1.1}$), Outranking ($v_{1.2}$), mathematische Optimierung ($v_{1.3}$), Fuzzy-MCDA/OR ($v_{1.4}$), probabilistische/wissensbasierte KI ($v_{1.5}$) und rein qualitative/zielorientierte Modelle ($v_{1.6}$).
+  \item \textbf{$P_2$ (Entscheidungsunterstützungs-Automatisierung):} Erfasst den werkzeugtechnischen Reifegrad aus dem Feld \texttt{Decision\_Support\_Automation} mit $|P_2| = 3$ Ausprägungen: manuelle Leitfäden ($v_{2.1}$), Solver/Skripte/Tabellenkalkulationen ($v_{2.2}$) und vollwertige interaktive Decision Support Systems mit GUI ($v_{2.3}$).
+  \item \textbf{$P_3$ (Mismatch- und Inkompatibilitätsbehandlung):} Systematisiert die architektonische Integrationsfähigkeit aus den Feldern \texttt{Mismatch\_Handling} und \texttt{Mismatch\_Handling\_Phase} mit $|P_3| = 4$ Ausprägungen: keine Behandlung ($v_{3.1}$), Vorabfilterung ($v_{3.2}$), mathematische Nebenbedingungen ($v_{3.3}$) und post-selektive Adaptationsplanung inklusive Schnittstellen-/Wrapper-Kosten ($v_{3.4}$).
+  \item \textbf{$P_4$ (Unsicherheits- und Unschärfemodellierung):} Klassifiziert den mathematischen Umgang mit epistemischer und stochastischer Vagheit aus dem Feld \texttt{Uncertainty\_Handling} mit $|P_4| = 4$ Ausprägungen: deterministische Punktwerte ($v_{4.1}$), Fuzzy-Set-Theorie ($v_{4.2}$), Sensitivitäts-/Intervallanalysen inklusive CoDa ($v_{4.3}$) und probabilistische Bayes-/Evidenztheorie ($v_{4.4}$).
+  \item \textbf{$P_5$ (Umfang des Kriterienkatalogs):} Bildet die inhaltliche Bewertungsbreite aus dem Feld \texttt{Covered\_Criteria\_Types} mit $|P_5| = 3$ Ausprägungen ab: rein funktionale Eignung ($v_{5.1}$), Softwarequalität und Performance ($v_{5.2}$) sowie ganzheitlich-mehrdimensionale Kriterienbäume ($v_{5.3}$).
+  \item \textbf{$P_6$ (Kriterien-Standardisierung und Wiederverwendbarkeit):} Erfasst den Grad der normativen Verankerung aus dem Feld \texttt{Criteria\_Catalog\_Structure} mit $|P_6| = 3$ Ausprägungen: ad-hoc generiert ($v_{6.1}$), standardbasiert nach ISO/IEC 9126 bzw. ISO/IEC 25010 ($v_{6.2}$) und wiederverwendbare Ontologien bzw. Wissensbasen ($v_{6.3}$).
+\end{enumerate}
+
+Das kartesische Produkt der Parameterdomänen spannt einen theoretischen Gesamtraum von
+\begin{equation}
+  N = \prod_{i=1}^{6} |P_i| = 6 \times 3 \times 4 \times 4 \times 3 \times 3 = 2.592 \text{ Konfigurationen}
+\end{equation}
+auf. Das vollständige morphologische Feld samt den relativen Häufigkeitsverteilungen im Primärkorpus ist in Tabelle~\ref{tab:morphologisches_feld} dargestellt.
+
+Im Rahmen des durchgeführten Cross-Consistency Assessments (CCA) wurden alle $\binom{6}{2} = 15$ zweidimensionalen Sub-Matrizen mit insgesamt 219 paarweisen Zustandskombinationen evaluiert: 154 Kombinationen wurden im Schrifttum empirisch beobachtet ($O$), 61 Kombinationen stellen plausible und theoretisch konsistente Innovationsräume dar ($?$), während 4 Kombinationen als logisch-strukturell inkonsistent identifiziert wurden ($X$, z.\,B. rein manuelle Durchführung gepaart mit nicht-linearer Ganzzahloptimierung).
 
 \begin{landscape}
 \begin{table}[p]

@@ -5,7 +5,7 @@
 \section{Forschungsdesign}
 \label{sec:forschungsdesign}
 
-Dieses Kapitel beschreibt das methodische Fundament der Studienarbeit. Um den verteilten Forschungsstand zu Methoden der Evaluierung und Auswahl von COTS-Software (\textit{Commercial Off-The-Shelf}) systematisch zu erfassen und kritisch zu bewerten, bedarf es eines transparenten, methodisch fundierten und replizierbaren Forschungsdesigns. Im Folgenden wird zunächst der methodische Gesamtrahmen hergeleitet, der das achtstufige Vorgehensmodell für eigenständige systematische Literaturübersichten (\textit{Systematic Literature Reviews}, SLR) nach \textcite{2NHFUF5N} mit den Berichtsstandards des PRISMA-2020-Statements \parencite{BP42WGEK} verknüpft. Zudem wird der komplementäre Einsatz agentischer Sprachmodelle unter strengen Verifikations- und Anti-Halluzinationsprotokollen offengelegt. Daran anknüpfend werden die Operationalisierung der Such- und Screening-Prozesse, das vierdimensionale Schema zur Qualitätsbewertung (\textit{Quality Appraisal}), die standardisierte 18-spaltige Datenextraktionsmatrix sowie die Methodik der General Morphological Analysis (GMA) nach Fritz Zwicky und Tom Ritchey detailliert beschrieben.
+Dieses Kapitel legt das methodische Fundament der vorliegenden Studienarbeit dar. Um den dispers verteilten, über mehr als zwei Jahrzehnte gewachsenen Forschungsstand zu Methoden der Evaluierung und Auswahl von Commercial-Off-The-Shelf-Software (COTS) systematisch zu erfassen, kritisch zu bewerten und theoriegeleitet zu synthetisieren, bedarf es eines transparenten, methodisch rigorosen und intersubjektiv nachvollziehbaren Forschungsdesigns. Im Folgenden wird zunächst der methodische Gesamtrahmen hergeleitet, der das achtstufige Vorgehensmodell für eigenständige systematische Literaturübersichten (\textit{Systematic Literature Reviews}, SLR) nach \textcite[S.~879--910]{2NHFUF5N} mit den Berichts- und Transparenzstandards des PRISMA-2020-Statements \parencite[S.~1--9]{BP42WGEK} verknüpft. Zudem wird der komplementäre Einsatz agentischer großer Sprachmodelle unter strengen Verifikations- und Anti-Halluzinationsprotokollen offengelegt. Daran anknüpfend werden die Operationalisierung der Such- und Filterprozesse, das theoriegeleitete Schema zur Qualitätsbewertung (\textit{Quality Appraisal}), die standardisierte Datenextraktionsmatrix sowie die wissenschaftstheoretische Methodik der General Morphological Analysis (GMA) nach Fritz Zwicky und Tom Ritchey \parencite[S.~81--91]{Z6N6V5L9} fundiert beschrieben.
 
 % ------------------------------------------------------------------------------
 % 3.1 Methodischer Gesamtrahmen und Vorgehensmodell nach Okoli
@@ -13,47 +13,75 @@ Dieses Kapitel beschreibt das methodische Fundament der Studienarbeit. Um den ve
 \subsection{Methodischer Gesamtrahmen und Vorgehensmodell nach Okoli}
 \label{subsec:methodischer_gesamtrahmen}
 
-In den Disziplinen des Software Engineering und der Wirtschaftsinformatik stellt die systematische Literaturübersicht ein zentrales Instrument der Sekundärforschung dar. Während traditionelle Übersichtsarbeiten anfällig für Selektionsverzerrungen (\textit{Selection Bias}) und mangelnde prozedurale Nachvollziehbarkeit sind, zeichnet sich eine eigenständige SLR durch einen streng formalisierten, kriteriengeleiteten und reproduzierbaren Prozess aus. Ziel ist es, die Gesamtheit der verfügbaren Primärevidenz zu einem definierten Untersuchungsgegenstand erschöpfend zu identifizieren, deren methodische Güte unabhängig zu prüfen und die heterogenen Befunde theorieorientiert zu aggregieren \parencite[vgl.][S. 880 – 882]{2NHFUF5N}. Angesichts der über zwei Jahrzehnte gewachsenen, stark fragmentierten Methodenlandschaft im Bereich der COTS-Auswahl bildet ein solches Vorgehen die notwendige Voraussetzung, um bestehende Ansätze von frühen Heuristiken bis hin zu modernen Optimierungsmodellen belastbar zu vergleichen.
+In den Disziplinen des Software Engineering und der Wirtschaftsinformatik stellt die systematische Literaturübersicht ein zentrales Instrument der wissenschaftlichen Sekundärforschung dar. Während traditionelle narrative Übersichtsarbeiten anfällig für unbewusste Selektionsverzerrungen (\textit{Selection Bias}) und eine mangelnde prozedurale Nachvollziehbarkeit sind, zeichnet sich eine eigenständige SLR durch einen streng formalisierten, kriteriengeleiteten und replizierbaren Forschungsprozess aus. Ziel ist es, die Gesamtheit der verfügbaren Primärevidenz zu einem präzise abgegrenzten Untersuchungsgegenstand systematisch zu identifizieren, deren methodische Güte unabhängig zu prüfen und die dispersen Einzelbefunde theorieorientiert zu aggregieren \parencite[S.~880--882]{2NHFUF5N}. Angesichts der stark fragmentierten Methodenlandschaft im Bereich der COTS-Auswahl bildet ein solches Vorgehen die notwendige Voraussetzung, um bestehende Ansätze von frühen heuristischen Modellen bis hin zu modernen mathematischen Optimierungsverfahren belastbar zu vergleichen.
 
-Für die vorliegende Arbeit wird das von \textcite{2NHFUF5N} etablierte Leitfadenmodell zugrunde gelegt. Dieses Leitfadenmodell gliedert sich in vier Phasen mit acht Einzelschritten:
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Phasen und Schritte des methodischen Vorgehens nach \textcite[S.~882--905]{2NHFUF5N}}
+  \label{tab:okoli_phasen}
+  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{3.2cm}X>{\raggedright\arraybackslash}p{3.5cm}}
+    \toprule
+    \textbf{Phase} & \textbf{Schritt nach Okoli} & \textbf{Zielsetzung im Kontext der Studienarbeit} & \textbf{Eingesetzte Werkzeuge \& Methoden} \\
+    \midrule
+    \multirow{2}{*}{\textbf{1. Planung}} 
+      & 1. Identify Purpose & Präzisierung der Forschungsziele und Forschungsfragen (RQ1--RQ3) & Problemstellung, Zieltaxonomie \\
+      & 2. Draft Protocol & Spezifikation des Review-Protokolls und des Mastersuchstrings & Gemini 3.1 Pro, PRISMA 2020 \\
+    \addlinespace[2pt]
+    \multirow{2}{*}{\textbf{2. Auswahl}} 
+      & 3. Search Literature & Systematische Recherche in vier wissenschaftlichen Fachdatenbanken & IEEE, ACM, EBSCO, Springer, Python-API \\
+      & 4. Apply Practical Screen & Dreistufiger Filterprozess (Metadaten-, Relevanz- und Eignungsprüfung) & Zotero, Gemini 3.5 Flash, Screening-Raster \\
+    \addlinespace[2pt]
+    \multirow{2}{*}{\textbf{3. Extraktion}} 
+      & 5. Appraise Quality & Methodische Qualitätsbewertung anhand von QA1--QA4 & Gemini 3.7 Flash, \texttt{verify\_quotes.py} \\
+      & 6. Extract Data & Strukturierte 18-spaltige Evidenz- und Merkmaltextraktion & Subagent-per-Paper, JSON-Textextraktion \\
+    \addlinespace[2pt]
+    \multirow{2}{*}{\textbf{4. Ausführung}} 
+      & 7. Synthesize Studies & Evolutionäre Analyse \& General Morphological Analysis (GMA) & Ritchey-Formalismus, Kreuzkonsistenz \\
+      & 8. Write Review & Wissenschaftliche Berichterstattung gemäß akademischer Standards & LaTeX, Shiny App \parencite{MQ9M8Q7L} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Für die vorliegende Arbeit wird das von \textcite[S.~882--905]{2NHFUF5N} etablierte Leitfadenmodell zugrunde gelegt. Dieses gliedert sich in vier sequentielle Phasen mit acht aufeinander aufbauenden Einzelschritten (siehe Tabelle~\ref{tab:okoli_phasen}):
 \begin{enumerate}[label=\textbf{Phase \arabic*:}, leftmargin=*]
-    \item \textbf{Planning}
-    \begin{enumerate}[label=\textbf{Schritt \arabic*:}, leftmargin=*]
-        \item \textbf{Identify the Purpose:} Präzise Definition des Forschungszwecks und Ableitung theoriegeleiteter Forschungsfragen zur Abgrenzung des Untersuchungsgegenstands.
-        \item \textbf{Draft Protocol and Train the Team:} Spezifikation eines Review-Protokolls mit Suchbegriffen, Fachdatenbanken, Ein- und Ausschlusskriterien sowie Extraktionsvariablen.
-    \end{enumerate}
-    \item \textbf{Selection}
-    \begin{enumerate}[start=3, label=\textbf{Schritt \arabic*:}, leftmargin=*]
-        \item \textbf{Search for Literature:} Durchführung der systematischen Suche in Fachdatenbanken über syntaktisch adaptierte Abfragen.
-        \item \textbf{Apply Practical Screen:} Sequentielles Filtern der Treffermenge anhand vordefinierter praktischer Kriterien.
-    \end{enumerate}
-    \item \textbf{Extraction}
-    \begin{enumerate}[start=5, label=\textbf{Schritt \arabic*:}, leftmargin=*]
-        \item \textbf{Appraise Quality:} Systematische Begutachtung der methodischen Rigorosität und Validität aller Primärstudien anhand standardisierter Kriterien.
-        \item \textbf{Extract Data:} Systematische Datenerhebung aus den Volltexten mittels einer standardisierten Extraktionsmatrix.
-    \end{enumerate}
-    \item \textbf{Execution}
-    \begin{enumerate}[start=7, label=\textbf{Schritt \arabic*:}, leftmargin=*]
-        \item \textbf{Synthesize Studies:} Synthese der extrahierten Informationen.
-        \item \textbf{Write the Review:} Strukturierte, transparente Dokumentation der Syntheseergebnisse unter Einhaltung internationaler Berichtsstandards.
-    \end{enumerate}
+  \item \textbf{Planung (\textit{Planning}):} 
+  \begin{enumerate}[label=\textbf{Schritt \arabic*:}, leftmargin=*]
+    \item \textbf{Identify the Purpose:} Präzise Definition des Forschungszwecks und theoriegeleitete Ableitung der Forschungsfragen zur Schärfung des Untersuchungsgegenstands \parencite[S.~886--887]{2NHFUF5N}.
+    \item \textbf{Draft Protocol and Train the Team:} Ausarbeitung eines detaillierten Review-Protokolls mit Suchbegriffen, Datenbanken, Ein- und Ausschlusskriterien sowie Extraktionsvariablen \parencite[S.~887--889]{2NHFUF5N}.
+  \end{enumerate}
+  \item \textbf{Auswahl (\textit{Selection}):}
+  \begin{enumerate}[start=3, label=\textbf{Schritt \arabic*:}, leftmargin=*]
+    \item \textbf{Search for Literature:} Durchführung der Suche in elektronischen Fachdatenbanken über syntaktisch adaptierte Abfragestrings \parencite[S.~889--892]{2NHFUF5N}.
+    \item \textbf{Apply Practical Screen:} Sequentielles Filtern der Treffermenge anhand vordefinierter praktischer Kriterien über einen mehrstufigen Trichteransatz \parencite[S.~892--893]{2NHFUF5N}.
+  \end{enumerate}
+  \item \textbf{Extraktion (\textit{Extraction}):}
+  \begin{enumerate}[start=5, label=\textbf{Schritt \arabic*:}, leftmargin=*]
+    \item \textbf{Appraise Quality:} Systematische Begutachtung der methodischen Rigorosität und Validität aller Primärstudien anhand eines standardisierten Kriterienrasters \parencite[S.~893--896]{2NHFUF5N}.
+    \item \textbf{Extract Data:} Systematische Datenerhebung aus den Volltexten mittels einer standardisierten 18-spaltigen Extraktionsmatrix \parencite[S.~896--898]{2NHFUF5N}.
+  \end{enumerate}
+  \item \textbf{Ausführung (\textit{Execution}):}
+  \begin{enumerate}[start=7, label=\textbf{Schritt \arabic*:}, leftmargin=*]
+    \item \textbf{Synthesize Studies:} Qualitative, evolutionäre und morphologische Synthese der Evidenz zur Identifikation von Entwicklungspfaden, Archetypen und Forschungslücken \parencite[S.~898--902]{2NHFUF5N}.
+    \item \textbf{Write the Review:} Strukturierte, transparente Dokumentation der Syntheseergebnisse unter Einhaltung wissenschaftlicher Berichtsstandards \parencite[S.~902--905]{2NHFUF5N}.
+  \end{enumerate}
 \end{enumerate}
 
-Als struktureller Leitfaden wird das PRISMA-2020-Statement von \textcite{BP42WGEK} integriert. Dieses fordert die lückenlose Dokumentation des Selektionsprozesses über ein standardisiertes Flussdiagramm, die Offenlegung von Ausschlussgründen auf Volltextebene sowie die methodische Unterscheidung zwischen Publikationsdokumenten (\textit{Reports}) und eigenständigen Forschungsarbeiten (\textit{Studies}).
+Als struktureller Berichts- und Qualitätsleitfaden wird das PRISMA-2020-Statement von \textcite[S.~1--9]{BP42WGEK} integriert. Dieses fordert die lückenlose Dokumentation des Selektionsprozesses über ein standardisiertes Flussdiagramm, die explizite Offenlegung von Ausschlussgründen auf Volltextebene sowie die methodische Unterscheidung zwischen Publikationsdokumenten (\textit{Reports}) und eigenständigen Forschungsstudien (\textit{Studies}) \parencite[S.~3--5]{BP42WGEK}.
 
-Zur Bewältigung der hohen Textkomplexität innerhalb des vorgegebenen Zeitrahmens dieser Arbeit wurde der Prozess durch den kontrollierten Einsatz agentischer großer Sprachmodelle (Google Antigravity mit Google Gemini LLMs) unterstützt. Gemäß dem Prinzip wissenschaftlicher Redlichkeit wird dieser Einsatz differenziert offengelegt:
+Zur Bewältigung der hohen Textkomplexität innerhalb des Bearbeitungszeitraums wurde der Forschungsprozess durch den kontrollierten Einsatz agentischer großer Sprachmodelle (Google Antigravity mit Google Gemini LLMs) unterstützt. Gemäß dem Prinzip wissenschaftlicher Redlichkeit und Transparenz wird dieser Werkzeugeinsatz differenziert offengelegt:
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Gemini 3.1 Pro (Deep Think):} Konzeption, semantische Schärfung und Strukturierung des Mastersuchstrings.
-  \item \textbf{Gemini 3.5 Flash (Extended):} Syntaktische Transformation des Mastersuchstrings auf die Fachdatenbanken, Skripterstellung für API-Exporte (z.\,B. Springer Nature Reference API) sowie Durchführung der ersten beiden Screening-Stufen.
-  \item \textbf{Gemini 3.7 Flash (High):} Volltextanalyse, methodisches Quality-Appraisal-Scoring, Datenextraktion und Vorstrukturierung der morphologischen Parameterzustände.
+  \item \textbf{Gemini 3.1 Pro (Deep Think):} Konzeption, semantische Schärfung und Boolesche Strukturierung des domänenweiten Mastersuchstrings.
+  \item \textbf{Gemini 3.5 Flash (Extended):} Syntaktische Transformation des Mastersuchstrings auf die jeweiligen Fachdatenbanken, Skripterstellung für API-Exporte (z.\,B. Springer Nature Reference API) sowie Ausführung der ersten beiden Screening-Stufen.
+  \item \textbf{Gemini 3.7 Flash (High):} Volltextanalyse, theoriegeleitetes Quality-Appraisal-Scoring, strukturierte Datenextraktion und Vorstrukturierung morphologischer Parameterzustände.
 \end{itemize}
 
-Um das bei generativen Sprachmodellen inhärente Risiko von Halluzinationen oder Fehlinterpretationen vollständig zu eliminieren, wurde ein mehrschichtiges Anti-Halluzinations-Framework etabliert:
+Um das bei generativen Sprachmodellen inhärente Risiko von Halluzinationen oder Fehlinterpretationen vollständig zu eliminieren, wurde ein fünfstufiges Anti-Halluzinations-Framework etabliert:
 \begin{enumerate}[label=(\alph*), leftmargin=*]
-  \item \textbf{Subagent-per-Paper-Architektur:} Jedes Primärdokument wurde von einer isolierten Subagenten-Instanz in einem separaten Kontext verarbeitet, um Informationsübertragungen zwischen Studien (\textit{Cross-Contamination}) konstruktiv auszuschließen.
+  \item \textbf{Subagent-per-Paper-Architektur:} Jedes Primärdokument wurde von einer isolierten Subagenten-Instanz in einem separaten Kontext verarbeitet, um unbewusste Informationsübertragungen zwischen Studien (\textit{Cross-Contamination}) konstruktiv auszuschließen.
   \item \textbf{Automatisierte JSON-Textextraktion:} Volltexte aller PDF-Dokumente wurden vorab über Python seitenweise bereinigt und als strukturierte JSON-Dateien persistent abgelegt.
-  \item \textbf{Strikte Zitationspflicht:} Jede qualitative Bewertung, jeder Score im Quality Appraisal und jedes Feld der Datenextraktionsmatrix musste zwingend durch ein wörtliches Originalzitat im Format \texttt{[p.~X, Sec.~Y: "Wörtliches Zitat"]} belegt werden.
-  \item \textbf{Deterministische Zitatprüfung:} Ein automatisiertes Python-Prüfprogramm glich alle Zitate zeichengenau gegen den extrahierten Volltext der jeweiligen JSON-Seitendatei ab. Alle 156 Zitate des Quality Appraisals und alle 478 Zitate der Datenextraktion wurden fehlerfrei verifiziert.
+  \item \textbf{Strikte Verbatim-Belegpflicht:} Jede qualitative Bewertung, jeder Score im Quality Appraisal und jedes Feld der Datenextraktionsmatrix musste zwingend durch ein wörtliches Originalzitat im Format \texttt{[p.~X, Sec.~Y: "Wörtliches Zitat"]} belegt werden.
+  \item \textbf{Deterministische Substring-Verifikation (\texttt{verify\_quotes.py}):} Ein automatisiertes Python-Prüfprogramm glich alle Zitate zeichengenau gegen den extrahierten Volltext der jeweiligen JSON-Seitendatei ab. Alle 156 Zitate des Quality Appraisals und alle 478 Zitate der Datenextraktion wurden mit 100\,\%iger Trefferquote fehlerfrei verifiziert.
   \item \textbf{Manuelle Stichprobenvalidierung:} Sämtliche aggregierten Datenmatrizen wurden abschließend durch den Reviewer stichprobenartig gegen die Primärtexte validiert.
 \end{enumerate}
 
@@ -63,52 +91,74 @@ Um das bei generativen Sprachmodellen inhärente Risiko von Halluzinationen oder
 \subsection{Operationalisierung der Literaturrecherche}
 \label{subsec:operationalisierung_recherche}
 
-Die Definition des Suchzwecks leitet sich unmittelbar aus den drei übergeordneten Forschungsfragen dieser Arbeit ab. Zur systematischen Erfassung aller relevanten Beiträge wurde ein 3-Block-Mastersuchstring konstruiert, der die Schnittmenge aus Anwendungsdomäne, Prozessaktivität und methodischem Paradigma über Boolesche Operatoren abbildet:
+Die Definition des Suchzwecks leitet sich unmittelbar aus den drei übergeordneten Forschungsfragen dieser Arbeit ab:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{RQ1 (Evolutionäre Trajektorie):} Wie haben sich Methoden zur Evaluierung und Auswahl von COTS-Software über die letzten zwei Jahrzehnte von frühen Heuristiken zu modernen mathematischen und hybriden Verfahren entwickelt?
+  \item \textbf{RQ2 (Methodische Merkmale \& Lösungsarchetypen):} Welche methodischen Merkmale, Stärken und praktischen Grenzen kennzeichnen aktuelle Auswahlmethoden, und welche übergeordneten Lösungsarchetypen lassen sich identifizieren?
+  \item \textbf{RQ3 (Forschungslücken \& Zukunftsagenda):} Welche strukturellen Forschungslücken bestehen gegenwärtig hinsichtlich der werkzeuggestützten Entscheidungsautomatisierung, des Mismatch-Handlings und standardisierter Kriterienkataloge?
+\end{itemize}
+
+Zur systematischen Identifikation aller relevanten wissenschaftlichen Beiträge wurde ein 3-Block-Mastersuchstring konstruiert, der die Schnittmenge aus Anwendungsdomäne, Prozessaktivität und methodischem Paradigma über Boolesche Operatoren formal abbildet:
 \begin{align}
   \text{Suchstring} = \;&\underbrace{\text{(\enquote{COTS} OR \enquote{commercial off-the-shelf} OR \dots OR \enquote{standard software})}}_{\text{Block 1: Anwendungsdomäne \& Softwaretyp}} \notag \\
   &\land \underbrace{\text{(\enquote{select*} OR \enquote{evaluat*} OR \enquote{assess*} OR \enquote{choos*} OR \dots OR \enquote{compar*})}}_{\text{Block 2: Prozessaktivität \& Entscheidungskontext}} \notag \\
   &\land \underbrace{\text{(\enquote{MCDM} OR \enquote{MCDA} OR \dots OR \enquote{AHP} OR \enquote{TOPSIS})}}_{\text{Block 3: Methodisches Paradigma \& Entscheidungsmodell}}
 \end{align}
 
-Die Recherche wurde in vier führenden wissenschaftlichen Fachdatenbanken durchgeführt, die sowohl die technische Perspektive der Informatik als auch betriebswirtschaftliche Aspekte der Wirtschaftsinformatik abdecken:
+Die Recherche wurde in vier führenden wissenschaftlichen Fachdatenbanken durchgeführt, die sowohl die technische Perspektive der Informatik und des Software Engineering als auch betriebswirtschaftliche Aspekte der Wirtschaftsinformatik und des Operations Research abdecken:
 \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
-  \item \textbf{IEEE Xplore (IEEE/IET Electronic Library):} Führende Datenbank für Software Engineering, Architekturen und angewandte Entscheidungsverfahren.
-  \item \textbf{ACM Digital Library Premium:} Kernplattform für Informatik-Grundlagenforschung, komponentenbasierte Softwaresysteme (CBSD) und Anforderungsanalyse.
-  \item \textbf{Business Source Premier (EBSCOhost):} Internationale Fachdatenbank für Wirtschaftsinformatik, Information Systems Management, Operations Research und betriebswirtschaftliche Softwarebeschaffung.
-  \item \textbf{Springer Nature eBooks:} Umfassendes Repositorium für wissenschaftliche Monographien, Handbücher und Konferenzberichtsreihen.
+  \item \textbf{IEEE Xplore (IEEE/IET Electronic Library):} Führende Datenbank für Software Engineering, Komponentenarchitekturen und angewandte Entscheidungsverfahren mit Kernkonferenzen (z.\,B. ICCBSS, COMPSAC, ICSE) und Zeitschriften wie den \textit{IEEE Transactions on Software Engineering} und \textit{IEEE Transactions on Engineering Management}.
+  \item \textbf{ACM Digital Library Premium:} Primäre Plattform für Informatik-Grundlagenforschung, komponentenbasierte Softwaresysteme (CBSD) und modellgetriebene Anforderungsanalyse.
+  \item \textbf{Business Source Premier (EBSCOhost):} Führende internationale Fachdatenbank für Wirtschaftsinformatik, Information Systems Management, Operations Research und betriebswirtschaftliche Softwarebeschaffung.
+  \item \textbf{Springer Nature eBooks:} Repositorium für wissenschaftliche Monographien, Handbücher und Konferenzberichtsreihen (z.\,B. \textit{Lecture Notes in Computer Science}, LNCS).
 \end{enumerate}
 
-Da sich die Syntaxanforderungen der Datenbanken signifikant unterscheiden, wurde der Mastersuchstring datenbankspezifisch angepasst. Während bei IEEE Xplore und ACM Digital Library gezielte Metadatenfilter (\texttt{All Metadata}, \texttt{Title/Abstract/Keywords}) zum Einsatz kamen, um Trefferrauschen aus Referenzlisten zu vermeiden, wurden bei EBSCOhost und Springer Nature feldübergreifende Abfragen mit optimierten Trunkierungs- und Phrasenoperatoren formuliert. Bei Springer Nature eBooks wurde zudem ein automatisiertes Skript über die Reference-API eingesetzt, um standardisierte RIS-Zitierungsdaten zu generieren.
+Da sich die Suchsyntaxen und Indizierungsstrukturen der Datenbanken signifikant unterscheiden, wurde der Mastersuchstring datenbankspezifisch übersetzt. Während bei IEEE Xplore und ACM Digital Library gezielte Metadatenfilter (\texttt{All Metadata}, \texttt{Title/Abstract/Keywords}) zum Einsatz kamen, um Trefferrauschen aus Literaturverzeichnissen zu vermeiden, wurden bei EBSCOhost und Springer Nature feldübergreifende Abfragen mit optimierten Trunkierungs- und Phrasenoperatoren formuliert. Bei Springer Nature eBooks wurde zudem ein automatisiertes Skript über die Reference-API eingesetzt, um standardisierte RIS-Zitierungsdaten zu generieren.
 
 \begin{table}[htbp]
   \centering
   \small
-  \caption{Systematische Ein- und Ausschlusskriterien über die drei Screening-Stufen}
+  \caption{Systematische Ein- und Ausschlusskriterien über die drei Filterstufen}
   \label{tab:screening_kriterien}
-  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{4.8cm}X>{\raggedright\arraybackslash}p{3.8cm}}
+  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{4.6cm}X}
     \toprule
-    \textbf{Filterstufe} & \textbf{Einschlusskriterien} & \textbf{Ausschlusskriterien} \\
+    \textbf{Filterstufe} & \textbf{Einschlusskriterien (Inclusion)} & \textbf{Ausschlusskriterien (Exclusion)} \\
     \midrule
-    \textbf{Screen 1} (Metadaten) 
-      & Publikation 2000--2026; \newline Sprache Englisch/Deutsch; Abstract vorhanden; \newline Bezug zu COTS/Standardsoftware.
-      & Vor 2000; andere Sprachen; \newline reine Editorials; \newline fehlende Metadaten; \newline kein COTS-Bezug.\\
-    \addlinespace
-    \textbf{Screen 2} (Relevanz) 
-      & Thematisierung von COTS-Auswahlmethoden; evolutionäre Analysen; Relevanz-Score $> 7$ \newline (Skala 1--10).
-      & Reine CBSE-Arbeiten ohne Auswahlfokus; \newline Hardware-/Cloud-Auswahl; \newline generische Qualitätsmodelle.\\
-    \addlinespace
-    \textbf{Screen 3} (Eligibility) 
-      & 1. Fokus auf COTS-/CBSD-Auswahl. \newline 2. Vorschlag oder Vergleich einer konkreten Methode.
-      & Non-COTS Domain; \newline Non-Selection Focus; \newline No Method; \newline Pure Survey\\
+    \textbf{Screen 1} \newline (Formale Metadaten) 
+      & \textbullet\ Publikationszeitraum 2000--2026 \newline
+        \textbullet\ Sprache Englisch oder Deutsch \newline
+        \textbullet\ Titel und Abstract vollständig vorhanden \newline
+        \textbullet\ Bezug zu COTS, Standardsoftware oder komponentenbasierter Software (CBSD)
+      & \textbullet\ Erscheinungsjahr vor 2000 \newline
+        \textbullet\ Andere Sprachen als Englisch/Deutsch \newline
+        \textbullet\ Reine Editorials, Inhaltsverzeichnisse oder Abstracts ohne Volltextreferenz \newline
+        \textbullet\ Fehlende Metadaten \newline
+        \textbullet\ Kein Bezug zu Standard- oder COTS-Software \\
+    \addlinespace[2pt]
+    \textbf{Screen 2} \newline (Thematische Relevanz) 
+      & \textbullet\ Explizite Thematisierung von Evaluierungs-, Auswahl- oder Rankingmethoden für COTS-Software \newline
+        \textbullet\ Historische, vergleichende oder methodische Analysen von COTS-Auswahlmodellen \newline
+        \textbullet\ Kalibrierter Relevanz-Score $> 7$ (Skala 1--10) auf Basis von Titel und Abstract
+      & \textbullet\ Allgemeine Software-Wiederverwendungs- oder CBSE-Arbeiten ohne Fokus auf den Auswahlprozess \newline
+        \textbullet\ Auswahl anderer IT-Artefakte (z.\,B. reine Hardware, Cloud-Infrastruktur, Microservices), sofern keine COTS-Fallstudie \newline
+        \textbullet\ Generische Software-Qualitätsmodelle ohne Anwendung auf die COTS-Auswahl \\
+    \addlinespace[2pt]
+    \textbf{Screen 3} \newline (Materielle Eignung / Volltext-Eligibility) 
+      & \textbullet\ Primärer Gegenstand ist die Evaluierung, Auswahl oder Priorisierung von COTS-Software oder COTS-basierten Systemen \newline
+        \textbullet\ Die Studie schlägt eine konkrete Methode, ein Modell, einen Prozess oder ein Framework zur COTS-Softwareauswahl vor oder vergleicht solche formal
+      & \textbullet\ \textbf{E1.1 Non-COTS Domain:} Kein COTS-Bezug \newline
+        \textbullet\ \textbf{E1.2 Non-Selection Focus:} Kein Fokus auf den Auswahlprozess \newline
+        \textbullet\ \textbf{E2.1 No Specific Method:} Keine operationalisierte Methode \newline
+        \textbullet\ \textbf{E2.2 Pure Survey:} Reine narrative Übersichtsarbeit ohne eigenständigen Methodenbeitrag \\
     \bottomrule
   \end{tabularx}
 \end{table}
 
-Zur Selektion der relevanten Primärstudien wurde ein dreistufiger Filterprozess operationalisiert (siehe Tabelle~\ref{tab:screening_kriterien}):
+Zur methodisch sauberen Selektion der relevanten Primärstudien wurde ein dreistufiger Filterprozess operationalisiert (siehe Tabelle~\ref{tab:screening_kriterien}). Die methodische Notwendigkeit eines solchen sequentiellen Trichteransatzes (\textit{Funnel Approach}) begründet sich in der schrittweisen Reduktion der kognitiven Last und der Trennung formaler, semantischer und materieller Prüfdimensionen gemäß \textcite[S.~892--893]{2NHFUF5N}:
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Practical Screen 1 (Metadaten-Screening):} Aus der Gesamttreffermenge von 761 Einträgen (IEEE: 27, ACM: 15, EBSCOhost: 145, Springer: 574) wurden nach Bereinigung von 16 Duplikaten ($N = 745$) formale Metadatenkriterien geprüft. Ausgeschlossen wurden 597 Publikationen, die vor dem Jahr 2000 erschienen waren, nicht in englischer oder deutscher Sprache vorlagen oder keinen erkennbaren Bezug zu Standardsoftware aufwiesen ($N = 148$ verbleibend).
-  \item \textbf{Practical Screen 2 (Thematisches Relevanz-Screening):} Die verbleibenden 148 Arbeiten wurden auf Basis von Titel und Abstract einer detaillierten Relevanzprüfung unterzogen. Jede Studie erhielt einen Relevanz-Score auf einer Skala von 1 bis 10. Als Einschlusskriterium galt ein Schwellenwert von $\text{Score} > 7$. 61 Arbeiten wurden ausgeschlossen, womit 87 Publikationen als hochrelevant klassifiziert wurden.
-  \item \textbf{Practical Screen 3 (Volltext-Eligibility-Screening):} Von den 87 relevanten Arbeiten konnten über die Bibliothekslizenzen der DHBW CAS 46 Volltexte erfolgreich abgerufen werden (43 Volltexte waren nicht zugänglich). Diese 46 Volltexte wurden gegen zwei materielle Kernkriterien geprüft: (1) Primärfokus auf COTS/CBSD-Auswahl und (2) Vorschlag oder formaler Vergleich einer konkreten Methode. Acht Volltexte wurden unter Nennung hierarchischer Ausschlussgründe exkludiert. Nach Hinzunahme einer methodisch grundlegenden Vorarbeit umfasst die finale Literatursammlung 39 Publikationen, welche 38 unabhängige Studien repräsentieren.
+  \item \textbf{Practical Screen 1 (Formale Metadatenprüfung):} Diese Stufe dient dem schnellen Ausschluss formal ungeeigneter Datensätze. Der Zeithorizont (2000--2026) stellt sicher, dass die moderne Ära komponentenbasierter Softwarearchitekturen nach dem Aufkommen früher COTS-Konzepte erfasst wird. Nicht-englisch- oder nicht-deutschsprachige Arbeiten sowie reine Editorials werden eliminiert, um die sprachliche Konsistenz und Nachvollziehbarkeit zu wahren.
+  \item \textbf{Practical Screen 2 (Thematische Relevanzprüfung auf Titel- und Abstractebene):} Auf dieser Stufe wird geprüft, ob eine Publikation den inhaltlichen Kern der Forschungsfragen adressiert. Da automatisierte Suchabfragen in Datenbanken häufig Arbeiten erfassen, die COTS lediglich am Rande erwähnen (z.\,B. allgemeine Programmiertechniken für Software-Reuse oder reine Hardware-Beschaffungen), bewertet ein 10-stufiges Relevanz-Scoring die thematische Passung. Der Schwellenwert ($\text{Score} > 7$) trennt hochrelevante methodische Kernarbeiten von marginalen Randbeiträgen.
+  \item \textbf{Practical Screen 3 (Materielle Volltext-Eignungsprüfung / Eligibility):} Die im Volltext beschafften Arbeiten werden einer vertieften Begutachtung unterzogen. Hierbei muss nachgewiesen werden, dass die Arbeit nicht nur abstrakte Anforderungen diskutiert, sondern ein operationalisiertes, replizierbares Modell, ein mathematisches Framework oder einen formalen Prozess zur COTS-Auswahl vorschlägt oder vergleicht. Zur Gewährleistung maximaler Transparenz werden Ausschlüsse über einen hierarchischen Entscheidungsbaum kategorisiert (Kategorien E1.1 bis E2.2).
 \end{itemize}
 
 % ------------------------------------------------------------------------------
@@ -117,69 +167,99 @@ Zur Selektion der relevanten Primärstudien wurde ein dreistufiger Filterprozess
 \subsection{Qualitätsbewertung und Datenextraktion}
 \label{subsec:qualitaetsbewertung_datenextraktion}
 
-Die Qualitätsbewertung (\textit{Quality Appraisal}) bildet ein unverzichtbares Filter- und Moderationsinstrument, um die methodische Belastbarkeit der Publikationen sicherzustellen und Verzerrungen bei der Beantwortung der Forschungsfragen zu vermeiden. Für die Qualitätsbewertung wurde ein vierdimensionales Qualitätsbewertungsschema entwickelt, das jede Studie mit 0 bis 2 Punkten je Kriterium bewertet (Gesamtscore: 0 bis 8 Punkte), siehe Tabelle~\ref{tab:qa_schema}.
+Die Qualitätsbewertung (\textit{Quality Appraisal}) bildet gemäß \textcite[S.~893--896]{2NHFUF5N} einen essenziellen Zwischenschritt vor der Synthese. Sie fungiert nicht als starrer Ausschlussmechanismus, sondern als methodisches Moderations- und Filterinstrument, um die interne Validität, methodische Rigorosität und empirische Belastbarkeit der Primärstudien zu gewichten und Verzerrungen bei der Synthese zu verhindern.
 
-Wie Tabelle~\ref{tab:qa_schema} verdeutlicht, weist die finale Literatursammlung eine überdurchschnittlich hohe methodische Güte auf (durchschnittlicher Gesamtscore: 6,87 von 8,00 Punkten). 36 Publikationen (92,3\,\%) erreichen die höchste Evidenzklasse. Zwei Studien weisen ein mittleres Evidenzniveau auf, während lediglich eine frühe Arbeit als rein konzeptionell eingestuft wurde.
-
-\begin{landscape}
-\begin{table}[p]
+\begin{table}[htbp]
   \centering
   \small
-  \caption{Bewertungsraster des Quality Appraisals (QA1--QA4) und Evidenzklassen}
+  \caption{Theoretisch fundiertes Bewertungsraster des Quality Appraisals (QA1--QA4)}
   \label{tab:qa_schema}
-  \begin{tabularx}{\linewidth}{l>{\raggedright\arraybackslash}p{4.8cm}X>{\raggedright\arraybackslash}p{4.2cm}}
+  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{4.2cm}X>{\raggedright\arraybackslash}p{3.8cm}}
     \toprule
-    \textbf{Kriterium} & \textbf{Fokus \& Kernfrage} & \textbf{Punkteabstufung \& Kriterien} & \textbf{Empirische Verteilung} \\
+    \textbf{Kriterium} & \textbf{Fokus \& Leitfrage} & \textbf{Punkteabstufung \& Bewertungsregeln} & \textbf{Methodischer Beitrag zur Synthese} \\
     \midrule
-    \textbf{QA1: Formalisierung} 
-      & Methodische Transparenz und Formalisierungsgrad.
-      & \textbf{0:} Vage/rein verbal. \newline \textbf{1:} Partiell formalisiert. \newline \textbf{2:} Vollständig mathematisch/logisch formalisiert.
-      & Mittelwert: 1,87 / 2,00 \newline 34 mit 2 Pkt. \newline 5 mit 1 Pkt. \\
-    \addlinespace
-    \textbf{QA2: Kriterienkatalog} 
-      & Transparenz und Struktur der Bewertungskriterien.
-      & \textbf{0:} Keine Kriterien genannt. \newline \textbf{1:} Nur beispielhafte Nennung. \newline \textbf{2:} Strukturierter Kriterienkatalog.
-      & Mittelwert: 1,87 / 2,00 \newline 34 mit 2 Pkt. \newline 5 mit 1 Pkt. \\
-    \addlinespace
-    \textbf{QA3: Validierung} 
-      & Grad der empirischen Validierung und Erprobung.
-      & \textbf{0:} Reine Konzeptbeschreibung. \newline \textbf{1:} Synthetisches Rechenbeispiel. \newline \textbf{2:} Reale Fallstudie/Experiment.
-      & Mittelwert: 1,56 / 2,00 \newline 22 mit 2 Pkt. \newline 17 mit 1 Pkt. \\
-    \addlinespace
-    \textbf{QA4: Reflexion} 
-      & Kritische Diskussion von Grenzen und Aufwand.
-      & \textbf{0:} Keine Diskussion von Grenzen. \newline \textbf{1:} Oberflächliche Erwähnung. \newline \textbf{2:} Fundierte Reflexion von Grenzen.
-      & Mittelwert: 1,56 / 2,00 \newline 22 mit 2 Pkt. \newline 17 mit 1 Pkt. \\
+    \textbf{QA1: Methodische Formalisierung} 
+      & Ist die vorgeschlagene Auswahlmethode mathematisch, algorithmisch oder prozessual klar und nachvollziehbar formalisiert?
+      & \textbf{0 Punkte:} Vage, rein verbale Beschreibung ohne mathematische Formeln oder formalen Prozess. \newline
+        \textbf{1 Punkt:} Teilweise formalisiert (z.\,B. grundlegende Ablaufschritte ohne formale Kriterienaggregation). \newline
+        \textbf{2 Punkte:} Vollständig mathematisch, logisch oder prozessual formalisiert.
+      & Prüft die theoretische Exaktheit und mathematische Reproduzierbarkeit des Entscheidungsmodells (Fundament für RQ2). \\
+    \addlinespace[2pt]
+    \textbf{QA2: Kriterienkatalog-Transparenz} 
+      & Werden die für die COTS-Evaluierung genutzten Kriterien (funktional, nicht-funktional, architektonisch, wirtschaftlich) explizit offengelegt?
+      & \textbf{0 Punkte:} Kriterien werden nicht oder nur intransparent genannt. \newline
+        \textbf{1 Punkt:} Kriterien werden nur beispielhaft oder unvollständig erwähnt. \newline
+        \textbf{2 Punkte:} Ein strukturierter, hierarchischer Kriterienkatalog wird explizit bereitgestellt.
+      & Gewährleistet die inhaltliche Vergleichbarkeit und Nachvollziehbarkeit der Kriterienkataloge (Fundament für RQ2/RQ3). \\
+    \addlinespace[2pt]
+    \textbf{QA3: Empirische Validierung} 
+      & In welcher Form und Tiefe wurde die vorgeschlagene Methode in der Praxis oder im Experiment validiert?
+      & \textbf{0 Punkte:} Reine Konzeptbeschreibung ohne numerisches Anwendungsbeispiel. \newline
+        \textbf{1 Punkt:} Synthetisches oder hypothetisches Rechenbeispiel (\textit{Toy Example}). \newline
+        \textbf{2 Punkte:} Reale Industrie-Fallstudie oder kontrolliertes empirisches Experiment.
+      & Bewertet den praktischen Reifegrad und die empirische Evidenzstärke der Methode (Fundament für RQ2). \\
+    \addlinespace[2pt]
+    \textbf{QA4: Reflexion von Grenzen \& Kontext} 
+      & Werden methodische Limitationen, organisatorischer Erhebungsaufwand und Kontextfaktoren kritisch reflektiert?
+      & \textbf{0 Punkte:} Keine Diskussion von Grenzen oder Einschränkungen. \newline
+        \textbf{1 Punkt:} Kurze oder oberflächliche Erwähnung von Limitationen. \newline
+        \textbf{2 Punkte:} Ausführliche, kritische Reflexion von Aufwand, kognitiver Last und Anwendungsgrenzen.
+      & Ermöglicht eine realistische Einschätzung praktischer Anwendungsbarrieren und Forschungslücken (Fundament für RQ2/RQ3). \\
     \midrule
-    \multicolumn{4}{p{\dimexpr\linewidth-2\tabcolsep\relax}}{\textbf{Klassifikation der Evidenzstärke im Gesamtkorpus ($N = 39$ Reports):} \newline
-    \textbullet\ \textbf{Hohe Evidenzstärke (6--8 Punkte):} 36 Reports (92,3\,\%) -- Primäre Evidenzbasis. \newline
-    \textbullet\ \textbf{Mittlere Evidenzstärke (3--5 Punkte):} 2 Reports (5,1\,\%) -- Solide Methodik, voll in Morphologie integriert. \newline
-    \textbullet\ \textbf{Niedrige Evidenzstärke (0--2 Punkte):} 1 Report (2,6\,\%) -- Konzeptuelle Impulse für Forschungslückenanalyse.} \\
+    \multicolumn{4}{p{\dimexpr\textwidth-2\tabcolsep\relax}}{\textbf{Definition der Evidenzstufen auf Basis des Gesamtscores (0 bis 8 Punkte):} \newline
+    \textbullet\ \textbf{Hohe Evidenzstärke (\textit{High Rigor \& Relevance}, 6--8 Punkte):} Höchste methodische und empirische Güte; dient als primäre Referenzbasis zur Bewertung von Stärken und Grenzen aktueller Methoden (RQ2). \newline
+    \textbullet\ \textbf{Mittlere Evidenzstärke (\textit{Medium Rigor}, 3--5 Punkte):} Methodisch solide Arbeiten mit leichten Einschränkungen in Validierung oder Formalisierung; fließt vollumfänglich in die morphologische Analyse ein. \newline
+    \textbullet\ \textbf{Niedrige Evidenzstärke (\textit{Low Rigor / Conceptual}, 0--2 Punkte):} Rein konzeptionelle Arbeiten; liefert wertvolle Impulse zur Identifikation von Forschungslücken (RQ3), besitzt jedoch eingeschränkte empirische Aussagekraft.} \\
     \bottomrule
   \end{tabularx}
 \end{table}
-\end{landscape}
-\FloatBarrier
 
-Für die systematische Extraktion der Primärdaten wurde eine standardisierte, 17-spaltige Datenextraktionsmatrix operationalisiert. Diese Matrix erfasst neben bibliographischen Metadaten alle wesentlichen methodischen, mathematischen und anwendungsorientierten Eigenschaften:
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
-  \item \textbf{Key:} Eindeutiger Zitierschlüssel der Primärstudie aus der Literaturverwaltungsprogramm.
-  \item \textbf{Author:} Vollständige Liste der beteiligten Autorinnen und Autoren.
-  \item \textbf{Publication\_Year:} Exaktes Erscheinungsjahr der wissenschaftlichen Publikation.
-  \item \textbf{Title:} Vollständiger wissenschaftlicher Titel des Werkes.
-  \item \textbf{Method\_Name:} Offizielle Bezeichnung bzw. Akronym der Methode (z.\,B. OTSO, CARE, MiHOS, Atana).
-  \item \textbf{Primary\_Methodological\_Approach:} Klassifikation des methodischen Paradigmas (z.\,B. Fuzzy MCDM, Lineare Programmierung, Zielmodelle).
-  \item \textbf{Main\_Objective:} Primäres Ziel im Auswahlprozess (z.\,B. Vorfilterung, Detail-Ranking, Portfolio-Optimierung).
-  \item \textbf{Decision\_Support\_Automation:} Grad der Entscheidungsautomatisierung (z.\,B. manueller Prozess, LINGO\slash{}MATLAB-Solver, dediziertes Decision Support System).
-  \item \textbf{Mathematical\_Decision\_Model:} Spezifischer mathematischer Bewertungs- und Aggregationsalgorithmus (z.\,B. AHP, ANP, TOPSIS, ELECTRE-TRI, PROMETHEE, VIKOR).
-  \item \textbf{Uncertainty\_Handling:} Formaler Mechanismus zur Modellierung von Unschärfe, Unvollständigkeit und subjektiver Expertenpräferenz (z.\,B. Fuzzy Sets, Bayes-Netze, Evidential Reasoning, Sensitivitätsanalysen).
-  \item \textbf{Mismatch\_Handling:} Strategien und Mechanismen zur Behandlung architektonischer und funktionaler Inkompatibilitäten.
-  \item \textbf{Mismatch\_Handling\_Phase:} Lebenszyklusphase, in welcher Diskrepanzen adressiert werden (z.\,B. Pre-Selection, Ranking, post-selektive Adaptationsplanung).
-  \item \textbf{Covered\_Criteria\_Types:} Spektrum der berücksichtigten Kriterienkategorien (funktional, Qualität\slash{}NFR, Architektur, TCO\slash{}Kosten, Anbieterverlässlichkeit).
-  \item \textbf{Criteria\_Catalog\_Structure:} Struktureller Aufbau und Standardisierungsgrad des Katalogs (z.\,B. ISO/IEC 9126, ISO/IEC 25010, hierarchischer Baum, Ad-hoc-Liste).
-  \item \textbf{Key\_Strengths:} Von den Autoren nachgewiesene herausragende methodische und praktische Stärken des Ansatzes.
-  \item \textbf{Practical\_Limitations:} Operative Grenzen, kognitiver Erhebungsaufwand und Skalierungshürden in der Unternehmenspraxis.
-  \item \textbf{Author\_Stated\_Gaps:} Von den Originalautoren explizit benannte zukünftige Forschungsbedarfe.
+Für die Durchführung des Quality Appraisals wurde ein theoriegeleitetes, vierdimensionales Bewertungsraster konstruiert (siehe Tabelle~\ref{tab:qa_schema}), das auf etablierten Standards für Software-Engineering-Reviews aufbaut \parencite[S.~893--896]{2NHFUF5N}. Jedes Kriterium wird auf einer 3-stufigen Ordinalskala von 0 bis 2 Punkten bewertet, wodurch sich ein Gesamtscore von 0 bis 8 Punkten ergibt. Die Kriterien adressieren die wesentlichen Dimensionen wissenschaftlicher Güte:
+\begin{enumerate}[label=\textbf{QA\arabic*:}, leftmargin=*]
+  \item \textbf{Methodische Transparenz \& Formalisierungsgrad:} Bewertet, ob die mathematischen Aggregationsformeln, Algorithmen oder Prozessschritte so präzise dokumentiert sind, dass eine unabhängige Re-Implementierung möglich ist.
+  \item \textbf{Kriterienkatalog-Transparenz:} Prüft, ob funktionale, Qualitäts-, architektonische und ökonomische Kriterien transparent offengelegt und strukturiert sind.
+  \item \textbf{Empirische Validierung / Evidenzgrad:} Unterscheidet zwischen rein hypothetischen Zahlenbeispielen und realen Industrieerprobungen.
+  \item \textbf{Reflexion von Grenzen \& Kontextfaktoren:} Misst den Grad der kritischen Selbstreflexion hinsichtlich Skalierbarkeit, kognitiver Entscheidungslast und organisatorischem Einführungsaufwand.
+\end{enumerate}
+
+Zur systematischen Erfassung aller relevanten Merkmale der Primärstudien wurde eine standardisierte, 18-spaltige Datenextraktionsmatrix konzipiert \parencite[S.~896--898]{2NHFUF5N}. Um eine zielgerichtete Beantwortung der Forschungsfragen zu gewährleisten, sind die Extraktionsattribute in sechs thematische Merkmalscluster strukturiert:
+\begin{enumerate}[label=\textbf{Cluster \Roman*:}, leftmargin=*]
+  \item \textbf{Bibliografische Metadaten (Identifikation):}
+  \begin{itemize}[leftmargin=*]
+    \item \texttt{Key}: Eindeutiger Zitierschlüssel aus der Literaturverwaltung.
+    \item \texttt{Author}: Vollständige Liste aller beteiligten Autorinnen und Autoren.
+    \item \texttt{Publication\_Year}: Erscheinungsjahr (dient der longitudinalen Rekonstruktion für RQ1).
+    \item \texttt{Title}: Vollständiger wissenschaftlicher Titel des Werkes.
+  \end{itemize}
+  \item \textbf{Methodisches Paradigma \& Zielsetzung (Fundierung für RQ1 \& RQ2):}
+  \begin{itemize}[leftmargin=*]
+    \item \texttt{Method\_Name}: Offizielle Bezeichnung bzw. Akronym der Methode (z.\,B. OTSO, CARE, MiHOS, Atana).
+    \item \texttt{Primary\_Methodological\_Approach}: Zuordnung zum übergeordneten Paradigma (z.\,B. MCDM, Optimierung, BBN, Zielmodellierung).
+    \item \texttt{Main\_Objective}: Primäres Ziel im Auswahlprozess (z.\,B. Vorfilterung, Detail-Ranking, Portfolio-Optimierung).
+  \end{itemize}
+  \item \textbf{Entscheidungsautomatisierung \& mathematische Formulierung (Fundierung für RQ2):}
+  \begin{itemize}[leftmargin=*]
+    \item \texttt{Decision\_Support\_Automation}: Grad der Werkzeugunterstützung (manuell, algorithmisches Skript, dediziertes Decision Support System).
+    \item \texttt{Mathematical\_Decision\_Model}: Spezifisches mathematisches Modell (z.\,B. AHP, ANP, TOPSIS, 0-1 IP, ELECTRE, VIKOR).
+  \end{itemize}
+  \item \textbf{Unsicherheits- \& Mismatch-Behandlung (Fundierung für RQ2 \& RQ3):}
+  \begin{itemize}[leftmargin=*]
+    \item \texttt{Uncertainty\_Handling}: Mathematische Technik zur Modellierung von Unschärfe und Unvollständigkeit (z.\,B. Fuzzy Sets, Bayes-Netze, Evidential Reasoning).
+    \item \texttt{Mismatch\_Handling}: Mechanismus zur Erkennung und Behandlung architektonischer und funktionaler Diskrepanzen.
+    \item \texttt{Mismatch\_Handling\_Phase}: Lebenszyklusphase der Mismatch-Behandlung (Vorab-Ausschluss, Optimierungsnebenbedingung, post-selektive Adaptationsplanung).
+  \end{itemize}
+  \item \textbf{Kriterienkatalog-Architektur (Fundierung für RQ2 \& RQ3):}
+  \begin{itemize}[leftmargin=*]
+    \item \texttt{Covered\_Criteria\_Types}: Spektrum der Kriterienkategorien (funktional, Qualität/NFR, Architektur, Kosten/TCO, Anbieter).
+    \item \texttt{Criteria\_Catalog\_Structure}: Standardisierungsgrad des Katalogs (z.\,B. ISO/IEC 9126, ISO/IEC 25010, Ad-hoc-Liste, Ontologie).
+  \end{itemize}
+  \item \textbf{Empirische Evidenz, Grenzen \& Forschungslücken (Fundierung für RQ2 \& RQ3):}
+  \begin{itemize}[leftmargin=*]
+    \item \texttt{Key\_Strengths}: Nachgewiesene methodische und praktische Stärken des Ansatzes.
+    \item \texttt{Practical\_Limitations}: Operative Grenzen, kognitive Belastung und Skalierungshemmnisse.
+    \item \texttt{Author\_Stated\_Gaps}: Von den Originalautoren explizit benannte zukünftige Forschungsbedarfe.
+    \item \texttt{Reviewer\_Identified\_Gaps}: Synthetisierte strukturelle Forschungslücken hinsichtlich Automatisierung und Standardisierung.
+  \end{itemize}
 \end{enumerate}
 
 % ------------------------------------------------------------------------------
@@ -188,28 +268,33 @@ Für die systematische Extraktion der Primärdaten wurde eine standardisierte, 1
 \subsection{Methodik der Morphologischen Analyse nach Zwicky}
 \label{subsec:morphologische_analyse_methodik}
 
-Zur Beantwortung von Forschungsfrage 2 und 3 bedarf es eines Syntheseverfahrens, das komplexe, mehrdimensionale Methodenlandschaften ohne informationsverzerrende Quantifizierung strukturieren kann. Hierfür wird die General Morphological Analysis (GMA) nach Fritz Zwicky herangezogen, welche durch \textcite{Z6N6V5L9} wissenschaftstheoretisch formalisiert wurde. Die GMA ist eine nicht-quantifizierende Modellierungsmethode zur systematischen Untersuchung und Strukturierung der Gesamtheit aller denkbaren Konfigurationen eines mehrdimensionalen, inhärent nicht-linearen Problemfeldes.
+Zur Beantwortung von Forschungsfrage 2 (Vergleich methodischer Merkmale und Archetypen) und Forschungsfrage 3 (Identifikation von Forschungslücken) bedarf es eines Syntheseverfahrens, das komplexe, mehrdimensionale Problemfelder ohne informationsverzerrende Quantifizierung systematisch analysieren und ordnen kann. Für diesen Zweck wird die General Morphological Analysis (GMA) nach Fritz Zwicky herangezogen, welche durch \textcite[S.~81--91]{Z6N6V5L9} sowie \textcite[S.~1--8]{MQ9M8Q7L} wissenschaftstheoretisch formalisiert wurde.
 
-Die Konstruktion des morphologischen Feldes erfolgt über die Definition von sechs orthogonalen Schlüsselparametern ($P_1 \dots P_6$), die den multidimensionalen Gestaltungsraum von COTS-Evaluierungsmethoden vollständig beschreiben:
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*]
-  \item \textbf{$P_1$ (Mathematisches Entscheidungs- und Gewichtungsmodell):} $|P_1| = 6$ Ausprägungen: $v_{1.1}$ Klassische MCDA (AHP\slash{}ANP\slash{}WSM), $v_{1.2}$ Outranking-Relationen (ELECTRE\slash{}PROMETHEE), $v_{1.3}$ Mathematische Optimierung\slash{}OR (0-1 IP\slash{}DEA), $v_{1.4}$ Fuzzy-MCDA\slash{}Fuzzy-OR, $v_{1.5}$ Probabilistisch\slash{}KI\slash{}Evidential (BBN\slash{}ER\slash{}CBR), $v_{1.6}$ Qualitativ\slash{}Heuristisch.
-  \item \textbf{$P_2$ (Automatisierungsgrad der Entscheidungsunterstützung):} $|P_2| = 3$ Ausprägungen: $v_{2.1}$ Manuell\slash{}Prozedurale Richtlinien, $v_{2.2}$ Skripte\slash{}Solver\slash{}Tabellenkalkulation, $v_{2.3}$ Dediziertes interaktives Decision Support System.
-  \item \textbf{$P_3$ (Mismatch- und Inkompatibilitätsbehandlung):} $|P_3| = 4$ Ausprägungen: $v_{3.1}$ Keine\slash{}Implizite Bewertung, $v_{3.2}$ Vorabauswahl-Filter (Threshold Gates), $v_{3.3}$ Mathematische Restriktionen\slash{}Straffunktionen, $v_{3.4}$ Post-Selection Adaptationsplanung.
-  \item \textbf{$P_4$ (Unsicherheits- und Unschärfemodellierung):} $|P_4| = 4$ Ausprägungen: $v_{4.1}$ Deterministisch\slash{}Keine, $v_{4.2}$ Fuzzy-Mengen\slash{}Linguistische Variablen, $v_{4.3}$ Sensitivitäts-\slash{}Robustheitsanalyse, $v_{4.4}$ Probabilistisch\slash{}Bayes\slash{}Belief Networks.
-  \item \textbf{$P_5$ (Umfang des Kriterienkatalogs):} $|P_5| = 3$ Ausprägungen: $v_{5.1}$ Rein funktional\slash{}architektonisch, $v_{5.2}$ Softwarequalität\slash{}Performance, $v_{5.3}$ Ganzheitlich mehrdimensional (Funktional, Qualität, TCO, Vendor, Ökosystem).
-  \item \textbf{$P_6$ (Kriterien-Standardisierung und Wiederverwendbarkeit):} $|P_6| = 3$ Ausprägungen: $v_{6.1}$ Ad-hoc\slash{}Projektspezifisch, $v_{6.2}$ Standardbasiert nach ISO/IEC (9126 / 25010), $v_{6.3}$ Domänenspezifische Ontologie\slash{}Wissensbasis.
+Die GMA ist eine nicht-quantifizierende Modellierungsmethode zur Untersuchung und Strukturierung der Gesamtheit aller denkbaren Konfigurationen eines mehrdimensionalen, inhärent nicht-linearen und nicht-reduzierbaren Problemkomplexes \parencite[S.~81--82]{Z6N6V5L9}. Während quantitative statistische Methoden auf kausale Richtungsfunktionen und messbare Skalen angewiesen sind, operiert die GMA auf relationalen morphologischen Räumen (\textit{Relational Morphospaces}), in denen qualitative Eigenschaften als diskrete Parameterzustände modelliert werden \parencite[S.~83--85]{Z6N6V5L9}.
+
+Der theoriegeleitete Modellierungszyklus der GMA gliedert sich nach \textcite[S.~82--89]{Z6N6V5L9} in sieben methodische Phasen:
+\begin{enumerate}[label=\textbf{Phase \arabic*:}, leftmargin=*]
+  \item \textbf{Formulierung des Problemkomplexes:} Präzise Definition des Untersuchungsgegenstands -- im Kontext dieser Arbeit der Gestaltungs- und Methodenraum zur Evaluierung und Auswahl von COTS-Software.
+  \item \textbf{Identifikation der Schlüsselparameter ($P_i$):} Bestimmung der grundlegenden orthogonalen Dimensionen, die das Problemfeld aufspannen. Gemäß den methodischen Modellierungsregeln nach \textcite[S.~82--83]{Z6N6V5L9} müssen die gewählten Parameter zwei fundamentale Bedingungen erfüllen:
+  \begin{itemize}[leftmargin=*]
+    \item \textit{Gegenseitiger Ausschluss (Mutual Exclusivity):} Jeder Parameter muss eine eigenständige, von den übrigen Parametern logisch unabhängige Dimension des Methodenraums abbilden.
+    \item \textit{Kollektive Erschöpfung (Collective Exhaustiveness):} Die Gesamtheit der Parameter muss den methodischen Lösungsraum in all seinen wesentlichen Facetten (Entscheidungsmodell, Automatisierung, Mismatch-Behandlung, Unsicherheit, Kriterienbreite und Standardisierung) vollständig abdecken.
+  \end{itemize}
+  \item \textbf{Definition diskreter Wertbereiche (\textit{Value Domains}):} Für jeden Parameter $P_i$ wird eine endliche Menge disjunkter, operationalisierter Zustände $v_{i,j} \in \text{Domain}(P_i)$ definiert, die das Spektrum aller in Theorie und Praxis existierenden Ausprägungen erschöpfend beschreiben.
+  \item \textbf{Konstruktion des Morphologischen Feldes (\textit{Configuration Space}):} Der gesamte theoretische Konfigurationsraum $N$ ergibt sich formal als kartesisches Produkt der Wertebereiche aller $k$ Parameter:
+  \begin{equation}
+    N = \prod_{i=1}^{k} |P_i| = |P_1| \times |P_2| \times \dots \times |P_k|
+  \end{equation}
+  Jeder Punkt in diesem $k$-dimensionalen Raum repräsentiert eine formal denkbare methodische Konfiguration in Form eines $k$-Tupels $(v_{1,i_1}, v_{2,i_2}, \dots, v_{k,i_k})$.
+  \item \textbf{Durchführung des Cross-Consistency Assessments (CCA):} Da der theoretische Gesamtraum $N$ zahlreiche logisch unmögliche oder praktisch widersprüchliche Kombinationen enthält, wird eine paarweise Konsistenzprüfung über alle $\binom{k}{2} = \frac{k(k-1)}{2}$ zweidimensionalen Sub-Matrizen durchgeführt \parencite[S.~83--87]{Z6N6V5L9}. Jede Zellenrelation $(v_{a,i}, v_{b,j})$ wird dabei auf Basis logischer, mathematischer und empirischer Kriterien in eine von drei Zustandsklassen eingestuft:
+  \begin{itemize}[leftmargin=*]
+    \item \textbf{Empirisch beobachtet ($O$ -- \textit{Observed}):} Die Parameterkombination ist in der Primärliteratur real dokumentiert und nachgewiesen.
+    \item \textbf{Logisch/strukturell inkonsistent ($X$ -- \textit{Incompatible}):} Die Kombination beinhaltet einen inhärenten logischen oder rechnerischen Widerspruch (z.\,B. rein manuelle Verfahren gepaart mit komplexer nicht-linearer mathematischer Optimierung).
+    \item \textbf{Plausibel, unbesetzt ($?$ -- \textit{Plausible Innovation Space}):} Die Kombination ist logisch konsistent und methodisch wünschenswert, wird jedoch in der aktuellen Literatur nicht adressiert.
+  \end{itemize}
+  \item \textbf{Morphologische Profilzuordnung und Archetypenbildung:} Jede im Review identifizierte Primärstudie wird auf Basis der extrahierten Merkmale eindeutig auf ein diskretes Parameter-Tupel im reduzierten Lösungsraum abgebildet. Durch typologische Clusterung der beobachteten Profile werden übergeordnete \textbf{Methodische Archetypen} induktiv abgeleitet, die dominante Lösungsmuster und methodische Paradigmen im Schrifttum repräsentieren \parencite[S.~87--90]{Z6N6V5L9}.
+  \item \textbf{Morphologische Lückenanalyse (\textit{Gap Analysis}):} Die im CCA identifizierten unbesetzten, plausiblen Zellen ($?$) werden systematisch analysiert, um strukturelle Defizite und zukünftige Forschungsrichtungen im Methodenraum theoriegeleitet aufzudecken.
 \end{enumerate}
 
-Der gesamte theoretische Konfigurationsraum umfasst das kartesische Produkt aller diskreten Parameterzustände:
-\begin{equation}
-  N = \prod_{i=1}^{6} |P_i| = 6 \times 3 \times 4 \times 4 \times 3 \times 3 = 2.592 \text{ theoretische Zustandskombinationen.}
-\end{equation}
+Die konkrete empirische Konstruktion und Herleitung der spezifischen Schlüsselparameter, die Definition ihrer diskreten Wertbereiche auf Basis der Datenextraktionsmatrix sowie die Durchführung des CCA und die Ableitung der methodischen Archetypen werden in Kapitel~\ref{subsec:morphologische_analyse_ergebnisse} im Rahmen der Ergebnissynthese detailliert dargelegt.
 
-Im Rahmen des \textit{Cross-Consistency Assessments} (CCA) werden alle $\binom{6}{2} = 15$ paarweisen Sub-Matrizen systematisch auf logische Widersprüche, strukturelle Unverträglichkeiten und empirische Vorkommen geprüft \parencite[vgl.][S. 83 – 85]{Z6N6V5L9}. Dabei werden drei relationale Zellzustände unterschieden:
-\begin{itemize}[leftmargin=*]
-  \item \textbf{Empirisch beobachtete Kombinationen ($O$):} In der untersuchten Literatursammlung real belegte Parameterkonfigurationen.
-  \item \textbf{Logisch/strukturell inkonsistente Relationen ($X$):} Konfigurationen, die sich gegenseitig ausschließen (z.\,B. rein manuelle Verfahren gepaart mit komplexer nicht-linearer mathematischer Optimierung).
-  \item \textbf{Plausible, unbesetzte Innovationsfelder ($?$):} Theoretisch konsistente und praktisch hochgradig wünschenswerte Kombinationen, die in der bisherigen Literatur eine Forschungslücke darstellen (z.\,B. standardbasierte Qualitätsmodelle kombiniert mit dedizierten interaktiven Decision Support Systemen und post-selektivem Mismatch-Handling).
-\end{itemize}
-
-Durch die eindeutige Zuordnung jeder Primärstudie zu einem 6-Tupel $(v_{1,i_1},\allowbreak v_{2,i_2},\allowbreak v_{3,i_3},\allowbreak v_{4,i_4},\allowbreak v_{5,i_5},\allowbreak v_{6,i_6})$ gelingt es, das Methodenfeld in vier übergeordnete Archetypen zu verdichten: (1) \textit{Klassisch-analytische MCDA-Verfahren}, (2) \textit{Fuzzy-optimierende Portfolio-Modelle}, (3) \textit{Probabilistisch-evidenzbasierte Bewertungsrahmen} und (4) \textit{Prozessorientierte Heuristiken und Anforderungsmodelle}. Diese morphologische Synthese bildet das analytische Fundament für die fundierte Beantwortung der Forschungsfragen 2 und 3.
