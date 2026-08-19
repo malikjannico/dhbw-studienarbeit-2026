@@ -15,35 +15,7 @@ Dieses Kapitel legt das methodische Fundament der vorliegenden Studienarbeit dar
 
 In den Disziplinen des Software Engineering und der Wirtschaftsinformatik stellt die systematische Literaturübersicht ein zentrales Instrument der wissenschaftlichen Sekundärforschung dar. Während traditionelle narrative Übersichtsarbeiten anfällig für unbewusste Selektionsverzerrungen (\textit{Selection Bias}) und eine mangelnde prozedurale Nachvollziehbarkeit sind, zeichnet sich eine eigenständige SLR durch einen streng formalisierten, kriteriengeleiteten und replizierbaren Forschungsprozess aus. Ziel ist es, die Gesamtheit der verfügbaren Primärevidenz zu einem präzise abgegrenzten Untersuchungsgegenstand systematisch zu identifizieren, deren methodische Güte unabhängig zu prüfen und die dispersen Einzelbefunde theorieorientiert zu aggregieren \parencite[S.~880--882]{2NHFUF5N}. Angesichts der stark fragmentierten Methodenlandschaft im Bereich der COTS-Auswahl bildet ein solches Vorgehen die notwendige Voraussetzung, um bestehende Ansätze von frühen heuristischen Modellen bis hin zu modernen mathematischen Optimierungsverfahren belastbar zu vergleichen.
 
-\begin{table}[htbp]
-  \centering
-  \small
-  \caption{Phasen und Schritte des methodischen Vorgehens nach \textcite[S.~882--905]{2NHFUF5N}}
-  \label{tab:okoli_phasen}
-  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{3.2cm}X>{\raggedright\arraybackslash}p{3.5cm}}
-    \toprule
-    \textbf{Phase} & \textbf{Schritt nach Okoli} & \textbf{Zielsetzung im Kontext der Studienarbeit} & \textbf{Eingesetzte Werkzeuge \& Methoden} \\
-    \midrule
-    \multirow{2}{*}{\textbf{1. Planung}} 
-      & 1. Identify Purpose & Präzisierung der Forschungsziele und Forschungsfragen (RQ1--RQ3) & Problemstellung, Zieltaxonomie \\
-      & 2. Draft Protocol & Spezifikation des Review-Protokolls und des Mastersuchstrings & Gemini 3.1 Pro, PRISMA 2020 \\
-    \addlinespace[2pt]
-    \multirow{2}{*}{\textbf{2. Auswahl}} 
-      & 3. Search Literature & Systematische Recherche in vier wissenschaftlichen Fachdatenbanken & IEEE, ACM, EBSCO, Springer, Python-API \\
-      & 4. Apply Practical Screen & Dreistufiger Filterprozess (Metadaten-, Relevanz- und Eignungsprüfung) & Zotero, Gemini 3.5 Flash, Screening-Raster \\
-    \addlinespace[2pt]
-    \multirow{2}{*}{\textbf{3. Extraktion}} 
-      & 5. Appraise Quality & Methodische Qualitätsbewertung anhand von QA1--QA4 & Gemini 3.7 Flash, \texttt{verify\_quotes.py} \\
-      & 6. Extract Data & Strukturierte 18-spaltige Evidenz- und Merkmaltextraktion & Subagent-per-Paper, JSON-Textextraktion \\
-    \addlinespace[2pt]
-    \multirow{2}{*}{\textbf{4. Ausführung}} 
-      & 7. Synthesize Studies & Evolutionäre Analyse \& General Morphological Analysis (GMA) & Ritchey-Formalismus, Kreuzkonsistenz \\
-      & 8. Write Review & Wissenschaftliche Berichterstattung gemäß akademischer Standards & LaTeX, Shiny App \parencite{MQ9M8Q7L} \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-
-Für die vorliegende Arbeit wird das von \textcite[S.~882--905]{2NHFUF5N} etablierte Leitfadenmodell zugrunde gelegt. Dieses gliedert sich in vier sequentielle Phasen mit acht aufeinander aufbauenden Einzelschritten (siehe Tabelle~\ref{tab:okoli_phasen}):
+Für die vorliegende Arbeit wird das von \textcite[S.~882--905]{2NHFUF5N} etablierte Leitfadenmodell zugrunde gelegt. Dieses gliedert sich in vier sequentielle Phasen mit acht aufeinander aufbauenden Einzelschritten:
 \begin{enumerate}[label=\textbf{Phase \arabic*:}, leftmargin=*]
   \item \textbf{Planung (\textit{Planning}):} 
   \begin{enumerate}[label=\textbf{Schritt \arabic*:}, leftmargin=*]
