@@ -62,38 +62,35 @@ Eine zentrale Publikation wurde aus der Proposal-Recherche integriert, bei der e
 
 Die bibliometrische Analyse der Literatursammlung über den Zeitraum 2000 bis 2026 zeigt eine kontinuierliche wissenschaftliche Befassung mit der COTS-Auswahlproblematik. Tabelle~\ref{tab:demografie_qa_uebersicht} fasst die demografischen Kennzahlen, Publikationskanäle und Quality-Appraisal-Ergebnisse zusammen.
 
-\begin{landscape}
-\begin{table}[p]
+\begin{table}[htbp]
   \centering
-  \footnotesize
+  \small
   \caption{Demografische Struktur, Publikationsorgane und Qualitätsbewertungsverteilung ($N = 39$)}
   \label{tab:demografie_qa_uebersicht}
-  \begin{tabularx}{\linewidth}{l>{\raggedright\arraybackslash}p{4.2cm}cc>{\raggedright\arraybackslash}X}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{3.8cm}cc>{\raggedright\arraybackslash}X}
     \toprule
-    \textbf{Kategorie} & \textbf{Ausprägung / Dimension} & \textbf{Anzahl ($N$)} & \textbf{Anteil (\%)} & \textbf{Charakteristische Publikationen (Auswahl)} \\
+    \textbf{Kategorie} & \textbf{Ausprägung} & \textbf{$N$} & \textbf{\%} & \textbf{Beispielhafte Publikationen} \\
     \midrule
-    \multirow{3}{*}{\textbf{Zeitraum}} 
+    \multirow{3}{*}{\textbf{Publikationszeitraum}} 
       & 2000--2009 (Dekade 1) & 16 & 41,0\,\% & \textcite{LZQJ6M4X}, \textcite{9F79VAAB} \\
       & 2010--2019 (Dekade 2) & 13 & 33,3\,\% & \textcite{8VHUMEKY}, \textcite{NZJEEPAC} \\
       & 2020--2026 (Dekade 3) & 10 & 25,6\,\% & \textcite{UK2X9C4W}, \textcite{LPC92LAP} \\
     \addlinespace[2pt]
     \multirow{3}{*}{\textbf{Publikationsorgan}} 
-      & Internationale Fachzeitschriften & 21 & 53,8\,\% & \textcite{FCYW9EWJ}, \textcite{8VHUMEKY} \\
+      & Fachzeitschriften & 21 & 53,8\,\% & \textcite{FCYW9EWJ}, \textcite{8VHUMEKY} \\
       & Konferenzbände & 14 & 35,9\,\% & \textcite{6RNULWVY}, \textcite{ZQMG69VT} \\
       & Dissertationen / Monographien & 4 & 10,3\,\% & \textcite{9F79VAAB}, \textcite{WBGP3ETU}, \textcite{WZM7DUBY}, \textcite{RRU375GB} \\
     \addlinespace[2pt]
     \multirow{3}{*}{\textbf{Quality Appraisal}} 
-      & Hohe Evidenzstärke & 36 & 92,3\,\% & \textcite{M3B2D3GD}, \textcite{QDUNCXFC} \\
-      & Mittelere Evidenzstärke & 2 & 5,1\,\% & \textcite{DFASRUVC}, \textcite{LPC92LAP} \\
-      & Niedrige Evidenzstärke & 1 & 2,6\,\% & \textcite{CZZ6XQZJ} \\
+      & Hohe Evidenzklasse & 36 & 92,3\,\% & \textcite{M3B2D3GD}, \textcite{QDUNCXFC} \\
+      & Mittlere Evidenzklasse & 2 & 5,1\,\% & \textcite{DFASRUVC}, \textcite{LPC92LAP} \\
+      & Niedrige Evidenzklasse & 1 & 2,6\,\% & \textcite{CZZ6XQZJ} \\
     \midrule
-    \multicolumn{5}{p{\dimexpr\linewidth-2\tabcolsep\relax}}{\textbf{Mittelwerte der Qualitätsdimensionen (Skala 0,00 bis 2,00; Gesamtmittelwert: 6,87 / 8,00):} \newline
-    QA1 (Formalisierung): \textbf{1,87} \quad QA2 (Kriterienkatalog): \textbf{1,87} \quad QA3 (Empirische Validierung): \textbf{1,56} \quad QA4 (Grenzen/Reflexion): \textbf{1,56}} \\
+    \multicolumn{5}{p{\dimexpr\textwidth-2\tabcolsep\relax}}{\textbf{Mittelwerte der Qualitätsdimensionen (Skala 0,00 bis 2,00; Gesamtmittelwert: 6,87 / 8,00):} \newline
+    QA1 (Formalisierung): \textbf{1,87} \quad QA2 (Kriterienkatalog): \textbf{1,87} \quad QA3 (Empirische Validierung): \textbf{1,56} \quad QA4 (Reflexion): \textbf{1,56}} \\
     \bottomrule
   \end{tabularx}
 \end{table}
-\end{landscape}
-\FloatBarrier
 
 In der Dekade 2000--2009 erschienen 16 Publikationen (41,0\,\%). Diese Pionierphase war geprägt von der Etablierung erster Outranking- und AHP-Modelle sowie dem Entwurf dedizierter Software-Werkzeuge. In der zweiten Dekade (2010--2019) wurden 13 Publikationen (33,3\,\%) publiziert, in denen die mathematische Optimierung, nicht-lineare Programmierung und Fuzzy-MCDA-Verfahren dominierten. Die jüngste Phase (2020--2026) steuert 10 Publikationen (25,6\,\%) bei, die sich auf kompositionelle Datenanalysen, Evidential Reasoning und großangelegte Meta-Synthesen konzentrieren.
 
@@ -155,7 +152,7 @@ Zur Beantwortung von Forschungsfrage 1 rekonstruiert dieser Abschnitt die histor
       & \textbf{Mathematische Optimierung \& Fuzzy-MCDA} 
       & $P_1 = v_{1.4}, \newline P_2 = v_{2.2}$ \newline $P_3 = v_{3.3}, \newline P_4 = v_{4.2}$ \newline $P_5 = v_{5.2}$
       & Modellierung linguistischer Unschärfe und multi-modularer Systeme via Fuzzy-TOPSIS, 0-1-Ganzzahlmodelle und Credibility Theory.
-      & \textcite{6YJHIVHG} \newline \textcite{VRTXHQI7} \newline Al-\textcite{WZM7DUBY} \newline \textcite{B7ZTQCZZ} \newline \textcite{NZJEEPAC} \\
+      & \textcite{6YJHIVHG} \newline \textcite{VRTXHQI7} \newline \textcite{WZM7DUBY} \newline \textcite{B7ZTQCZZ} \newline \textcite{NZJEEPAC} \\
     \addlinespace[3pt]
     \textbf{Epoche 4} \newline (2020 bis 2026) 
       & \textbf{CoDa, Evidential Reasoning \& Meta-Analysen} 
@@ -247,7 +244,7 @@ Das kartesische Produkt der Parameterdomänen spannt einen theoretischen Gesamtr
 \end{equation}
 auf. Das vollständige morphologische Feld samt den relativen Häufigkeitsverteilungen der Literatursammlung ist in Tabelle~\ref{tab:morphologisches_feld} dargestellt.
 
-Im Rahmen des durchgeführten Cross-Consistency Assessments (CCA) wurden alle $\binom{6}{2} = 15$ zweidimensionalen Sub-Matrizen mit insgesamt 219 paarweisen Zustandskombinationen evaluiert: 154 Kombinationen wurden in der Literatursammlung empirisch beobachtet ($O$), 61 Kombinationen stellen plausible und theoretisch konsistente Innovationsräume dar ($?$), während 4 Kombinationen als logisch-strukturell inkonsistent identifiziert wurden ($X$).
+Im Rahmen des durchgeführten Cross-Consistency Assessments (CCA) wurden alle $\binom{6}{2} = 15$ zweidimensionalen Sub-Matrizen mit insgesamt 217 paarweisen Zustandskombinationen evaluiert: 168 Kombinationen wurden in der Literatursammlung empirisch beobachtet ($O$), 45 Kombinationen stellen plausible und theoretisch konsistente Innovationsräume dar ($?$), während 4 Kombinationen als logisch-strukturell inkonsistent identifiziert wurden ($X$).
 
 \begin{landscape}
 \begin{table}[p]
@@ -317,6 +314,57 @@ Tabelle~\ref{tab:morphologisches_feld} schlüsselt die relative Häufigkeitsvert
   \item \textbf{$P_5$ (Umfang des Kriterienkatalogs):} Die Mehrheit ($v_{5.3}$: 56,4\,\%, $N = 22$) verfolgt ganzheitliche Kriterienkataloge (Funktionalität, NFRs, Kosten, Anbieterlebensfähigkeit). 33,3\,\% ($v_{5.2}$, $N = 13$) fokussieren primär Softwarequalität und technische Leistung, während 10,3\,\% ($v_{5.1}$, $N = 4$) rein funktionale Schnittstellen prüfen.
   \item \textbf{$P_6$ (Kriterien-Standardisierung und Wiederverwendbarkeit):} Fast die Hälfte aller Publikationen ($v_{6.1}$: 48,7\,\%, $N = 19$) definiert Kriterien ad-hoc für spezifische Fallbeispiele. 28,2\,\% ($v_{6.3}$, $N = 11$) nutzen wiederverwendbare Taxonomien oder Ontologien, während 23,1\,\% ($v_{6.2}$, $N = 9$) explizit auf ISO/IEC 9126 oder ISO/IEC 25010 referenzieren.
 \end{itemize}
+
+\subsubsection{Durchführung und Ergebnisse des Cross-Consistency Assessments (CCA)}
+\label{subsubsec:cca_ergebnisse}
+
+Gemäß der wissenschaftstheoretischen Formalisierung der General Morphological Analysis nach \textcite[S.~83 bis 86]{Z6N6V5L9} bildet das Cross-Consistency Assessment (CCA) das methodische Kernstück zur Bereinigung des theoretischen Konfigurationsraums ($N = 2.592$). Da das kartesische Produkt aller Parameterdomänen zahlreiche Kombinationen enthält, die in der Realität mathematisch unzulässig, algorithmisch widersprüchlich oder praktisch nicht umsetzbar sind, wurden alle $\binom{6}{2} = 15$ paarweisen zweidimensionalen Teilmatrizen mit insgesamt 219 disjunkten Zustandspaaren systematisch evaluiert.
+
+\begin{table}[p]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{3.5pt}
+  \caption{Übersicht und Konsistenzverteilung der 15 paarweisen CCA-Teilmatrizen}
+  \label{tab:cca_uebersicht}
+  \begin{tabularx}{\textwidth}{clcccc>{\raggedright\arraybackslash}X}
+    \toprule
+    \textbf{Nr.} & \textbf{Parameterpaar ($P_A \times P_B$)} & \textbf{Zellen} & \textbf{$O$} & \textbf{$?$} & \textbf{$X$} & \textbf{Primäre Inkonsistenz-Begründung} \\
+    \midrule
+    1  & $(P_1, P_2)$ Modell $\times$ Automatisierung & 18 & 12 & 4 & 2 & Logischer Widerspruch bei $v_{1.3}/v_{1.5} \times v_{2.1}$ \\
+    2  & $(P_1, P_3)$ Modell $\times$ Mismatch-Handling & 24 & 14 & 10 & 0 & Vollständig konsistenter Problemraum \\
+    3  & $(P_1, P_4)$ Modell $\times$ Unsicherheit & 24 & 13 & 10 & 1 & Methodischer Konflikt bei $v_{1.4} \times v_{4.1}$ \\
+    4  & $(P_1, P_5)$ Modell $\times$ Kriterienkatalog & 18 & 15 & 3 & 0 & Vollständig konsistenter Problemraum \\
+    5  & $(P_1, P_6)$ Modell $\times$ Standardisierung & 18 & 13 & 5 & 0 & Vollständig konsistenter Problemraum \\
+    6  & $(P_2, P_3)$ Automatisierung $\times$ Mismatch & 12 & 9 & 3 & 0 & Vollständig konsistenter Problemraum \\
+    7  & $(P_2, P_4)$ Automatisierung $\times$ Unsicherheit & 12 & 11 & 0 & 1 & Rechnerische Unvereinbarkeit bei $v_{2.1} \times v_{4.4}$ \\
+    8  & $(P_2, P_5)$ Automatisierung $\times$ Kriterienkatalog & 9 & 8 & 1 & 0 & Vollständig konsistenter Problemraum \\
+    9  & $(P_2, P_6)$ Automatisierung $\times$ Standardisierung & 9 & 9 & 0 & 0 & Vollständig konsistenter Problemraum \\
+    10 & $(P_3, P_4)$ Mismatch $\times$ Unsicherheit & 16 & 13 & 3 & 0 & Vollständig konsistenter Problemraum \\
+    11 & $(P_3, P_5)$ Mismatch $\times$ Kriterienkatalog & 12 & 10 & 2 & 0 & Vollständig konsistenter Problemraum \\
+    12 & $(P_3, P_6)$ Mismatch $\times$ Standardisierung & 12 & 11 & 1 & 0 & Vollständig konsistenter Problemraum \\
+    13 & $(P_4, P_5)$ Unsicherheit $\times$ Kriterienkatalog & 12 & 10 & 2 & 0 & Vollständig konsistenter Problemraum \\
+    14 & $(P_4, P_6)$ Unsicherheit $\times$ Standardisierung & 12 & 11 & 1 & 0 & Vollständig konsistenter Problemraum \\
+    15 & $(P_5, P_6)$ Kriterienkatalog $\times$ Standardisierung & 9 & 9 & 0 & 0 & Vollständig konsistenter Problemraum \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Gesamtsumme aller Relationen:}} & \textbf{217} & \textbf{168} & \textbf{45} & \textbf{4} & \textbf{4 Inkompatibilitäten ($X$)} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Wie die aggregierte Auswertung in Tabelle~\ref{tab:cca_uebersicht} verdeutlicht, gliedert sich der morphologische Gesamtraum in drei distinkte Konsistenzklassen:
+\begin{enumerate}[label=\textbf{\alph*)}, leftmargin=*]
+  \item \textbf{Empirisch beobachtete Konfigurationen ($O$ -- 168 Zellen / 77,4\,\%):} Diese Parameterkombinationen sind in mindestens einer der 39 untersuchten Primärstudien real belegt. Sie spiegeln die etablierten methodischen Entwicklungspfade der letzten 26 Jahre wider und bilden die empirische Basis für die typologische Synthese der vier methodischen Archetypen (Abschnitt~\ref{subsubsec:archetypen_analyse}).
+  \item \textbf{Plausible, unbesetzte Innovationsräume ($?$ -- 45 Zellen / 20,7\,\%):} Diese Relationen weisen keinerlei logische, mathematische oder funktionale Widersprüche auf, werden jedoch in der aktuellen COTS-Literatur nicht empirisch adressiert. Sie markieren ungenutzte Synergien und bilden den methodischen Ausgangspunkt für die theoriegeleitete Identifikation der vier zentralen Forschungslücken in Kapitel~\ref{subsec:identifikation_forschungsluecken}.
+  \item \textbf{Logisch-strukturelle Inkompatibilitäten ($X$ -- 4 Zellen / 1,8\,\%):} Vier Zellenrelationen wurden aufgrund formaler und axiomatisch unauflösbarer Widersprüche eliminiert:
+  \begin{itemize}[leftmargin=*]
+    \item \textit{$(P_1 = v_{1.3}) \times (P_2 = v_{2.1})$ (Mathematische Optimierung $\times$ Manuelle Prozesse):} Die nicht-lineare oder ganzzahlige 0-1-Ganzzahlprogrammierung ist NP-schwer und erfordert zwingend algorithmische Gleichungslöser (z.\,B. Branch-and-Bound-Solver in LINGO oder MATLAB); eine rein prozedural-manuelle Abarbeitung ist mathematisch ausgeschlossen.
+    \item \textit{$(P_1 = v_{1.5}) \times (P_2 = v_{2.1})$ (KI, Bayes-Netze \& Matching $\times$ Manuelle Prozesse):} Die Berechnung bedingter Wahrscheinlichkeitstabellen (CPTs) in gerichteten azyklischen Graphen (DAGs) sowie ontologiebasierte Baum-Editierdistanzen verlangen zwingend spezialisierte Rechenwerkzeuge.
+    \item \textit{$(P_1 = v_{1.4}) \times (P_4 = v_{4.1})$ (Fuzzy-MCDA/OR $\times$ Deterministische Einzelwerte):} Fuzzy-Entscheidungsverfahren basieren per Definition auf unscharfen Zugehörigkeitsfunktionen oder Kredibilitätsverteilungen; die Beschränkung auf rein deterministische Crisp-Einzelwerte hebt das fundamentale mathematische Paradigma auf.
+    \item \textit{$(P_2 = v_{2.1}) \times (P_4 = v_{4.4})$ (Manuelle Prozesse $\times$ Probabilistisches \& Evidential Reasoning):} Die exakte Evidenzakkumulation nach Dempster-Shafer mit $2^{|\Theta|}$ Teilmengen und die Modellierung von Nichtwissensgraden $m(\Theta)$ sind ohne computergestützte Werkzeuge fehlerfrei nicht durchführbar.
+  \end{itemize}
+\end{enumerate}
+
+Die vollständige tabellarische Dokumentation aller 15 paarweisen Kreuzmatrizen samt der zitatbasierten Begründungen für jede einzelne Zellenrelation ist aus Gründen der wissenschaftlichen Transparenz und Intersubjektivität lückenlos in Anhang~C hinterlegt.
 
 \subsubsection{Vergleichende Analyse der vier methodischen Archetypen}
 \label{subsubsec:archetypen_analyse}
