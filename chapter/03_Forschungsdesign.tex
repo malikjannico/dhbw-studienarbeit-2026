@@ -15,35 +15,7 @@ Dieses Kapitel legt das methodische Fundament der vorliegenden Studienarbeit dar
 
 In den Disziplinen des Software Engineering und der Wirtschaftsinformatik stellt die systematische Literaturübersicht ein zentrales Instrument der wissenschaftlichen Sekundärforschung dar. Während traditionelle narrative Übersichtsarbeiten anfällig für unbewusste Selektionsverzerrungen (\textit{Selection Bias}) und eine mangelnde prozedurale Nachvollziehbarkeit sind, zeichnet sich eine eigenständige SLR durch einen streng formalisierten, kriteriengeleiteten und replizierbaren Forschungsprozess aus. Ziel ist es, die Gesamtheit der verfügbaren Primärevidenz zu einem präzise abgegrenzten Untersuchungsgegenstand systematisch zu identifizieren, deren methodische Güte unabhängig zu prüfen und die dispersen Einzelbefunde theorieorientiert zu aggregieren \parencite[S.~880--882]{2NHFUF5N}. Angesichts der stark fragmentierten Methodenlandschaft im Bereich der COTS-Auswahl bildet ein solches Vorgehen die notwendige Voraussetzung, um bestehende Ansätze von frühen heuristischen Modellen bis hin zu modernen mathematischen Optimierungsverfahren belastbar zu vergleichen.
 
-\begin{table}[htbp]
-  \centering
-  \small
-  \caption{Phasen und Schritte des methodischen Vorgehens nach \textcite[S.~882--905]{2NHFUF5N}}
-  \label{tab:okoli_phasen}
-  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{3.2cm}X>{\raggedright\arraybackslash}p{3.5cm}}
-    \toprule
-    \textbf{Phase} & \textbf{Schritt nach Okoli} & \textbf{Zielsetzung im Kontext der Studienarbeit} & \textbf{Eingesetzte Werkzeuge \& Methoden} \\
-    \midrule
-    \multirow{2}{*}{\textbf{1. Planung}} 
-      & 1. Identify Purpose & Präzisierung der Forschungsziele und Forschungsfragen (RQ1--RQ3) & Problemstellung, Zieltaxonomie \\
-      & 2. Draft Protocol & Spezifikation des Review-Protokolls und des Mastersuchstrings & Gemini 3.1 Pro, PRISMA 2020 \\
-    \addlinespace[2pt]
-    \multirow{2}{*}{\textbf{2. Auswahl}} 
-      & 3. Search Literature & Systematische Recherche in vier wissenschaftlichen Fachdatenbanken & IEEE, ACM, EBSCO, Springer, Python-API \\
-      & 4. Apply Practical Screen & Dreistufiger Filterprozess (Metadaten-, Relevanz- und Eignungsprüfung) & Zotero, Gemini 3.5 Flash, Screening-Raster \\
-    \addlinespace[2pt]
-    \multirow{2}{*}{\textbf{3. Extraktion}} 
-      & 5. Appraise Quality & Methodische Qualitätsbewertung anhand von QA1--QA4 & Gemini 3.7 Flash, \texttt{verify\_quotes.py} \\
-      & 6. Extract Data & Strukturierte 18-spaltige Evidenz- und Merkmaltextraktion & Subagent-per-Paper, JSON-Textextraktion \\
-    \addlinespace[2pt]
-    \multirow{2}{*}{\textbf{4. Ausführung}} 
-      & 7. Synthesize Studies & Evolutionäre Analyse \& General Morphological Analysis (GMA) & Ritchey-Formalismus, Kreuzkonsistenz \\
-      & 8. Write Review & Wissenschaftliche Berichterstattung gemäß akademischer Standards & LaTeX, Shiny App \parencite{MQ9M8Q7L} \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-
-Für die vorliegende Arbeit wird das von \textcite[S.~882--905]{2NHFUF5N} etablierte Leitfadenmodell zugrunde gelegt. Dieses gliedert sich in vier sequentielle Phasen mit acht aufeinander aufbauenden Einzelschritten (siehe Tabelle~\ref{tab:okoli_phasen}):
+Für die vorliegende Arbeit wird das von \textcite[S.~882--905]{2NHFUF5N} etablierte Leitfadenmodell zugrunde gelegt. Dieses gliedert sich in vier sequentielle Phasen mit acht aufeinander aufbauenden Einzelschritten:
 \begin{enumerate}[label=\textbf{Phase \arabic*:}, leftmargin=*]
   \item \textbf{Planung (\textit{Planning}):} 
   \begin{enumerate}[label=\textbf{Schritt \arabic*:}, leftmargin=*]
@@ -120,7 +92,7 @@ Da sich die Suchsyntaxen und Indizierungsstrukturen der Datenbanken signifikant 
   \small
   \caption{Systematische Ein- und Ausschlusskriterien über die drei Filterstufen}
   \label{tab:screening_kriterien}
-  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{4.6cm}X}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
     \toprule
     \textbf{Filterstufe} & \textbf{Einschlusskriterien (Inclusion)} & \textbf{Ausschlusskriterien (Exclusion)} \\
     \midrule
@@ -134,7 +106,7 @@ Da sich die Suchsyntaxen und Indizierungsstrukturen der Datenbanken signifikant 
         \textbullet\ Reine Editorials, Inhaltsverzeichnisse oder Abstracts ohne Volltextreferenz \newline
         \textbullet\ Fehlende Metadaten \newline
         \textbullet\ Kein Bezug zu Standard- oder COTS-Software \\
-    \addlinespace[2pt]
+    \addlinespace[4pt]
     \textbf{Screen 2} \newline (Thematische Relevanz) 
       & \textbullet\ Explizite Thematisierung von Evaluierungs-, Auswahl- oder Rankingmethoden für COTS-Software \newline
         \textbullet\ Historische, vergleichende oder methodische Analysen von COTS-Auswahlmodellen \newline
@@ -142,7 +114,7 @@ Da sich die Suchsyntaxen und Indizierungsstrukturen der Datenbanken signifikant 
       & \textbullet\ Allgemeine Software-Wiederverwendungs- oder CBSE-Arbeiten ohne Fokus auf den Auswahlprozess \newline
         \textbullet\ Auswahl anderer IT-Artefakte (z.\,B. reine Hardware, Cloud-Infrastruktur, Microservices), sofern keine COTS-Fallstudie \newline
         \textbullet\ Generische Software-Qualitätsmodelle ohne Anwendung auf die COTS-Auswahl \\
-    \addlinespace[2pt]
+    \addlinespace[4pt]
     \textbf{Screen 3} \newline (Materielle Eignung / Volltext-Eligibility) 
       & \textbullet\ Primärer Gegenstand ist die Evaluierung, Auswahl oder Priorisierung von COTS-Software oder COTS-basierten Systemen \newline
         \textbullet\ Die Studie schlägt eine konkrete Methode, ein Modell, einen Prozess oder ein Framework zur COTS-Softwareauswahl vor oder vergleicht solche formal
@@ -169,12 +141,13 @@ Zur methodisch sauberen Selektion der relevanten Primärstudien wurde ein dreist
 
 Die Qualitätsbewertung (\textit{Quality Appraisal}) bildet gemäß \textcite[S.~893--896]{2NHFUF5N} einen essenziellen Zwischenschritt vor der Synthese. Sie fungiert nicht als starrer Ausschlussmechanismus, sondern als methodisches Moderations- und Filterinstrument, um die interne Validität, methodische Rigorosität und empirische Belastbarkeit der Primärstudien zu gewichten und Verzerrungen bei der Synthese zu verhindern.
 
-\begin{table}[htbp]
+\begin{landscape}
+\begin{table}[p]
   \centering
   \small
   \caption{Theoretisch fundiertes Bewertungsraster des Quality Appraisals (QA1--QA4)}
   \label{tab:qa_schema}
-  \begin{tabularx}{\textwidth}{l>{\raggedright\arraybackslash}p{4.2cm}X>{\raggedright\arraybackslash}p{3.8cm}}
+  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{5.4cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{5.0cm}}
     \toprule
     \textbf{Kriterium} & \textbf{Fokus \& Leitfrage} & \textbf{Punkteabstufung \& Bewertungsregeln} & \textbf{Methodischer Beitrag zur Synthese} \\
     \midrule
@@ -184,21 +157,21 @@ Die Qualitätsbewertung (\textit{Quality Appraisal}) bildet gemäß \textcite[S.
         \textbf{1 Punkt:} Teilweise formalisiert (z.\,B. grundlegende Ablaufschritte ohne formale Kriterienaggregation). \newline
         \textbf{2 Punkte:} Vollständig mathematisch, logisch oder prozessual formalisiert.
       & Prüft die theoretische Exaktheit und mathematische Reproduzierbarkeit des Entscheidungsmodells (Fundament für RQ2). \\
-    \addlinespace[2pt]
+    \addlinespace[4pt]
     \textbf{QA2: Kriterienkatalog-Transparenz} 
       & Werden die für die COTS-Evaluierung genutzten Kriterien (funktional, nicht-funktional, architektonisch, wirtschaftlich) explizit offengelegt?
       & \textbf{0 Punkte:} Kriterien werden nicht oder nur intransparent genannt. \newline
         \textbf{1 Punkt:} Kriterien werden nur beispielhaft oder unvollständig erwähnt. \newline
         \textbf{2 Punkte:} Ein strukturierter, hierarchischer Kriterienkatalog wird explizit bereitgestellt.
       & Gewährleistet die inhaltliche Vergleichbarkeit und Nachvollziehbarkeit der Kriterienkataloge (Fundament für RQ2/RQ3). \\
-    \addlinespace[2pt]
+    \addlinespace[4pt]
     \textbf{QA3: Empirische Validierung} 
       & In welcher Form und Tiefe wurde die vorgeschlagene Methode in der Praxis oder im Experiment validiert?
       & \textbf{0 Punkte:} Reine Konzeptbeschreibung ohne numerisches Anwendungsbeispiel. \newline
         \textbf{1 Punkt:} Synthetisches oder hypothetisches Rechenbeispiel (\textit{Toy Example}). \newline
         \textbf{2 Punkte:} Reale Industrie-Fallstudie oder kontrolliertes empirisches Experiment.
       & Bewertet den praktischen Reifegrad und die empirische Evidenzstärke der Methode (Fundament für RQ2). \\
-    \addlinespace[2pt]
+    \addlinespace[4pt]
     \textbf{QA4: Reflexion von Grenzen \& Kontext} 
       & Werden methodische Limitationen, organisatorischer Erhebungsaufwand und Kontextfaktoren kritisch reflektiert?
       & \textbf{0 Punkte:} Keine Diskussion von Grenzen oder Einschränkungen. \newline
@@ -206,13 +179,15 @@ Die Qualitätsbewertung (\textit{Quality Appraisal}) bildet gemäß \textcite[S.
         \textbf{2 Punkte:} Ausführliche, kritische Reflexion von Aufwand, kognitiver Last und Anwendungsgrenzen.
       & Ermöglicht eine realistische Einschätzung praktischer Anwendungsbarrieren und Forschungslücken (Fundament für RQ2/RQ3). \\
     \midrule
-    \multicolumn{4}{p{\dimexpr\textwidth-2\tabcolsep\relax}}{\textbf{Definition der Evidenzstufen auf Basis des Gesamtscores (0 bis 8 Punkte):} \newline
+    \multicolumn{4}{p{\dimexpr\linewidth-2\tabcolsep\relax}}{\textbf{Definition der Evidenzstufen auf Basis des Gesamtscores (0 bis 8 Punkte):} \newline
     \textbullet\ \textbf{Hohe Evidenzstärke (\textit{High Rigor \& Relevance}, 6--8 Punkte):} Höchste methodische und empirische Güte; dient als primäre Referenzbasis zur Bewertung von Stärken und Grenzen aktueller Methoden (RQ2). \newline
     \textbullet\ \textbf{Mittlere Evidenzstärke (\textit{Medium Rigor}, 3--5 Punkte):} Methodisch solide Arbeiten mit leichten Einschränkungen in Validierung oder Formalisierung; fließt vollumfänglich in die morphologische Analyse ein. \newline
     \textbullet\ \textbf{Niedrige Evidenzstärke (\textit{Low Rigor / Conceptual}, 0--2 Punkte):} Rein konzeptionelle Arbeiten; liefert wertvolle Impulse zur Identifikation von Forschungslücken (RQ3), besitzt jedoch eingeschränkte empirische Aussagekraft.} \\
     \bottomrule
   \end{tabularx}
 \end{table}
+\end{landscape}
+\FloatBarrier
 
 Für die Durchführung des Quality Appraisals wurde ein theoriegeleitetes, vierdimensionales Bewertungsraster konstruiert (siehe Tabelle~\ref{tab:qa_schema}), das auf etablierten Standards für Software-Engineering-Reviews aufbaut \parencite[S.~893--896]{2NHFUF5N}. Jedes Kriterium wird auf einer 3-stufigen Ordinalskala von 0 bis 2 Punkten bewertet, wodurch sich ein Gesamtscore von 0 bis 8 Punkten ergibt. Die Kriterien adressieren die wesentlichen Dimensionen wissenschaftlicher Güte:
 \begin{enumerate}[label=\textbf{QA\arabic*:}, leftmargin=*]
