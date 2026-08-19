@@ -62,7 +62,7 @@ Eine zentrale Publikation wurde aus der Proposal-Recherche integriert, bei der e
 
 Die bibliometrische Analyse der Literatursammlung über den Zeitraum 2000 bis 2026 zeigt eine kontinuierliche wissenschaftliche Befassung mit der COTS-Auswahlproblematik. Tabelle~\ref{tab:demografie_qa_uebersicht} fasst die demografischen Kennzahlen, Publikationskanäle und Quality-Appraisal-Ergebnisse zusammen.
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Demografische Struktur, Publikationsorgane und Qualitätsbewertungsverteilung ($N = 39$)}
@@ -91,6 +91,7 @@ Die bibliometrische Analyse der Literatursammlung über den Zeitraum 2000 bis 20
     \bottomrule
   \end{tabularx}
 \end{table}
+\FloatBarrier
 
 In der Dekade 2000--2009 erschienen 16 Publikationen (41,0\,\%). Diese Pionierphase war geprägt von der Etablierung erster Outranking- und AHP-Modelle sowie dem Entwurf dedizierter Software-Werkzeuge. In der zweiten Dekade (2010--2019) wurden 13 Publikationen (33,3\,\%) publiziert, in denen die mathematische Optimierung, nicht-lineare Programmierung und Fuzzy-MCDA-Verfahren dominierten. Die jüngste Phase (2020--2026) steuert 10 Publikationen (25,6\,\%) bei, die sich auf kompositionelle Datenanalysen, Evidential Reasoning und großangelegte Meta-Synthesen konzentrieren.
 
@@ -165,10 +166,10 @@ Zur Beantwortung von Forschungsfrage 1 rekonstruiert dieser Abschnitt die histor
 \end{landscape}
 \FloatBarrier
 
-\subsubsection{Epoche 1 (2000--2005): Grundlegende Outranking- und frühe Mehrkriterien-Frameworks}
+\subsubsection{Epoche 1 (2000 bis 2005): Grundlegende Outranking- und frühe Mehrkriterien-Frameworks}
 \label{subsubsec:epoche1}
 
-Die erste Epoche (2000--2005) markiert den Übergang von rein informellen, intuitiven Beschaffungsentscheidungen zu formalisierten mathematischen und prozeduralen Bewertungsverfahren. Angesichts explodierender Fehlerraten bei der Einführung unternehmensweiter Softwaresysteme bestand das primäre Ziel darin, die Auswahlentscheidung transparent, objektiv und kriteriengeleitet zu gestalten.
+Die erste Epoche (2000 bis 2005) markiert den Übergang von rein informellen, intuitiven Beschaffungsentscheidungen zu formalisierten mathematischen und prozeduralen Bewertungsverfahren. Angesichts explodierender Fehlerraten bei der Einführung unternehmensweiter Softwaresysteme bestand das primäre Ziel darin, die Auswahlentscheidung transparent, objektiv und kriteriengeleitet zu gestalten.
 
 Den Beginn markieren Arbeiten aus dem Bereich der europäischen Outranking-Methode. \textcite{LZQJ6M4X} demonstrierten anhand eines realen Beschaffungsprojekts bei Telecom Italia den Einsatz von ELECTRE-TRI zur Vorfilterung und Klassifikation kommerzieller Angebote im Rahmen öffentlicher Ausschreibungen (\textit{Calls for Tenders}). Ihr Ansatz nutzte Konkordanz- und Diskordanzschwellen, um unzureichende Softwarekandidaten über Veto-Regeln auszusortieren. Der fundamentale Vorteil dieses Outranking-Ansatzes lag in seiner Nicht-Kompensatorik: Gravierende Schwächen in funktionalen Kernanforderungen durften nicht durch hervorragende Werte in Nebenkriterien kompensiert werden. Aufbauend auf dieser Arbeit stellten \textcite{M3B2D3GD} die erste formale Verbindung zwischen Outranking-Relationen und dem internationalen Qualitätsstandard ISO/IEC 9126 her. Sie wiesen mathematisch nach, dass naive additive Aggregationen (wie das klassische gewichtete Punktwertmodell WSM) auf ordinalen Qualitätsmetriken unzulässig sind und führten Präferenz- sowie Indifferenzschwellen zur Vermeidung von Fehlinterpretationen ein.
 
@@ -178,10 +179,10 @@ Für hochgradig sicherheitskritische Anwendungsdomänen reichten deterministisch
 
 Gleichzeitig entstanden erste hybride und anforderungszentrierte Ansätze. \textcite{CI86GRRG} integrierten Fuzzy-Regelsysteme und Adaptive Neuro-Fuzzy Inference Systems (ANFIS), um Unschärfen in Dienstgütemetriken (QoS) von COTS-Komponenten auszugleichen. \textcite{TLB687YL} konzipierte einen leichtgewichtigen zielorientierten Modellierungsansatz auf Basis des $i^*$-Strategic Dependency Models, der relationale Abhängigkeiten zwischen Organisationszielen (\textit{Strategic Dependency}) und Softwarefähigkeiten (\textit{Strategic Rationale}) analysierte. \textcite{CZZ6XQZJ} legten mit NeMo-CoSe ein Verhandlungsmodell vor, das spieltheoretische Win-Win-Konditionen zwischen heterogenen Stakeholder-Gruppen bei der Komponentenauswahl formalisierte.
 
-\subsubsection{Epoche 2 (2006--2011): Architekturintegration, Mismatch-Behandlung und dedizierte DSS-Engines}
+\subsubsection{Epoche 2 (2006 bis 2011): Architekturintegration, Mismatch-Behandlung und dedizierte DSS-Engines}
 \label{subsubsec:epoche2}
 
-Die zweite Epoche (2006--2011) brachte eine entscheidende architektonische Wende hervor. Die wissenschaftliche Gemeinschaft erkannte, dass Standardsoftwarekomponenten isoliert selten perfekt in bestehende Systemlandschaften passen. Der Forschungsschwerpunkt verlagerte sich daher von der reinen Blackbox-Bewertung hin zur aktiven Mismatch-Erkennung, architektonischen Verträglichkeitsprüfung und der Entwicklung eigenständiger Decision Support Systems (DSS).
+Die zweite Epoche (2006 bis 2011) brachte eine entscheidende architektonische Wende hervor. Die wissenschaftliche Gemeinschaft erkannte, dass Standardsoftwarekomponenten isoliert selten perfekt in bestehende Systemlandschaften passen. Der Forschungsschwerpunkt verlagerte sich daher von der reinen Blackbox-Bewertung hin zur aktiven Mismatch-Erkennung, architektonischen Verträglichkeitsprüfung und der Entwicklung eigenständiger Decision Support Systems (DSS).
 
 \textcite{8XNYS4M9} operationalisierten funktionale Diskrepanzen, indem sie auf Basis von ISO/IEC 9126-2 ein formales Messmodell für funktionale Eignung entwickelten. Dieses differenzierte zwischen funktionaler Vollständigkeit (\textit{Completeness}), Adäquatheit (\textit{Adequacy}) und funktionalem Überhang (\textit{Excess}) und balancierte diese Metriken über AHP-Stakeholdergewichte im E-Payment-Kontext. \textcite{6RNULWVY} automatisierten den Anforderungsabgleich im CARE-Framework (\textit{Component-Aware Requirements Engineering}), indem sie syntaktische Baum-Editierdistanzen mit semantischen WordNet-Ontologien kombinierten, um funktionale \enquote{Near-Miss}-Kandidaten über Softgoal Interdependency Graphs (SIG) algorithmisch zu identifizieren. \textcite{U5JPV4SF} präsentierte eine Hybridisierung, die ANP zur Modellierung von Kriterieninterdependenzen mit einem modifizierten TOPSIS-Algorithmus vereinte, um Workflow-Management-Systeme anhand euklidischer Distanzen zu idealen Referenzpunkten zu bewerten.
 
@@ -191,7 +192,7 @@ Parallel dazu revolutionierten \textcite{ZQMG69VT} und \textcite{MZ8JHDYA} die m
 
 Weitere spezialisierte DSS-Artefakte entstanden in dieser Phase: \textcite{8VHUMEKY} entwickelten das Plato-DSS für digitale Langzeitarchivierung, das subjektive Experteneinschätzungen durch vollautomatisierte empirische Benchmark-Messreihen und objektive Nutzenbäume ersetzte. \textcite{VUVLUN85} formulierten ein nicht-lineares 0-1-Optimierungsmodell zur Komponentenauswahl unter fehlertoleranten \textit{Recovery Block} (RB) Architekturen, das Zuverlässigkeit, Kosten und Ausführungszeit simultan optimierte. \textcite{WBGP3ETU} strukturierte die strategische Make-or-Buy-Entscheidung architektonisch, während \textcite{U4E7VXQU} mit HKBS ein wissensbasiertes System schufen, das regelbasierte Vorabfilterung, fallbasiertes Schließen (\textit{CBRank}) und AHP vereinte.
 
-\subsubsection{Epoche 3 (2012--2019): Mathematische Optimierung und Proliferation von Fuzzy-MCDA}
+\subsubsection{Epoche 3 (2012 bis 2019): Mathematische Optimierung und Ausbreitung von Fuzzy-MCDA}
 \label{subsubsec:epoche3}
 
 Die dritte Epoche (2012--2019) war durch eine massive Mathematisierung und die Ausbreitung der Fuzzy-Set-Theorie gekennzeichnet. Die Wissenschaftliche Gemeinschaft reagierte damit auf die Erkenntnis, dass Expertenurteile bei komplexen Softwarebeschaffungen naturgemäß vage, linguistisch geprägt und mit erkenntnistheoretischer Unsicherheit behaftet sind.
@@ -204,10 +205,10 @@ Eine Serie mathematisch hochgradig anspruchsvoller Arbeiten stammte von der Fors
 
 Ergänzt wurde diese Phase durch hierarchische Wiederverwendungsmodelle von \textcite{DFASRUVC}, das strategische GRADE-Sourcing-Framework von \textcite{JT5X3FIG}, die methodische Triangulation aus Delphi-Filterung, Fuzzy-AHP und PROMETHEE-II-Outranking-Flüssen von \textcite{NZJEEPAC} sowie die Usability-fokussierte AHP-VIKOR-Kompromissrangbildung von \textcite{QNWK8SAP}.
 
-\subsubsection{Epoche 4 (2020--2026): Kompositionelle Daten, Evidential Reasoning und Meta-Analysen}
+\subsubsection{Epoche 4 (2020 bis 2026): Kompositionelle Daten, Evidential Reasoning und Meta-Analysen}
 \label{subsubsec:epoche4}
 
-Die jüngste Epoche (2020--2026) zeichnet sich durch methodische Reifung, die Beseitigung struktureller mathematischer Verzerrungen klassischer Verfahren sowie breit angelegte empirische und methodische Meta-Analysen aus.
+Die jüngste Epoche (2020 bis 2026) zeichnet sich durch methodische Reifung, die Beseitigung struktureller mathematischer Verzerrungen klassischer Verfahren sowie breit angelegte empirische und methodische Meta-Analysen aus.
 
 Einen herausragenden methodenkritischen Beitrag leisteten \textcite{UK2X9C4W}: Sie wiesen mathematisch nach, dass traditionelle Punkteverteilungsverfahren wie das Cumulative Voting (\$100-Test) aufgrund der konstanten Summenrestriktion im Simplex-Raum massiven statistischen Scheinkorrelationen unterliegen. Durch die Einführung der \textit{Compositional Data Analysis} (CoDa) mit Centered Log Ratio (CLR) Transformationen etablierten sie ein verzerrungsfreies statistisches Fundament zur Priorisierung von ISO/IEC-25010-Qualitätsattributen, validiert an 157 Software-Praktikern.
 
@@ -319,8 +320,7 @@ Tabelle~\ref{tab:morphologisches_feld} schlüsselt die relative Häufigkeitsvert
 \label{subsubsec:cca_ergebnisse}
 
 Gemäß der wissenschaftstheoretischen Formalisierung der General Morphological Analysis nach \textcite[S.~83 bis 86]{Z6N6V5L9} bildet das Cross-Consistency Assessment (CCA) das methodische Kernstück zur Bereinigung des theoretischen Konfigurationsraums ($N = 2.592$). Da das kartesische Produkt aller Parameterdomänen zahlreiche Kombinationen enthält, die in der Realität mathematisch unzulässig, algorithmisch widersprüchlich oder praktisch nicht umsetzbar sind, wurden alle $\binom{6}{2} = 15$ paarweisen zweidimensionalen Teilmatrizen mit insgesamt 219 disjunkten Zustandspaaren systematisch evaluiert.
-
-\begin{table}[p]
+\begin{table}[!htbp]
   \centering
   \footnotesize
   \setlength{\tabcolsep}{3.5pt}
@@ -350,6 +350,8 @@ Gemäß der wissenschaftstheoretischen Formalisierung der General Morphological 
     \bottomrule
   \end{tabularx}
 \end{table}
+\FloatBarrier
+
 
 Wie die aggregierte Auswertung in Tabelle~\ref{tab:cca_uebersicht} verdeutlicht, gliedert sich der morphologische Gesamtraum in drei distinkte Konsistenzklassen:
 \begin{enumerate}[label=\textbf{\alph*)}, leftmargin=*]
