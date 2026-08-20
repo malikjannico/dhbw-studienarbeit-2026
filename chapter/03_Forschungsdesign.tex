@@ -82,52 +82,28 @@ Die Recherche wurde in vier führenden wissenschaftlichen Fachdatenbanken durchg
 
 Da sich die Suchnotationen und Indizierungsstrukturen der Datenbanken teilweise unterscheiden, wurde der Mastersuchstring datenbankspezifisch übersetzt. Während bei IEEE Xplore und ACM Digital Library gezielte Metadatenfilter (\texttt{All Metadata}, \texttt{Title/Abstract/Keywords}) zum Einsatz kamen, wurden bei EBSCOhost und Springer Nature feldübergreifende Abfragen mit optimierten Trunkierungs- und Phrasenoperatoren formuliert. Bei Springer Nature eBooks wurde zudem ein automatisiertes Skript über die Reference-API eingesetzt, um die notwendigen Literaturmetadaten für das Literaturverwaltungsprogramm zu exportieren.
 
-\begin{table}[!htbp]
-  \centering
-  \small
-  \caption{Systematische Ein- und Ausschlusskriterien über die drei Filterstufen}
-  \label{tab:screening_kriterien}
-  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
-    \toprule
-    \textbf{Filterstufe} & \textbf{Einschlusskriterien (Inclusion)} & \textbf{Ausschlusskriterien (Exclusion)} \\
-    \midrule
-    \textbf{Screen 1} \newline (Formale Metadaten) 
-      & \textbullet\ Publikationszeitraum 2000 bis 2026 \newline
-        \textbullet\ Sprache Englisch oder Deutsch \newline
-        \textbullet\ Titel und Abstract vollständig vorhanden \newline
-        \textbullet\ Bezug zu COTS, Standardsoftware oder komponentenbasierter Software (CBSD)
-      & \textbullet\ Erscheinungsjahr vor 2000 \newline
-        \textbullet\ Andere Sprachen als Englisch/Deutsch \newline
-        \textbullet\ Reine Editorials, Inhaltsverzeichnisse oder Abstracts ohne Volltextreferenz \newline
-        \textbullet\ Fehlende Metadaten \newline
-        \textbullet\ Kein Bezug zu Standard- oder COTS-Software \\
-    \addlinespace[4pt]
-    \textbf{Screen 2} \newline (Thematische Relevanz) 
-      & \textbullet\ Explizite Thematisierung von Evaluierungs-, Auswahl- oder Rankingmethoden für COTS-Software \newline
-        \textbullet\ Historische, vergleichende oder methodische Analysen von COTS-Auswahlmodellen \newline
-        \textbullet\ Kalibrierter Relevanz-Score $> 7$ (Skala 1 bis 10) auf Basis von Titel und Abstract
-      & \textbullet\ Allgemeine Software-Wiederverwendungs- oder CBSE-Arbeiten ohne Fokus auf den Auswahlprozess \newline
-        \textbullet\ Auswahl anderer IT-Artefakte (z.\,B. reine Hardware, Cloud-Infrastruktur, Microservices), sofern keine COTS-Fallstudie \newline
-        \textbullet\ Generische Software-Qualitätsmodelle ohne Anwendung auf die COTS-Auswahl \\
-    \addlinespace[4pt]
-    \textbf{Screen 3} \newline (Materielle Eignung / Volltext-Eligibility) 
-      & \textbullet\ Primärer Gegenstand ist die Evaluierung, Auswahl oder Priorisierung von COTS-Software oder COTS-basierten Systemen \newline
-        \textbullet\ Die Studie schlägt eine konkrete Methode, ein Modell, einen Prozess oder ein Framework zur COTS-Softwareauswahl vor oder vergleicht solche formal
-      & \textbullet\ \textbf{E1.1 Non-COTS Domain:} Kein COTS-Bezug \newline
-        \textbullet\ \textbf{E1.2 Non-Selection Focus:} Kein Fokus auf den Auswahlprozess \newline
-        \textbullet\ \textbf{E2.1 No Specific Method:} Keine formalisierte oder operationalisierte Methode \newline
-        \textbullet\ \textbf{E2.2 Pure Survey:} Reine narrative Übersichtsarbeit ohne eigenständigen Methodenbeitrag \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-\FloatBarrier
-
 Zur methodisch sauberen Selektion der relevanten Publikationen wurde ein dreistufiger Filterprozess operationalisiert (siehe Tabelle~\ref{tab:screening_kriterien}). Die methodische Notwendigkeit eines solchen sequentiellen Trichteransatzes (\textit{Funnel Approach}) begründet sich in der schrittweisen Reduktion der kognitiven Last und der Trennung formaler, semantischer und materieller Prüfdimensionen gemäß \textcite[S.~892 bis 893]{2NHFUF5N}:
 \begin{itemize}[leftmargin=*]
   \item \textbf{Practical Screen 1 (Formale Metadatenprüfung):} Diese Stufe dient dem schnellen Ausschluss formal ungeeigneter Datensätze. Dadurch soll die Treffermenge direkt auf aktuelle Publikationen reduziert werden, die den sprachlichen Kenntnissen des Autors entsprechen, Primär- und Sekundärliteratur abbilden und vollständig zitierfähig sind.
   \item \textbf{Practical Screen 2 (Thematische Relevanzprüfung auf Titel- und Abstractebene):} Diese Stufe prüft, ob eine Publikation den inhaltlichen Kern der Forschungsfragen adressiert. Da automatisierte Suchabfragen in Datenbanken häufig Arbeiten erfassen, die COTS lediglich am Rande erwähnen, bewertet ein Relevanz-Scoring die thematischer Übereinstimmung. Der Schwellenwert ($\text{Score} > 7$) trennt hochrelevante methodische Kernarbeiten von marginalen Randbeiträgen.
   \item \textbf{Practical Screen 3 (Materielle Volltext-Eignungsprüfung / Eligibility):} Diese Stufe prüft die Volltexte der Publikationen. Hierbei muss nachgewiesen werden, dass die Arbeit nicht nur abstrakte Anforderungen diskutiert, sondern ein operationalisiertes, replizierbares Modell, ein mathematisches Framework oder einen formalen Prozess zur COTS-Auswahl vorschlägt oder vergleicht. Zur Gewährleistung maximaler Transparenz werden Ausschlüsse über einen hierarchischen Entscheidungsbaum kategorisiert.
 \end{itemize}
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Dreistufiger Screening- und Filterungsprozess der Literaturübersicht}
+  \label{tab:screening_kriterien}
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+    \toprule
+    Filterstufe & Zentrale Einschlusskriterien & Primäre Ausschlussgründe \\
+    \midrule
+    Screen 1: Formal & Zeitraum 2000--2026; EN/DE; COTS-/CBSD-Bezug & Erscheinungsjahr vor 2000; fehlender Volltext \\
+    Screen 2: Relevanz & COTS-Evaluierungs- oder Auswahlmethoden & Reines CBSE/Reuse ohne Selektionsfokus \\
+    Screen 3: Eignung & Formalisierte Methode, Modell oder Vergleich & Reine Survey ohne Methodenbeitrag; Non-COTS \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
 
 % ------------------------------------------------------------------------------
 % 3.3 Qualitätsbewertung und Datenextraktion
@@ -137,54 +113,6 @@ Zur methodisch sauberen Selektion der relevanten Publikationen wurde ein dreistu
 
 Die Qualitätsbewertung (\textit{Quality Appraisal}) bildet gemäß \textcite[S.~893 bis 896]{2NHFUF5N} einen essenziellen Zwischenschritt vor der Analyse. Sie fungiert nicht als starrer Ausschlussmechanismus, sondern als methodisches Moderations- und Filterinstrument, um die interne Validität, methodische Strenge und empirische Belastbarkeit der Publikationen zu gewichten und Verzerrungen bei der Analyse zu verhindern.
 
-\begin{landscape}
-\begin{table}[p]
-  \centering
-  \small
-  \caption{Theoretisch fundiertes Bewertungsraster der Qualitätsbewertung}
-  \label{tab:qa_schema}
-  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{5.4cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{5.0cm}}
-    \toprule
-    \textbf{Kriterium} & \textbf{Fokus \& Leitfrage} & \textbf{Punkteabstufung \& Bewertungsregeln} & \textbf{Methodischer Beitrag zur Analyse} \\
-    \midrule
-    \textbf{QA1: Methodische Formalisierung} 
-      & Ist die vorgeschlagene Auswahlmethode mathematisch, algorithmisch oder prozessual klar und nachvollziehbar formalisiert?
-      & \textbf{0 Punkte:} Vage, rein verbale Beschreibung ohne mathematische Formeln oder formalen Prozess. \newline
-        \textbf{1 Punkt:} Teilweise formalisiert (z.\,B. grundlegende Ablaufschritte ohne formale Kriterienaggregation). \newline
-        \textbf{2 Punkte:} Vollständig mathematisch, logisch oder prozessual formalisiert.
-      & Prüft die theoretische Exaktheit und mathematische Reproduzierbarkeit des Entscheidungsmodells. \\
-    \addlinespace[2pt]
-    \textbf{QA2: Kriterienkatalog-Transparenz} 
-      & Werden die für die COTS-Evaluierung genutzten Kriterien (funktional, nicht-funktional, architektonisch, wirtschaftlich) explizit offengelegt?
-      & \textbf{0 Punkte:} Kriterien werden nicht oder nur intransparent genannt. \newline
-        \textbf{1 Punkt:} Kriterien werden nur beispielhaft oder unvollständig erwähnt. \newline
-        \textbf{2 Punkte:} Ein strukturierter, hierarchischer Kriterienkatalog wird explizit bereitgestellt.
-      & Gewährleistet die inhaltliche Vergleichbarkeit und Nachvollziehbarkeit der Kriterienkataloge. \\
-    \addlinespace[2pt]
-    \textbf{QA3: Empirische Validierung} 
-      & In welcher Form und Tiefe wurde die vorgeschlagene Methode validiert?
-      & \textbf{0 Punkte:} Reine Konzeptbeschreibung ohne numerisches Anwendungsbeispiel. \newline
-        \textbf{1 Punkt:} Synthetisches oder hypothetisches Rechenbeispiel (\textit{Toy Example}). \newline
-        \textbf{2 Punkte:} Reale Industrie-Fallstudie oder kontrolliertes empirisches Experiment.
-      & Bewertet den praktischen Reifegrad und die empirische Evidenzstärke der Methode. \\
-    \addlinespace[2pt]
-    \textbf{QA4: Reflexion von Grenzen \& Kontext} 
-      & Werden methodische Limitationen, organisatorischer Erhebungsaufwand und Kontextfaktoren kritisch reflektiert?
-      & \textbf{0 Punkte:} Keine Diskussion von Grenzen oder Einschränkungen. \newline
-        \textbf{1 Punkt:} Kurze oder oberflächliche Erwähnung von Limitationen. \newline
-        \textbf{2 Punkte:} Ausführliche, kritische Reflexion von Aufwand, kognitiver Last und Anwendungsgrenzen.
-      & Ermöglicht eine realistische Einschätzung praktischer Anwendungsbarrieren und Forschungslücken. \\
-    \midrule
-    \multicolumn{4}{p{\dimexpr\linewidth-2\tabcolsep\relax}}{\textbf{Definition der Evidenzstufen auf Basis des Gesamtscores (0 bis 8 Punkte):} \newline
-    \textbullet\ \textbf{Hohe Evidenzklasse (6 bis 8 Punkte):} Höchste methodische und empirische Güte; dient als primäre Referenzbasis zur Bewertung von Stärken und Grenzen aktueller Methoden. \newline
-    \textbullet\ \textbf{Mittlere Evidenzklasse (3 bis 5 Punkte):} Methodisch solide Arbeiten mit leichten Einschränkungen in Validierung oder Formalisierung; fließt vollumfänglich in die morphologische Analyse ein. \newline
-    \textbullet\ \textbf{Niedrige Evidenzklasse (0 bis 2 Punkte):} Rein konzeptionelle Arbeiten; liefert wertvolle Impulse zur Identifikation von Forschungslücken, besitzt jedoch eingeschränkte empirische Aussagekraft.} \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-\end{landscape}
-\FloatBarrier
-
 Für die Durchführung des Quality Appraisals wurde ein vierdimensionales Bewertungsraster konstruiert (siehe Tabelle~\ref{tab:qa_schema}). Jedes Kriterium wird auf einer 3-stufigen Ordinalskala von 0 bis 2 Punkten bewertet, wodurch sich ein Gesamtscore von 0 bis 8 Punkten ergibt. Die Kriterien adressieren die wesentlichen Dimensionen wissenschaftlicher Güte:
 \begin{enumerate}[label=\textbf{QA\arabic*:}, leftmargin=*]
   \item \textbf{Methodische Transparenz \& Formalisierungsgrad:} Bewertet, ob die mathematischen Aggregationsformeln, Algorithmen oder Prozessschritte so präzise dokumentiert sind, dass eine unabhängige Re-Implementierung möglich ist.
@@ -192,6 +120,25 @@ Für die Durchführung des Quality Appraisals wurde ein vierdimensionales Bewert
   \item \textbf{Empirische Validierung / Evidenzgrad:} Unterscheidet zwischen rein hypothetischen Zahlenbeispielen und realen Industrieerprobungen.
   \item \textbf{Reflexion von Grenzen \& Kontextfaktoren:} Misst den Grad der kritischen Selbstreflexion hinsichtlich Skalierbarkeit, kognitiver Entscheidungslast und organisatorischem Einführungsaufwand.
 \end{enumerate}
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Übersicht der vier Qualitätsbewertungsdimensionen (QA1--QA4)}
+  \label{tab:qa_schema}
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{4.2cm}}
+    \toprule
+    Dimension & Inhaltlicher Bewertungsfokus & Skala & Methodischer Beitrag \\
+    \midrule
+    QA1: Formalisierung & Mathematische/algorithmische Exaktheit & 0--2 Punkte & Prüft Reproduzierbarkeit des Modells \\
+    QA2: Kriterien & Transparenz des Kriterienkatalogs & 0--2 Punkte & Sichert Vergleichbarkeit der Kriterien \\
+    QA3: Validierung & Empirische Fallstudie vs. Toy Example & 0--2 Punkte & Misst praktischen Reifegrad \\
+    QA4: Reflexion & Diskussion von Aufwand \& Grenzen & 0--2 Punkte & Identifiziert Praxisbarrieren \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+Das vollständige detaillierte Bewertungsraster mit allen Leitfragen, Punkteabstufungen und Evidenzklassen ist in Anhang~A (Tabelle~\ref{tab:anhang_qa_schema}) dokumentiert.
 
 Zur systematischen Erfassung aller relevanten Merkmale der Publikationen wurde eine standardisierte, 17-spaltige Datenextraktionsmatrix konzipiert. Um eine zielgerichtete Beantwortung der Forschungsfragen zu gewährleisten, sind die Extraktionsattribute in sechs thematische Merkmalsgruppen strukturiert:
 \begin{enumerate}[label=\textbf{Gruppe \Roman*:}, leftmargin=*]

@@ -51,6 +51,7 @@
 \usepackage{amsmath, amssymb, mathtools} 
 \usepackage{array, booktabs} 
 \usepackage{longtable} 
+\usepackage{xltabular}
 \usepackage{multirow}
 \usepackage{tabularx} 
 
@@ -158,14 +159,13 @@
 
   % 6. Hauptteil (arabische Nummerierung ab Seite 1)
   \pagenumbering{arabic}
-  \include{chapter/10_AllChapter}
+  \input{chapter/10_AllChapter}
 
   % 7. Anhang
-  \begin{appendix}
-    \include{appendix/index}
-  \end{appendix}
+  \appendix
+  \input{appendix/index}
 
   % 8. Literaturverzeichnis
-  \include{pages/18_literaturverzeichnis}
+  \input{pages/18_literaturverzeichnis}
 
 \end{document}

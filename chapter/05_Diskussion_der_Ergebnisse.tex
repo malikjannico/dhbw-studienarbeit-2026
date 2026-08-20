@@ -59,44 +59,22 @@ Die durchgeführte systematische Literaturübersicht liefert auf Basis von 39 me
 
 Die Durchführung des paarweisen Cross-Consistency Assessments (CCA) über alle $\binom{6}{2} = 15$ Teilmatrizen des morphologischen Feldes ($N = 2.592$ formal denkbare Konfigurationen) ermöglichte die mathematisch präzise Isolierung unbesetzter, jedoch methodisch konsistenter und hochgradig relevanter Innovationsräume ($?$). Im Folgenden werden die vier zentralen morphologischen Forschungslücken detailliert analysiert, wodurch Forschungsfrage 3 vollständig und erschöpfend beantwortet wird. Tabelle~\ref{tab:morphologische_luecken} fasst die Lücken, ihre strukturellen Ursachen und die abgeleitete Forschungsagenda zusammen.
 
-\begin{landscape}
-\begin{table}[p]
+\begin{table}[htbp]
   \centering
   \small
-  \caption{Strukturierte Übersicht der identifizierten morphologischen Forschungslücken}
+  \caption{Strukturierte Übersicht der vier identifizierten morphologischen Forschungslücken}
   \label{tab:morphologische_luecken}
-  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{4.8cm}}
+  \begin{tabularx}{\textwidth}{cl>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}X}
     \toprule
-    \textbf{Forschungslücke} & \textbf{Parameter-Kombination} & \textbf{Strukturelles Defizit in der Literatur} & \textbf{Theoretische \& praktische Barriere} & \textbf{Prioritäre Forschungsagenda} \\
+    \textbf{Nr.} & \textbf{Kombination} & \textbf{Strukturelles Defizit in der Literatur} & \textbf{Prioritäre Forschungsagenda} \\
     \midrule
-    \textbf{1} 
-      & $(P_2 = v_{2.3}) \times (P_6 = v_{6.2})$ \newline DSS $\times$ ISO-Norm
-      & Vollständiges Fehlen interaktiver Decision Support Systems mit nativer Implementierung der ISO/IEC 25010.
-      & DSS-Prototypen nutzen proprietäre Ad-hoc-Bäume ($v_{6.1}$) oder Ontologien ($v_{6.3}$); ISO-Normen verharren in statischen Tabellenkalkulationen ($v_{2.2}$).
-      & Entwicklung quelloffener, modularer DSS-Plattformen mit vorkonfigurierten ISO-25010-Messbäumen und dynamischer Gewichtung. \\
-    \addlinespace[3pt]
-    \textbf{2} 
-      & $(P_1 = v_{1.3}) \times (P_3 = v_{3.4})$ \newline OR-Modelle $\times$ Adaptationsplan
-      & Mathematische Optimierungsmodelle berücksichtigen keine quantifizierte post-selektive Mismatch- und Glue-Code-Planung.
-      & OR-Modelle behandeln Inkompatibilitäten rein als binäre K.-o.-Restriktionen ($C_{ij} \in \{0,1\}$), wodurch anpassbare Komponenten verworfen werden.
-      & Formulierung dynamischer mathematischer Modelle, die Komponentenselektion und Wrapper-Entwicklungs\-aufwände simultan ko-optimieren. \\
-    \addlinespace[3pt]
-    \textbf{3} 
-      & $(P_2 = v_{2.3}) \times (P_4 = v_{4.4})$ \newline DSS $\times$ Evidential Reasoning
-      & Mangel an interaktiven DSS-Werkzeugen mit grafischer Modellierung unvollständiger Daten via Dempster-Shafer-Theorie.
-      & Evidential Reasoning verbleibt auf Ebene akademischer Formeln; keine anwenderfreundlichen GUIs zur Visualisierung von Nichtwissensintervallen.
-      & Konzeption webbasierter Evidenz-DSS, die Glaubens- und Plausibilitätsintervalle für Praktiker visuell erfahrbar machen. \\
-    \addlinespace[3pt]
-    \textbf{4} 
-      & $(P_5 = v_{5.2}) \times (P_6 = v_{6.2}) \times (P_2 = v_{2.3})$ \newline NFR $\times$ Norm $\times$ Benchmarking
-      & Weitgehende Entkopplung standardisierter Qualitätskataloge von automatisierter, empirischer Telemetrie- und Benchmark-Erhebung.
-      & ISO-Kriterien werden primär über subjektive Fragebögen evaluiert; objektive Testbeds (z.\,B. API-Fuzzing, Lasttests) bleiben isoliert.
-      & Nahtlose Integration automatisierter CI/CD-Pipelines und CVE-Sicherheitsfeeds in standardbasierte Qualitätsmodelle. \\
+    \textbf{1} & $(v_{2.3} \times v_{6.2})$ DSS $\times$ ISO & Fehlen interaktiver DSS mit ISO 25010 & Quelloffene modulare DSS-Plattformen \\
+    \textbf{2} & $(v_{1.3} \times v_{3.4})$ OR $\times$ Glue-Code & Inkompatibilitäten nur binäre Restriktionen & Ko-Optimierung mit Wrapper-Kosten \\
+    \textbf{3} & $(v_{2.3} \times v_{4.4})$ DSS $\times$ Evidential & Mangel an GUIs für Nichtwissensintervalle & Webbasierte Evidenz-DSS (Bel/Pl) \\
+    \textbf{4} & $(v_{5.2} \times v_{6.2} \times v_{2.3})$ Benchmarking & Entkopplung von Qualitätsnorm und Testbeds & Integration von CI/CD, Fuzzing und CVE \\
     \bottomrule
   \end{tabularx}
 \end{table}
-\end{landscape}
-\FloatBarrier
 
 \subsubsection{Forschungslücke 1: DSS-Tooling versus standardisierte Qualitätsmodelle}
 \label{subsubsec:gap1}
@@ -163,35 +141,21 @@ Für die wissenschaftliche Gemeinschaft im Software Engineering und der Wirtscha
 
 Für IT-Architekten, Chief Information Officers (CIOs) und Beschaffungsverantwortliche liefert diese Arbeit einen theoriegeleiteten, evidenzbasierten Kontingenz-Leitfaden, der in Tabelle~\ref{tab:entscheidungsmatrix_praxis} als praxistaugliche Entscheidungsmatrix zusammengefasst ist.
 
-\begin{landscape}
-\begin{table}[p]
+\begin{table}[htbp]
   \centering
   \small
-  \caption{Kontingenz-Entscheidungsmatrix zur Methodenauswahl in der Unternehmenspraxis}
+  \caption{Kontingenz-Entscheidungsmatrix zur Methodenauswahl in der Praxis}
   \label{tab:entscheidungsmatrix_praxis}
-  \begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{4.8cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{5.0cm}}
+  \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.6cm}}
     \toprule
-    \textbf{Entscheidungskontext} & \textbf{Empfohlener Archetyp \& Methode} & \textbf{Zentrale Nutzenargumente für Praktiker} & \textbf{Kritische Umsetzungshinweise} \\
+    Entscheidungskontext & Empfohlener Archetyp & Primäre Methoden & Zentraler Umsetzungshinweis \\
     \midrule
-    \textbf{Monolithische Enterprise-Software} \newline (z.\,B. ERP, CRM, BPMS) 
-      & \textbf{Archetyp 1 \& 3} \newline Delphi-basiertes Fuzzy-AHP / F-TOPSIS nach ISO/IEC 25010 \parencite{5BBYQCJB, NZJEEPAC}
-      & Strukturierte Einbindung heterogener Fachabteilungen; verlässlicher Ausgleich linguistischer Bewertungsunschärfen; umfassende TCO-Betrachtung.
-      & Kriterienanzahl hierarchisch begrenzen (max. 7 Subkriterien pro Knoten); Sensitivitätsanalysen zwingend durchführen. \\
-    \addlinespace[3pt]
-    \textbf{Modulare CBSD- \& Cloud-Systeme} \newline (z.\,B. Microservices, Multi-Komponenten) 
-      & \textbf{Archetyp 2} \newline Multikriterielle 0-1-Optimierung via Pareto-Exploration \parencite{MZ8JHDYA, YVWGHAWQ}
-      & Globale Ko-Optimierung von Systemlatenz, Schnittstellenkompatibilität und Budget; transparente Visualisierung von Trade-offs.
-      & Nutzung von Open-Source-Solvern; Verzicht auf starre \textit{a-priori}-Gewichte; dynamische Erkundung der Pareto-Front. \\
-    \addlinespace[3pt]
-    \textbf{Sicherheitskritische Systeme} \newline (z.\,B. Avionik, Medizintechnik, IoT) 
-      & \textbf{Archetyp 4} \newline Bayes-Netze (BBN) \& Evidential Reasoning \parencite{QDUNCXFC, LNQHES84}
-      & Mathematisch exakte Modellierung von Ausfallwahrscheinlichkeiten und unvollständigen Herstellerangaben; Nicht-Kompensatorik.
-      & Rigorose Veto-Schwellen gegen Sicherheitsrisiken; Verifikation via automatisierter Benchmark-Messreihen \parencite{8VHUMEKY}. \\
+    Monolithische Systeme & Archetyp 1 \& 3 & Fuzzy-AHP / F-TOPSIS & Kriterienhierarchie schlank halten \\
+    Modulare Cloud/CBSD & Archetyp 2 & Multikriterielle 0-1-Optimierung & Dynamische Pareto-Exploration \\
+    Sicherheitskritisch & Archetyp 4 & Bayes-Netze \& Evidential Reasoning & Veto-Schwellen \& Benchmarking \\
     \bottomrule
   \end{tabularx}
 \end{table}
-\end{landscape}
-\FloatBarrier
 
 Aus dieser Kontingenzmatrix ergeben sich drei fundamentale operative Handlungsempfehlungen für die Unternehmenspraxis:
 
